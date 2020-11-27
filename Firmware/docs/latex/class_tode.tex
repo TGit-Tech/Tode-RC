@@ -1,0 +1,130 @@
+\hypertarget{class_tode}{}\doxysection{Tode Class Reference}
+\label{class_tode}\index{Tode@{Tode}}
+
+
+Represents a \mbox{\hyperlink{class_tode}{Tode}} Device.  
+
+
+
+
+{\ttfamily \#include $<$Tode.\+h$>$}
+
+Inheritance diagram for Tode\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tode}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_tode_a1412c399be8312d6ad3132c927a615b2}\label{class_tode_a1412c399be8312d6ad3132c927a615b2}} 
+{\bfseries Tode} (int \+\_\+\+Tode\+Addr)
+\item 
+\mbox{\Hypertarget{class_tode_a0a4e10cf0eab8175165e84b11bea33a0}\label{class_tode_a0a4e10cf0eab8175165e84b11bea33a0}} 
+virtual const char $\ast$ {\bfseries Name} () override
+\item 
+virtual \mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ \mbox{\hyperlink{class_tode_a890de7c550027aeeaa359fc84f21bc6f}{Add\+Device}} (int \+\_\+\+D\+T\+\_\+\+Type)
+\begin{DoxyCompactList}\small\item\em Adds a Device to the \mbox{\hyperlink{class_tode}{Tode}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_tode_aa3a68700e75f21fa218aa62a065944a1}\label{class_tode_aa3a68700e75f21fa218aa62a065944a1}} 
+int {\bfseries U\+ID} ()
+\item 
+\mbox{\Hypertarget{class_tode_abdd9e08a5f636d5a2647edcbb1b3b744}\label{class_tode_abdd9e08a5f636d5a2647edcbb1b3b744}} 
+virtual int {\bfseries End\+Addr} ()
+\item 
+\mbox{\Hypertarget{class_tode_a7409587221f62849fb08595c92dd1b46}\label{class_tode_a7409587221f62849fb08595c92dd1b46}} 
+virtual int {\bfseries E\+Addr} ()
+\item 
+\mbox{\Hypertarget{class_tode_a9c9b42e94bcf98297c3887de89db3d49}\label{class_tode_a9c9b42e94bcf98297c3887de89db3d49}} 
+virtual int {\bfseries R\+F\+Addr} ()
+\item 
+\mbox{\Hypertarget{class_tode_ad30bd7e16a6014a51998f724341729ba}\label{class_tode_ad30bd7e16a6014a51998f724341729ba}} 
+virtual void {\bfseries R\+F\+Addr} (int \+\_\+\+R\+F\+Addr)
+\item 
+\mbox{\Hypertarget{class_tode_afd1da8e7751307d48120050c1a71011b}\label{class_tode_afd1da8e7751307d48120050c1a71011b}} 
+virtual void {\bfseries Send\+R\+F\+\_\+\+Config} (int \+\_\+\+R\+F\+Target)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_tode_a311f4a58136f34356fbbf5a1feb7895e}\label{class_tode_a311f4a58136f34356fbbf5a1feb7895e}} 
+\mbox{\hyperlink{class_menu_name}{Menu\+Name}} $\ast$ {\bfseries Tode\+Name} =0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Represents a \mbox{\hyperlink{class_tode}{Tode}} Device. 
+
+
+\begin{DoxyItemize}
+\item E\+E\+P\+R\+OM Organization ( see E\+E\+\_\+ in \mbox{\hyperlink{_constants_8h}{Constants.\+h}} )
+\begin{DoxyItemize}
+\item byte\mbox{[}0\mbox{]} = \mbox{\hyperlink{class_tode}{Tode}} Size in bytes
+\item byte\mbox{[}1\mbox{]} = Version
+\item byte\mbox{[}2\mbox{]} = U\+ID
+\item byte\mbox{[}3$\sim$12\mbox{]} = \mbox{\hyperlink{class_tode}{Tode}} Name 9-\/Chars + N\+U\+LL
+\item byte\mbox{[}14\mbox{]} = 1st Device Size
+\end{DoxyItemize}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]IF This\+Tode Size $<$ 50 then Remote \mbox{\hyperlink{class_tode}{Tode}}\textquotesingle{}s start at 50, else 100\end{DoxyRefDesc}
+
+\end{DoxyItemize}
+
+Definition at line 31 of file Tode.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tode_a890de7c550027aeeaa359fc84f21bc6f}\label{class_tode_a890de7c550027aeeaa359fc84f21bc6f}} 
+\index{Tode@{Tode}!AddDevice@{AddDevice}}
+\index{AddDevice@{AddDevice}!Tode@{Tode}}
+\doxysubsubsection{\texorpdfstring{AddDevice()}{AddDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ Tode\+::\+Add\+Device (\begin{DoxyParamCaption}\item[{int}]{\+\_\+\+D\+T\+\_\+\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a Device to the \mbox{\hyperlink{class_tode}{Tode}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+D\+T\+\_\+\+Type} & -\/ The \mbox{\hyperlink{_constants_8h}{Constants.\+h}} Device Type definition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the Parameter List for the added Device. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Allocates E\+E\+P\+R\+OM memory; Do not use for auto-\/loading devices. 
+\end{DoxyNote}
+
+
+Definition at line 75 of file Tode.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75                                       \{}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{/*}}
+\DoxyCodeLine{78 \textcolor{comment}{  if (\_DT\_Type == DT\_ONOFF) \{}}
+\DoxyCodeLine{79 \textcolor{comment}{    OnOff* pItem = new OnOff( TodeEndAddr, (TodeAddr == 0));}}
+\DoxyCodeLine{80 \textcolor{comment}{    Add(pItem);}}
+\DoxyCodeLine{81 \textcolor{comment}{    TodeEndAddr = TodeEndAddr + EEPROM.read(TodeEndAddr);          // 'new' writes device size into eeprom}}
+\DoxyCodeLine{82 \textcolor{comment}{    EEPROM.update(TodeAddr + EMO\_TODESIZE, TodeEndAddr);        // Update the Tode Size}}
+\DoxyCodeLine{83 \textcolor{comment}{}}
+\DoxyCodeLine{84 \textcolor{comment}{    ConfigVer++; if (ConfigVer > 255) ConfigVer = 0;            // Change Tode Version}}
+\DoxyCodeLine{85 \textcolor{comment}{    EEPROM.update(TodeAddr + EMO\_TODEVER, ConfigVer);          // Update Tode Version}}
+\DoxyCodeLine{86 \textcolor{comment}{}}
+\DoxyCodeLine{87 \textcolor{comment}{    return pItem-\/>SubList;}}
+\DoxyCodeLine{88 \textcolor{comment}{  \}}}
+\DoxyCodeLine{89 \textcolor{comment}{  */}}
+\DoxyCodeLine{90 \}\textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_tode_8h}{Tode.\+h}}\item 
+C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_tode_8cpp}{Tode.\+cpp}}\end{DoxyCompactItemize}

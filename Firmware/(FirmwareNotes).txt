@@ -1,0 +1,37 @@
+*****************************************
+IMPORTANT NOTES:  MyFonts is special Fonts couldn't find online
+So keep it with the project so it can be copied into Docs\Arduino\libraries\Adafruit_GFX_library\ folder
+*****************************************
+
+-------------------------
+To Investigate & Do
+-------------------------
+Divide ALL-EEPROM memory into 'Tode' Sections
+- The # of Tode's Configured + 1 / TOTAL EEPROM MEMORY
+- Then; Only adding a Tode will require an entire EEPROM Imprint
+- Adding/Changing devices can generally be done without a whole new imprint (Be sure to check-it)
+
+I want to write programming for IoT Technology & a Base Station
+- Probably use a Rasberry Pi for this!
+
+-------------------------
+Tode-E32-20L
+-------------------------
+Implements the UCGLIB library which had great fonts/abilities
+but was WAY TOO SLOW!!!
+
+-------------------------
+Tode-E32-20FK
+-------------------------
+Latest GFX library with TrueType Fonts but no Display.h file
+
+-------------------------
+Tode-E32-20FM
+-------------------------
+Added Display.h to separate Display functions
+Added 'MyFonts' to enhance display
+Used Droid and Roboto
+
+-------------------------
+Tode-E32-20BC
+-------------------------

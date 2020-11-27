@@ -1,0 +1,323 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Conn_01x10_Male J1
+U 1 1 5FB7D498
+P 1500 2000
+F 0 "J1" H 1608 2581 50  0000 C CNN
+F 1 "IOP" H 1608 2490 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical" H 1500 2000 50  0001 C CNN
+F 3 "~" H 1500 2000 50  0001 C CNN
+	1    1500 2000
+	1    0    0    -1  
+$EndComp
+Text Label 1800 1600 0    50   ~ 0
+5V
+Text Label 1800 1700 0    50   ~ 0
+GND
+Text Label 1800 1800 0    50   ~ 0
+A3
+Text Label 1800 1900 0    50   ~ 0
+A5
+Text Label 1800 2000 0    50   ~ 0
+A7
+Text Label 1800 2100 0    50   ~ 0
+A9
+Text Label 1800 2200 0    50   ~ 0
+A11
+Text Label 1800 2300 0    50   ~ 0
+A13
+Text Label 1800 2400 0    50   ~ 0
+D33
+Text Label 1800 2500 0    50   ~ 0
+D45
+$Comp
+L Device:Transformer_1P_1S T1
+U 1 1 5FBAD326
+P 6250 1900
+F 0 "T1" H 6250 1475 50  0000 C CNN
+F 1 "LM2596" H 6250 1566 50  0000 C CNN
+F 2 "Transformer_THT:Transformer_Toroid_Horizontal_D18.0mm" H 6250 1900 50  0001 C CNN
+F 3 "~" H 6250 1900 50  0001 C CNN
+	1    6250 1900
+	-1   0    0    1   
+$EndComp
+Text Label 6800 1700 0    50   ~ 0
+VIN
+Wire Wire Line
+	6650 2100 7000 2100
+Wire Wire Line
+	6650 1700 7100 1700
+$Comp
+L Connector:Conn_01x06_Male J3
+U 1 1 5FBDDEE7
+P 4550 2550
+F 0 "J3" V 4704 2794 50  0000 L CNN
+F 1 "IOM" V 4613 2794 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 4550 2550 50  0001 C CNN
+F 3 "~" H 4550 2550 50  0001 C CNN
+	1    4550 2550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J6
+U 1 1 5FBE156F
+P 7100 2700
+F 0 "J6" V 6972 2780 50  0000 L CNN
+F 1 "PWR" V 7063 2780 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal" H 7100 2700 50  0001 C CNN
+F 3 "~" H 7100 2700 50  0001 C CNN
+	1    7100 2700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7000 2100 7000 2500
+Wire Wire Line
+	7100 1700 7100 2500
+$Comp
+L Connector:Screw_Terminal_01x10 J2
+U 1 1 5FBF8A20
+P 5700 2750
+F 0 "J2" V 5825 2696 50  0000 C CNN
+F 1 "IOT" V 5916 2696 50  0000 C CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-10-5.08_1x10_P5.08mm_Horizontal" H 5700 2750 50  0001 C CNN
+F 3 "~" H 5700 2750 50  0001 C CNN
+	1    5700 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x06_Female J4
+U 1 1 5FBFE2A3
+P 4600 2550
+F 0 "J4" V 4538 2798 50  0000 L CNN
+F 1 "IOF" V 4447 2798 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical" H 4600 2550 50  0001 C CNN
+F 3 "~" H 4600 2550 50  0001 C CNN
+	1    4600 2550
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 2350 5050 2350
+Wire Wire Line
+	4800 2450 5150 2450
+Wire Wire Line
+	4800 2550 5500 2550
+Wire Wire Line
+	4800 2650 5500 2650
+Wire Wire Line
+	5050 2350 5050 2750
+Wire Wire Line
+	5050 2750 5500 2750
+Connection ~ 5050 2350
+Wire Wire Line
+	5050 2350 5500 2350
+Wire Wire Line
+	5150 2450 5150 2850
+Wire Wire Line
+	5150 2850 5500 2850
+Connection ~ 5150 2450
+Wire Wire Line
+	5150 2450 5500 2450
+Wire Wire Line
+	4800 2750 4950 2750
+Wire Wire Line
+	4950 2750 4950 2950
+Wire Wire Line
+	4950 2950 5500 2950
+Wire Wire Line
+	4800 2850 4850 2850
+Wire Wire Line
+	4850 2850 4850 3050
+Wire Wire Line
+	4850 3050 5500 3050
+Wire Wire Line
+	5500 3150 5050 3150
+Wire Wire Line
+	5050 3150 5050 2750
+Connection ~ 5050 2750
+Wire Wire Line
+	5500 3250 5150 3250
+Wire Wire Line
+	5150 3250 5150 2850
+Connection ~ 5150 2850
+Wire Wire Line
+	5850 2100 4150 2100
+Wire Wire Line
+	3500 2100 3500 1600
+Wire Wire Line
+	4350 2350 4250 2350
+Wire Wire Line
+	4250 2350 4250 1700
+Connection ~ 4250 1700
+Wire Wire Line
+	4250 1700 5850 1700
+Wire Wire Line
+	4350 2450 4150 2450
+Wire Wire Line
+	3600 2400 3600 2750
+Wire Wire Line
+	3600 2750 4350 2750
+Wire Wire Line
+	3700 2300 3700 2650
+Wire Wire Line
+	3700 2650 4350 2650
+Wire Wire Line
+	3800 2200 3800 2550
+Wire Wire Line
+	3800 2550 4350 2550
+Wire Wire Line
+	4150 2450 4150 2100
+Connection ~ 4150 2100
+Wire Wire Line
+	4150 2100 3500 2100
+Wire Wire Line
+	2600 1700 2600 3150
+Connection ~ 2600 1700
+Wire Wire Line
+	2500 1600 2500 3250
+Connection ~ 2500 1600
+Wire Wire Line
+	1700 2500 2300 2500
+Wire Wire Line
+	2300 2500 2300 3450
+Wire Wire Line
+	1700 2400 2400 2400
+Wire Wire Line
+	2400 2400 2400 3350
+Wire Wire Line
+	1700 2300 2700 2300
+Wire Wire Line
+	1700 1800 3300 1800
+Wire Wire Line
+	3300 1800 3300 2200
+Wire Wire Line
+	3300 2200 3800 2200
+Wire Wire Line
+	1700 1900 3250 1900
+Wire Wire Line
+	3250 1900 3250 2300
+Wire Wire Line
+	3250 2300 3700 2300
+Wire Wire Line
+	1700 2000 3200 2000
+Wire Wire Line
+	3200 2000 3200 2400
+Wire Wire Line
+	3200 2400 3600 2400
+Wire Wire Line
+	1700 2100 3150 2100
+Wire Wire Line
+	3150 2100 3150 2850
+Wire Wire Line
+	3150 2850 4350 2850
+Text Label 5200 2550 0    50   ~ 0
+3
+Text Label 5200 2650 0    50   ~ 0
+5
+Text Label 5200 2950 0    50   ~ 0
+7
+Text Label 5200 3050 0    50   ~ 0
+9
+Wire Wire Line
+	1700 1600 2500 1600
+Text Label 6800 2100 0    50   ~ 0
+GND
+Wire Wire Line
+	1700 1700 2600 1700
+Wire Wire Line
+	2500 1600 2900 1600
+Wire Wire Line
+	2900 1600 3500 1600
+Connection ~ 2900 1600
+Wire Wire Line
+	2900 1600 2900 3250
+$Comp
+L Connector:Screw_Terminal_01x08 J5
+U 1 1 5FC663E6
+P 2700 3650
+F 0 "J5" V 2572 4030 50  0000 L CNN
+F 1 "IOB" V 2663 4030 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-8-5.08_1x08_P5.08mm_Horizontal" H 2700 3650 50  0001 C CNN
+F 3 "~" H 2700 3650 50  0001 C CNN
+	1    2700 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x03_Female J8
+U 1 1 5FC7CCD8
+P 3450 3250
+F 0 "J8" H 3478 3276 50  0000 L CNN
+F 1 "RY2" H 3478 3185 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 3450 3250 50  0001 C CNN
+F 3 "~" H 3450 3250 50  0001 C CNN
+	1    3450 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x03_Female J7
+U 1 1 5FC7D1B1
+P 1800 3250
+F 0 "J7" H 1692 2925 50  0000 C CNN
+F 1 "RY1" H 1692 3016 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 1800 3250 50  0001 C CNN
+F 3 "~" H 1800 3250 50  0001 C CNN
+	1    1800 3250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2000 3350 2400 3350
+Connection ~ 2400 3350
+Wire Wire Line
+	2400 3350 2400 3450
+Wire Wire Line
+	2000 3250 2500 3250
+Connection ~ 2500 3250
+Wire Wire Line
+	2500 3250 2500 3450
+Wire Wire Line
+	2000 3150 2600 3150
+Connection ~ 2600 3150
+Wire Wire Line
+	2600 3150 2600 3450
+Wire Wire Line
+	3250 3250 2900 3250
+Connection ~ 2900 3250
+Wire Wire Line
+	2900 3250 2900 3450
+Wire Wire Line
+	2700 2300 2700 3450
+Wire Wire Line
+	2600 1700 2800 1700
+Wire Wire Line
+	3000 2200 3000 3150
+Wire Wire Line
+	1700 2200 3000 2200
+Wire Wire Line
+	3250 3150 3000 3150
+Connection ~ 3000 3150
+Wire Wire Line
+	3000 3150 3000 3450
+Wire Wire Line
+	2800 3450 2800 3350
+Connection ~ 2800 1700
+Wire Wire Line
+	2800 1700 4250 1700
+Wire Wire Line
+	3250 3350 2800 3350
+Connection ~ 2800 3350
+Wire Wire Line
+	2800 3350 2800 1700
+$EndSCHEMATC

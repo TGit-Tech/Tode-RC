@@ -1,0 +1,63 @@
+\hypertarget{class_menu_item}{}\doxysection{Menu\+Item Class Reference}
+\label{class_menu_item}\index{MenuItem@{MenuItem}}
+
+
+The Menu-\/\+Item Interface (i.\+e. Abstract Base Class). Each Item-\/\+Type can rely on \textquotesingle{}Display\textquotesingle{} being defined but each Item-\/\+Type must contain its own implementation of Navigate() and corresponding Display methods.  
+
+
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
+Inheritance diagram for Menu\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_menu_item}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_item_adb14928626ae7067fda6a1d4e05aae64}\label{class_menu_item_adb14928626ae7067fda6a1d4e05aae64}} 
+virtual byte {\bfseries Navigate} (byte \+\_\+\+Key, byte \+\_\+\+Row=0)=0
+\item 
+\mbox{\Hypertarget{class_menu_item_ae6d797a6a96ef94272cfdd40bd8e227a}\label{class_menu_item_ae6d797a6a96ef94272cfdd40bd8e227a}} 
+virtual byte {\bfseries On\+Key} (byte \+\_\+\+Key)
+\item 
+\mbox{\Hypertarget{class_menu_item_abf02643226f157acac37b6c580b3a157}\label{class_menu_item_abf02643226f157acac37b6c580b3a157}} 
+virtual byte {\bfseries On\+Ret\+Key} (byte \+\_\+\+Key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_item_a8191cc6be97c9d7f0ea4ce6934a97dfc}\label{class_menu_item_a8191cc6be97c9d7f0ea4ce6934a97dfc}} 
+\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ \mbox{\hyperlink{class_menu_item_a8191cc6be97c9d7f0ea4ce6934a97dfc}{Sub\+List}} = 0
+\begin{DoxyCompactList}\small\item\em Link-\/\+List Item -\/$>$ Another Link-\/\+List. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_item_a7208787ab8bfe20c158f4118d057a1d6}\label{class_menu_item_a7208787ab8bfe20c158f4118d057a1d6}} 
+D\+S\+P\+C\+L\+A\+SS $\ast$ {\bfseries Display} = 0
+\item 
+\mbox{\Hypertarget{class_menu_item_a693c9800858365738aa83011cfb16ffd}\label{class_menu_item_a693c9800858365738aa83011cfb16ffd}} 
+byte {\bfseries Selected} = \mbox{\hyperlink{group___s_e_l_ga09d444abc77ba9f4bf20f632cd585918}{S\+E\+L\+\_\+\+N\+O\+NE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_item_afb936457c5e3f44d44a50275e5d82fd3}\label{class_menu_item_afb936457c5e3f44d44a50275e5d82fd3}} 
+class {\bfseries Menu\+List}
+\item 
+\mbox{\Hypertarget{class_menu_item_a1c39e2e7a194cc6a61b868bc08f8b3c8}\label{class_menu_item_a1c39e2e7a194cc6a61b868bc08f8b3c8}} 
+class {\bfseries Navigator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Menu-\/\+Item Interface (i.\+e. Abstract Base Class). Each Item-\/\+Type can rely on \textquotesingle{}Display\textquotesingle{} being defined but each Item-\/\+Type must contain its own implementation of Navigate() and corresponding Display methods. 
+
+Definition at line 18 of file Menu.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_menu_8h}{Menu.\+h}}\item 
+C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_menu_8cpp}{Menu.\+cpp}}\end{DoxyCompactItemize}
