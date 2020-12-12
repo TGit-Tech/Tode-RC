@@ -1,37 +1,46 @@
 \hypertarget{class_on_off}{}\doxysection{On\+Off Class Reference}
 \label{class_on_off}\index{OnOff@{OnOff}}
+
+
+{\bfseries{D\+E\+V\+I\+CE}} Digital On/\+Off {\itshape Value} Control and Local Settings; inherits \mbox{\hyperlink{class_menu_value}{Menu\+Value}}.  
+
+
+
+
+{\ttfamily \#include $<$Devices.\+h$>$}
+
 Inheritance diagram for On\+Off\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=5.000000cm]{class_on_off}
+\includegraphics[height=4.000000cm]{class_on_off}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_on_off_acbb998fe79706c2e42618d035272f0e7}\label{class_on_off_acbb998fe79706c2e42618d035272f0e7}} 
-{\bfseries On\+Off} (int \+\_\+\+N\+Addr, bool \+\_\+\+Is\+Local=false)
+\mbox{\Hypertarget{class_on_off_aa00b40632fd62224ee9bc802efa518be}\label{class_on_off_aa00b40632fd62224ee9bc802efa518be}} 
+{\bfseries On\+Off} (int \+\_\+\+E\+E\+Dev\+Addr, byte \+\_\+\+Dev\+ID, bool \+\_\+\+Is\+Local=false)
 \item 
-\mbox{\Hypertarget{class_on_off_a173c12ea4b5ef6474b84216711742e06}\label{class_on_off_a173c12ea4b5ef6474b84216711742e06}} 
-virtual int {\bfseries Value} ()
-\item 
-\mbox{\Hypertarget{class_on_off_ad8e59e24d8643d6bdbee4a3b01a8e91e}\label{class_on_off_ad8e59e24d8643d6bdbee4a3b01a8e91e}} 
-virtual void {\bfseries Value} (int \+\_\+\+Value)
-\item 
-\mbox{\Hypertarget{class_on_off_a96d8a404bb19e31de0d8362ea96edde8}\label{class_on_off_a96d8a404bb19e31de0d8362ea96edde8}} 
-virtual int {\bfseries I\+O\+Pin} ()
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_on_off_a3c820893f83117ca017c62913057c478}\label{class_on_off_a3c820893f83117ca017c62913057c478}} 
+virtual int \mbox{\hyperlink{class_on_off_a3c820893f83117ca017c62913057c478}{Value}} ()
+\begin{DoxyCompactList}\small\item\em G\+ET Item Value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_on_off_a52ba21ee4adf878d476d4e8126784b01}\label{class_on_off_a52ba21ee4adf878d476d4e8126784b01}} 
+virtual void \mbox{\hyperlink{class_on_off_a52ba21ee4adf878d476d4e8126784b01}{Value}} (int \+\_\+\+Value)
+\begin{DoxyCompactList}\small\item\em S\+ET Item Value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_on_off_a6b840f30e5cf82c189347b28e29c6563}\label{class_on_off_a6b840f30e5cf82c189347b28e29c6563}} 
+virtual byte \mbox{\hyperlink{class_on_off_a6b840f30e5cf82c189347b28e29c6563}{Dev\+Type}} (byte \+\_\+\+D\+T\+P\+Key=\mbox{\hyperlink{group___d_t_p_ga86beaa067694390507a20326ec7d1b6e}{D\+T\+P\+\_\+\+D\+E\+V\+T\+Y\+PE}}) override
+\begin{DoxyCompactList}\small\item\em Device-\/\+Type Parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
+{\bfseries{D\+E\+V\+I\+CE}} Digital On/\+Off {\itshape Value} Control and Local Settings; inherits \mbox{\hyperlink{class_menu_value}{Menu\+Value}}. 
 
-
-Definition at line 50 of file Devices.\+h.
+Definition at line 23 of file Devices.\+h.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_devices_8h}{Devices.\+h}}\item 
-C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_devices_8cpp}{Devices.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_devices_8h}{Devices.\+h}}\item 
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_devices_8cpp}{Devices.\+cpp}}\end{DoxyCompactItemize}

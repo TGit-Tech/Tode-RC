@@ -35,3 +35,30 @@ Used Droid and Roboto
 -------------------------
 Tode-E32-20BC
 -------------------------
+Updated to Use pin A15 for keypad input
+
+-------------------------
+Tode-E32-20BT
+-------------------------
+Enhanced Doxygen Comments
+
+-------------------------
+Tode-E32-20C1
+-------------------------
+Added PinSelect Class
+Add Devices by Devices
+
+-------------------------
+Tode-E32-20C5
+-------------------------
+3-Arg Debug
+Removed MVOptions (NumberName better implementation)
+E32 PC-App Settings Connection Implemented
+Changed to System->Loop
+Removed OnKey() implementation (Not needed)
+
+-------------------------
+Tode-E32-20C9
+-------------------------
+Setup E32Lib and GetParam
+EEPROM updates and Tode AddDevice

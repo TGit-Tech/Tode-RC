@@ -1,0 +1,39 @@
+\hypertarget{_dev_lib_8h}{}\doxysection{C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\+Dev\+Lib.h File Reference}
+\label{_dev_lib_8h}\index{C:/Users/TGIT-\/TECH/Documents/\#Projects/Tode-\/RC/firmware/Tode-\/E32-\/20C9/DevLib.h@{C:/Users/TGIT-\/TECH/Documents/\#Projects/Tode-\/RC/firmware/Tode-\/E32-\/20C9/DevLib.h}}
+
+
+Library that implements generic Device Control structures and I\+O-\/\+H\+DW Board Options.  
+
+
+{\ttfamily \#include \char`\"{}Constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Menu\+Lib.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$E\+E\+P\+R\+O\+M.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_set_net}{Set\+Net}}
+\begin{DoxyCompactList}\small\item\em On-\/\+Demand initialized Item-\/\+Object Tool used to set Textual Names on a new screen. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_pin_select}{Pin\+Select}}
+\begin{DoxyCompactList}\small\item\em {\bfseries{I\+T\+EM}} adds \mbox{\hyperlink{group___i_o_h_d_w}{I\+O-\/\+Hardware}} specific On-\/\+Display Pick-\/\+A-\/\+Pin to \mbox{\hyperlink{class_menu_value}{Menu\+Value}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Library that implements generic Device Control structures and I\+O-\/\+H\+DW Board Options. 
+
+Thinking of using E32 0x\+F\+FF Address + 0x\+F\+F.\+F for Sec\+Net so all \mbox{\hyperlink{class_tode}{Tode}}\textquotesingle{}s same ID\#.
+\begin{DoxyItemize}
+\item E\+E\+P\+R\+OM Organization ( see E\+E\+\_\+ in \mbox{\hyperlink{_constants_8h}{Constants.\+h}} )
+\end{DoxyItemize}
+
+byte\mbox{[}0\mbox{]} = \mbox{\hyperlink{class_tode}{Tode}} Size in bytes ~\newline
+
+\begin{DoxyItemize}
+\item byte\mbox{[}1\mbox{]} = Version ~\newline
+
+\item byte\mbox{[}2\mbox{]} = U\+ID ~\newline
+
+\item byte\mbox{[}3$\sim$12\mbox{]} = \mbox{\hyperlink{class_tode}{Tode}} Name 9-\/Chars + N\+U\+LL ~\newline
+
+\item byte\mbox{[}14\mbox{]} = 1st Device-\/\+Type Use-\/\+Size as device driver version compatibility? ~\newline
+ 
+\end{DoxyItemize}

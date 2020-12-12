@@ -1,25 +1,30 @@
-\hypertarget{_menu_8h}{}\doxysection{C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\+Menu.h File Reference}
-\label{_menu_8h}\index{C:/Users/tgit23/Documents/\_Projects/Tode-\/E32/Pro-\/Mega-\/Tode/Firmware/Tode-\/E32-\/20FM/Menu.h@{C:/Users/tgit23/Documents/\_Projects/Tode-\/E32/Pro-\/Mega-\/Tode/Firmware/Tode-\/E32-\/20FM/Menu.h}}
+\hypertarget{_menu_8h}{}\doxysection{C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\+Menu.h File Reference}
+\label{_menu_8h}\index{C:/Users/TGIT-\/TECH/Documents/\#Projects/Tode-\/RC/firmware/Tode-\/E32-\/20C9/Menu.h@{C:/Users/TGIT-\/TECH/Documents/\#Projects/Tode-\/RC/firmware/Tode-\/E32-\/20C9/Menu.h}}
 
 
-A Link-\/\+List Menu Structure; \mbox{[}Top-\/\+Level \mbox{\hyperlink{class_navigator}{Navigator}}\mbox{]}$<$\mbox{[}Lists\mbox{]}$<$\mbox{[}Items\mbox{]} hierarchy.  
+Abstract Base Classes for Menu Structure hierarchy.  
 
 
 {\ttfamily \#include \char`\"{}Constants.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Display.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Radio.\+h\char`\"{}}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_menu_item}{Menu\+Item}}
-\begin{DoxyCompactList}\small\item\em The Menu-\/\+Item Interface (i.\+e. Abstract Base Class). Each Item-\/\+Type can rely on \textquotesingle{}Display\textquotesingle{} being defined but each Item-\/\+Type must contain its own implementation of Navigate() and corresponding Display methods. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em {\bfseries{I\+T\+EM}} Menu-\/\+Item Base Class ie {\itshape Interface}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_menu_list}{Menu\+List}}
-\begin{DoxyCompactList}\small\item\em ~\newline
- \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em {\bfseries{L\+I\+ST}} of Menu-\/\+Item (s) which can carry a {\itshape List Name}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_navigator}{Navigator}}
-\begin{DoxyCompactList}\small\item\em ~\newline
- \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em {\bfseries{L\+I\+ST of L\+I\+S\+TS}} Top-\/\+Level \mbox{\hyperlink{class_navigator}{Navigator}} of multiple \mbox{\hyperlink{class_menu_list}{Menu\+List}} (s). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-A Link-\/\+List Menu Structure; \mbox{[}Top-\/\+Level \mbox{\hyperlink{class_navigator}{Navigator}}\mbox{]}$<$\mbox{[}Lists\mbox{]}$<$\mbox{[}Items\mbox{]} hierarchy. 
+Abstract Base Classes for Menu Structure hierarchy. 
 
+
+\begin{DoxyItemize}
+\item Top-\/\+Level \mbox{\hyperlink{class_navigator}{Navigator}} of \mbox{\hyperlink{class_menu_list}{Menu\+List}} (s)
+\item \mbox{\hyperlink{class_menu_list}{Menu\+List}} of \mbox{\hyperlink{class_menu_item}{Menu\+Item}} (s)
+\item \mbox{\hyperlink{class_menu_item}{Menu\+Item}} 
+\end{DoxyItemize}

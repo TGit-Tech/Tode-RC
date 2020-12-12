@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['set_20selected_89',['Set Selected',['../group___s_s.html',1,'']]]
+  ['ebyte_20e32_20radio_20mode_177',['Ebyte E32 Radio Mode',['../group___e32_m_o_d_e_s.html',1,'']]]
 ];

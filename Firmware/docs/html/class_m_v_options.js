@@ -1,6 +1,6 @@
 var class_m_v_options =
 [
-    [ "MVOptions", "class_m_v_options.html#a2ab30ec61d8d517fef09df34025e2263", null ],
-    [ "MVOptions", "class_m_v_options.html#acdc5e5dd0acc3c61299d1aba04a774aa", null ],
-    [ "VNavigate", "class_m_v_options.html#a01341b7e044491b0b4923a0a9aceac10", null ]
+    [ "MVOptions", "class_m_v_options.html#afde6e5c1348bc9e730f5908356d1fd55", null ],
+    [ "MVOptions", "class_m_v_options.html#a4ec6cf38e7cc048f6d93ea98b964b3ce", null ],
+    [ "ValueNav", "class_m_v_options.html#a689d7a802da992b3adb47a6a5a5b38f3", null ]
 ];

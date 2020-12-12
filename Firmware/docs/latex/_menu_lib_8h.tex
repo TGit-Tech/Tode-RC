@@ -1,8 +1,8 @@
-\hypertarget{_menu_lib_8h}{}\doxysection{C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\+Menu\+Lib.h File Reference}
-\label{_menu_lib_8h}\index{C:/Users/tgit23/Documents/\_Projects/Tode-\/E32/Pro-\/Mega-\/Tode/Firmware/Tode-\/E32-\/20FM/MenuLib.h@{C:/Users/tgit23/Documents/\_Projects/Tode-\/E32/Pro-\/Mega-\/Tode/Firmware/Tode-\/E32-\/20FM/MenuLib.h}}
+\hypertarget{_menu_lib_8h}{}\doxysection{C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\+Menu\+Lib.h File Reference}
+\label{_menu_lib_8h}\index{C:/Users/TGIT-\/TECH/Documents/\#Projects/Tode-\/RC/firmware/Tode-\/E32-\/20C9/MenuLib.h@{C:/Users/TGIT-\/TECH/Documents/\#Projects/Tode-\/RC/firmware/Tode-\/E32-\/20C9/MenuLib.h}}
 
 
-\mbox{[}M\mbox{]}enu \mbox{[}L\mbox{]}ibrary  
+Library to expand \mbox{\hyperlink{class_menu_item}{Menu\+Item}} class for specific usage.  
 
 
 {\ttfamily \#include \char`\"{}Menu.\+h\char`\"{}}\newline
@@ -12,15 +12,18 @@
 class \mbox{\hyperlink{class_set_name_tool}{Set\+Name\+Tool}}
 \begin{DoxyCompactList}\small\item\em On-\/\+Demand initialized Tool-\/\+Object for setting Textual Names on a seperate screen. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_menu_name}{Menu\+Name}}
-\begin{DoxyCompactList}\small\item\em Constructor call determines if Name is stored in R\+AM or E\+E\+P\+R\+OM. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em {\bfseries{I\+T\+EM}} adds {\itshape N\+A\+ME} to \mbox{\hyperlink{class_menu_item}{Menu\+Item}} stored in either M\+EM or E\+E\+P\+R\+OM determined by Constructor. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_menu_name_key}{Menu\+Name\+Key}}
+\begin{DoxyCompactList}\small\item\em {\bfseries{I\+T\+EM}} injects \mbox{\hyperlink{group___k_e_y}{Navigate() Keys}} when K\+E\+Y\+O\+K\+AY is pressed on Name (Used to add devices). \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_menu_value}{Menu\+Value}}
-\begin{DoxyCompactList}\small\item\em Read-\/\+Only Value. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em {\bfseries{I\+T\+EM}} adds {\itshape V\+A\+L\+UE} to \mbox{\hyperlink{class_menu_name}{Menu\+Name}} for a Name-\/$>$Value Pair + Number-\/\+Naming ability. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_menu_value_1_1_number_name}{Menu\+Value\+::\+Number\+Name}}
+\begin{DoxyCompactList}\small\item\em Text-\/\+Name Numbers. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_m_v_digit_set}{M\+V\+Digit\+Set}}
-\begin{DoxyCompactList}\small\item\em \mbox{[}M\mbox{]}enu\mbox{[}V\mbox{]}alue with a per Digit Value Set \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{class_m_v_options}{M\+V\+Options}}
-\begin{DoxyCompactList}\small\item\em \mbox{[}M\mbox{]}enu\mbox{[}V\mbox{]}alue with a Pick-\/\+An-\/\+Option Value Set \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em {\bfseries{I\+T\+EM}} adds On-\/\+Display {\itshape Per-\/\+Digit} S\+ET feature to \mbox{\hyperlink{class_menu_value}{Menu\+Value}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\mbox{[}M\mbox{]}enu \mbox{[}L\mbox{]}ibrary 
+Library to expand \mbox{\hyperlink{class_menu_item}{Menu\+Item}} class for specific usage. 
 
+Adds the {\itshape \mbox{\hyperlink{class_set_name_tool}{Set\+Name\+Tool}}} class. 

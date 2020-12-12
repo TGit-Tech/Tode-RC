@@ -1,5 +1,14 @@
 \hypertarget{class_main}{}\doxysection{Main Class Reference}
 \label{class_main}\index{Main@{Main}}
+
+
+{\bfseries{System}} Top-\/\+Level System for Setup, Todes, and This\+Tode\textquotesingle{}s H\+DW / Device Setup.  
+
+
+
+
+{\ttfamily \#include $<$Main.\+h$>$}
+
 Inheritance diagram for Main\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,27 +18,38 @@ Inheritance diagram for Main\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_main_a7697be41430220d437aecf28be698eb1}\label{class_main_a7697be41430220d437aecf28be698eb1}} 
-{\bfseries Main} (\mbox{\hyperlink{class_tode}{Tode}} $\ast$\+\_\+\+This\+Tode)
+\mbox{\hyperlink{class_main_a50d4361a1b613205467a441b5c40c199}{Main}} ()
 \item 
-\mbox{\Hypertarget{class_main_aaaa65ae1f26184bc0d99c0ecdc4bbbea}\label{class_main_aaaa65ae1f26184bc0d99c0ecdc4bbbea}} 
-byte {\bfseries On\+Ret\+Key} (byte \+\_\+\+Key) override
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_main_aa4e69a8681ea6e4aa9415be82c0c2c4f}\label{class_main_aa4e69a8681ea6e4aa9415be82c0c2c4f}} 
+byte \mbox{\hyperlink{class_main_aa4e69a8681ea6e4aa9415be82c0c2c4f}{Loop}} (byte \+\_\+\+Final\+Key) override
+\begin{DoxyCompactList}\small\item\em Last Return key for Adding Devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_main_a030d2817c818e7f479538f415fd62ced}\label{class_main_a030d2817c818e7f479538f415fd62ced}} 
-\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ {\bfseries System\+Menu} = 0
+\mbox{\Hypertarget{class_main_ace2bb05f94a3481197248f093f9bc058}\label{class_main_ace2bb05f94a3481197248f093f9bc058}} 
+\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ \mbox{\hyperlink{class_main_ace2bb05f94a3481197248f093f9bc058}{Setup\+Menu}} = 0
+\begin{DoxyCompactList}\small\item\em Setup the System Menu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_ad21bec839599478af12dded51c156ae7}\label{class_main_ad21bec839599478af12dded51c156ae7}} 
+\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ \mbox{\hyperlink{class_main_ad21bec839599478af12dded51c156ae7}{Devices}} = 0
+\begin{DoxyCompactList}\small\item\em This\+Tode Devices and Settings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_a495421482f9cc158f58da4540a7e945b}\label{class_main_a495421482f9cc158f58da4540a7e945b}} 
+\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ \mbox{\hyperlink{class_main_a495421482f9cc158f58da4540a7e945b}{Add\+Device\+List}} = 0
+\begin{DoxyCompactList}\small\item\em Add Device drivers for Adding by-\/menu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_main_a220dac0ac89f122137ed676af4ae5d78}\label{class_main_a220dac0ac89f122137ed676af4ae5d78}} 
+\mbox{\hyperlink{class_e32_radio}{E32\+Radio}} $\ast$ {\bfseries R\+F\+Radio} = 0
 \item 
-\mbox{\Hypertarget{class_main_a494e2680790adde88792a6d1fbfe8ca1}\label{class_main_a494e2680790adde88792a6d1fbfe8ca1}} 
-\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ {\bfseries Add\+Tode} = 0
-\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_main_a661c5c0fa9cdb1987fe01b8e7c841076}\label{class_main_a661c5c0fa9cdb1987fe01b8e7c841076}} 
+\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ \mbox{\hyperlink{class_main_a661c5c0fa9cdb1987fe01b8e7c841076}{Radio\+Settings}} = 0
+\begin{DoxyCompactList}\small\item\em RF Radio Settings on Menu List. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_main_a3fa54b82df9c4e70cfb9536956c82f2e}\label{class_main_a3fa54b82df9c4e70cfb9536956c82f2e}} 
+int \mbox{\hyperlink{class_main_a3fa54b82df9c4e70cfb9536956c82f2e}{New\+Tode\+E\+EA}} ()
+\begin{DoxyCompactList}\small\item\em Increments T\+O\+D\+E\+A\+L\+L\+OC everytime called. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_main_a495421482f9cc158f58da4540a7e945b}\label{class_main_a495421482f9cc158f58da4540a7e945b}} 
-\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ \mbox{\hyperlink{class_main_a495421482f9cc158f58da4540a7e945b}{Add\+Device\+List}} = 0
-\begin{DoxyCompactList}\small\item\em A List of Addable Devices. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_main_a0946a6d1b105dba204021fea0fc05e14}\label{class_main_a0946a6d1b105dba204021fea0fc05e14}} 
 \mbox{\hyperlink{class_tode}{Tode}} $\ast$ {\bfseries This\+Tode} = 0
 \item 
@@ -39,13 +59,63 @@ int {\bfseries R\+F\+Addr} = 0
 
 
 \doxysubsection{Detailed Description}
+{\bfseries{System}} Top-\/\+Level System for Setup, Todes, and This\+Tode\textquotesingle{}s H\+DW / Device Setup. 
+
+Definition at line 25 of file Main.\+h.
 
 
-Definition at line 21 of file Main.\+h.
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_a50d4361a1b613205467a441b5c40c199}\label{class_main_a50d4361a1b613205467a441b5c40c199}} 
+\index{Main@{Main}!Main@{Main}}
+\index{Main@{Main}!Main@{Main}}
+\doxysubsubsection{\texorpdfstring{Main()}{Main()}}
+{\footnotesize\ttfamily Main\+::\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+$<$ \mbox{\hyperlink{class_navigator}{Navigator}} List \#1
+
+$<$ \mbox{\hyperlink{class_navigator}{Navigator}} List \#2
+
+Definition at line 29 of file Main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29            \{                                        DBINITL((\textcolor{stringliteral}{"{}Main::Main"{}}))}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31   \textcolor{comment}{// Create a ThisTode and RFRadio Object}}
+\DoxyCodeLine{32   ThisTode = new \mbox{\hyperlink{class_tode}{Tode}}(\mbox{\hyperlink{class_main_a3fa54b82df9c4e70cfb9536956c82f2e}{NewTodeEEA}}());}
+\DoxyCodeLine{33   RFRadio = new \mbox{\hyperlink{class_e32_radio}{E32Radio}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35   DBINFOAL(("{}\mbox{\hyperlink{class_main}{Main}}::\mbox{\hyperlink{class_main}{Main}} Radio Address: "{}), (RFRadio-\/>Address()))}
+\DoxyCodeLine{36   DBINFOAL(("{}\mbox{\hyperlink{class_main}{Main}}::\mbox{\hyperlink{class_main}{Main}} Radio Freq[mhz]: "{}), (RFRadio-\/>Frequency()))}
+\DoxyCodeLine{37   DBINFOAL(("{}\mbox{\hyperlink{class_main}{Main}}::\mbox{\hyperlink{class_main}{Main}} Radio Power[db]: "{}), (RFRadio-\/>TxPower()))}
+\DoxyCodeLine{38   RFRadio-\/>Mode(E32\_NORMMODE);}
+\DoxyCodeLine{39   }
+\DoxyCodeLine{40   \textcolor{comment}{// Build Menu's}}
+\DoxyCodeLine{41   DeviceList\_Init();}
+\DoxyCodeLine{42   Radio\_Init();}
+\DoxyCodeLine{43   SetupMenu\_Init();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45   \textcolor{comment}{// Add the Lists 'this' Main.System : Navigator}}
+\DoxyCodeLine{46   this-\/>\mbox{\hyperlink{class_navigator_aaaa1cd1724e60de126d081e711a40d73}{Add}}(\mbox{\hyperlink{class_main_ace2bb05f94a3481197248f093f9bc058}{SetupMenu}});                                    }
+\DoxyCodeLine{47   this-\/>\mbox{\hyperlink{class_navigator_aaaa1cd1724e60de126d081e711a40d73}{Add}}(ThisTode);                                     }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49   \textcolor{comment}{// Get ThisTode RFAddr if not same as RFRadio's Update EEPROM}}
+\DoxyCodeLine{50   if ( RFRadio-\/>Address() != ThisTode-\/>RFAddr() ) \{ }
+\DoxyCodeLine{51     DBINFOAL((\textcolor{stringliteral}{"{}Main::Main() RFRadio-\/>RadioAddress() != ThisTode-\/>RFAddr()"{}}),(ThisTode-\/>RFAddr()))}
+\DoxyCodeLine{52     ThisTode-\/>RFAddr(RFRadio-\/>Address()); }
+\DoxyCodeLine{53   \}}
+\DoxyCodeLine{54   }
+\DoxyCodeLine{55   \textcolor{comment}{//E32Radio = new PeerIOSerialControl(1, Serial1, Serial);}}
+\DoxyCodeLine{56   \textcolor{comment}{//E32Radio-\/>Timeout(2000);}}
+\DoxyCodeLine{57   DBINFOAL(("{}*** Free Memory *** = "{}),(freeMemory()))}
+\DoxyCodeLine{58   }
+\DoxyCodeLine{59 \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_main_8h}{Main.\+h}}\item 
-C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_main_8cpp}{Main.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_main_8h}{Main.\+h}}\item 
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_main_8cpp}{Main.\+cpp}}\end{DoxyCompactItemize}

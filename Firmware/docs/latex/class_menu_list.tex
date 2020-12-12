@@ -2,8 +2,7 @@
 \label{class_menu_list}\index{MenuList@{MenuList}}
 
 
-~\newline
-  
+{\bfseries{L\+I\+ST}} of Menu-\/\+Item (s) which can carry a {\itshape List Name}.  
 
 
 
@@ -20,28 +19,49 @@ Inheritance diagram for Menu\+List\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_menu_list_ab1fc966b9385e748fc6ef00aaa3465a3}\label{class_menu_list_ab1fc966b9385e748fc6ef00aaa3465a3}} 
-{\bfseries Menu\+List} (const char $\ast$\+\_\+\+C\+Name=0)
-\item 
+\mbox{\hyperlink{class_menu_list_ab1fc966b9385e748fc6ef00aaa3465a3}{Menu\+List}} (const char $\ast$\+\_\+\+C\+Name=0)
+\begin{DoxyCompactList}\small\item\em N\+EW List optional Name. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_menu_list_abe01717aad9a3300cd72fe3076a36672}\label{class_menu_list_abe01717aad9a3300cd72fe3076a36672}} 
-virtual byte {\bfseries Navigate} (byte \+\_\+\+Key, byte \+\_\+\+Row=0)
-\item 
-\mbox{\Hypertarget{class_menu_list_af604253bfc7ba5c0d54d72de53b4b223}\label{class_menu_list_af604253bfc7ba5c0d54d72de53b4b223}} 
-virtual byte {\bfseries On\+Key} (byte \+\_\+\+Key)
-\item 
-\mbox{\Hypertarget{class_menu_list_a7cec428f4bf3ba7b839c4ebe2aa3e91c}\label{class_menu_list_a7cec428f4bf3ba7b839c4ebe2aa3e91c}} 
-virtual byte {\bfseries On\+Ret\+Key} (byte \+\_\+\+Key)
-\item 
+virtual byte \mbox{\hyperlink{class_menu_list_abe01717aad9a3300cd72fe3076a36672}{Navigate}} (byte \+\_\+\+Key, byte \+\_\+\+Row=0)
+\begin{DoxyCompactList}\small\item\em Keypad Navigate by \mbox{\hyperlink{group___k_e_y}{Navigate() Keys}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_list_a86325cd98b3ca2a7c0cc26fe14392d52}\label{class_menu_list_a86325cd98b3ca2a7c0cc26fe14392d52}} 
+virtual int \mbox{\hyperlink{class_menu_list_a86325cd98b3ca2a7c0cc26fe14392d52}{Command}} (byte \+\_\+\+Item\+ID, byte \+\_\+\+C\+MD, int \+\_\+\+Value)
+\begin{DoxyCompactList}\small\item\em Command Console. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_menu_list_a2d088285e715923069ead8e0c5a54d78}\label{class_menu_list_a2d088285e715923069ead8e0c5a54d78}} 
-virtual \mbox{\hyperlink{class_menu_item}{Menu\+Item}} $\ast$ {\bfseries Add} (\mbox{\hyperlink{class_menu_item}{Menu\+Item}} $\ast$\+\_\+\+Item)
-\item 
+virtual \mbox{\hyperlink{class_menu_item}{Menu\+Item}} $\ast$ \mbox{\hyperlink{class_menu_list_a2d088285e715923069ead8e0c5a54d78}{Add}} (\mbox{\hyperlink{class_menu_item}{Menu\+Item}} $\ast$\+\_\+\+Item)
+\begin{DoxyCompactList}\small\item\em A\+DD \mbox{\hyperlink{class_menu_item}{Menu\+Item}} to the \mbox{\hyperlink{class_menu_list}{Menu\+List}}. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_menu_list_a3a656189dae36fe1b7c4cac99cde8440}\label{class_menu_list_a3a656189dae36fe1b7c4cac99cde8440}} 
-virtual const char $\ast$ {\bfseries Name} ()
+virtual const char $\ast$ \mbox{\hyperlink{class_menu_list_a3a656189dae36fe1b7c4cac99cde8440}{Name}} ()
+\begin{DoxyCompactList}\small\item\em G\+ET List Name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_list_aca1747bceb5bf14f233ae128a1437e8c}\label{class_menu_list_aca1747bceb5bf14f233ae128a1437e8c}} 
+virtual byte \mbox{\hyperlink{class_menu_list_aca1747bceb5bf14f233ae128a1437e8c}{Loop}} ()
+\begin{DoxyCompactList}\small\item\em System loop() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_list_aee6e82442ea3ddf1b2702413b1949103}\label{class_menu_list_aee6e82442ea3ddf1b2702413b1949103}} 
+\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ {\bfseries Next\+List} = 0
+\item 
+\mbox{\Hypertarget{class_menu_list_a265a8e2b6d1008bd7962f636b30c41b9}\label{class_menu_list_a265a8e2b6d1008bd7962f636b30c41b9}} 
+\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ {\bfseries Prev\+List} = 0
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_menu_list_a3d375f4bb212075a6820f62b9711a9a7}\label{class_menu_list_a3d375f4bb212075a6820f62b9711a9a7}} 
 D\+S\+P\+C\+L\+A\+SS $\ast$ {\bfseries Display} = 0
+\item 
+\mbox{\Hypertarget{class_menu_list_a1e44fd3a455fdd96c764fc78da41fde6}\label{class_menu_list_a1e44fd3a455fdd96c764fc78da41fde6}} 
+R\+F\+C\+L\+A\+SS $\ast$ {\bfseries RF} = 0
+\item 
+\mbox{\Hypertarget{class_menu_list_abb4c6d40e4ac35561021cc533d6b2283}\label{class_menu_list_abb4c6d40e4ac35561021cc533d6b2283}} 
+\mbox{\hyperlink{class_menu_item}{Menu\+Item}} $\ast$ {\bfseries First\+Item} = 0
+\item 
+\mbox{\Hypertarget{class_menu_list_a7dc15702ef0c90d9a57d862ff0d0ed90}\label{class_menu_list_a7dc15702ef0c90d9a57d862ff0d0ed90}} 
+\mbox{\hyperlink{class_menu_item}{Menu\+Item}} $\ast$ {\bfseries Last\+Item} = 0
+\item 
+\mbox{\Hypertarget{class_menu_list_aa6b013621b7b33231a9d7bed44a5f119}\label{class_menu_list_aa6b013621b7b33231a9d7bed44a5f119}} 
+\mbox{\hyperlink{class_menu_item}{Menu\+Item}} $\ast$ {\bfseries Curr\+Item} = 0
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -52,14 +72,13 @@ class {\bfseries Navigator}
 
 
 \doxysubsection{Detailed Description}
-~\newline
- 
+{\bfseries{L\+I\+ST}} of Menu-\/\+Item (s) which can carry a {\itshape List Name}. 
 
-Definition at line 41 of file Menu.\+h.
+Definition at line 52 of file Menu.\+h.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_menu_8h}{Menu.\+h}}\item 
-C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\mbox{\hyperlink{_menu_8cpp}{Menu.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_menu_8h}{Menu.\+h}}\item 
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_menu_8cpp}{Menu.\+cpp}}\end{DoxyCompactItemize}

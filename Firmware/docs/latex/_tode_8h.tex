@@ -1,5 +1,5 @@
-\hypertarget{_tode_8h}{}\doxysection{C\+:/\+Users/tgit23/\+Documents/\+\_\+\+Projects/\+Tode-\/\+E32/\+Pro-\/\+Mega-\/\+Tode/\+Firmware/\+Tode-\/\+E32-\/20\+F\+M/\+Tode.h File Reference}
-\label{_tode_8h}\index{C:/Users/tgit23/Documents/\_Projects/Tode-\/E32/Pro-\/Mega-\/Tode/Firmware/Tode-\/E32-\/20FM/Tode.h@{C:/Users/tgit23/Documents/\_Projects/Tode-\/E32/Pro-\/Mega-\/Tode/Firmware/Tode-\/E32-\/20FM/Tode.h}}
+\hypertarget{_tode_8h}{}\doxysection{C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\+Tode.h File Reference}
+\label{_tode_8h}\index{C:/Users/TGIT-\/TECH/Documents/\#Projects/Tode-\/RC/firmware/Tode-\/E32-\/20C9/Tode.h@{C:/Users/TGIT-\/TECH/Documents/\#Projects/Tode-\/RC/firmware/Tode-\/E32-\/20C9/Tode.h}}
 
 
 \mbox{\hyperlink{class_tode}{Tode}} Class.  
@@ -11,7 +11,7 @@
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_tode}{Tode}}
-\begin{DoxyCompactList}\small\item\em Represents a \mbox{\hyperlink{class_tode}{Tode}} Device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em {\bfseries{L\+I\+ST}} of Devices per \mbox{\hyperlink{class_tode}{Tode}} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -19,8 +19,17 @@ class \mbox{\hyperlink{class_tode}{Tode}}
 
 
 \begin{DoxyPre}
- Lets discuss this class with lots of details and explain everything here??
- DOES|                             SPACES              WORK |
+ \mbox{\hyperlink{class_tode}{Tode}} class represents the 'Control' Configuration.  Any Device Settings are stored in System.
+ All Radio Settings are stored in System except Radio Address.
+ It is a '\mbox{\hyperlink{class_menu_list}{MenuList}}' of Devices.\end{DoxyPre}
+
+
+
+\begin{DoxyPre} System Settings will be saved at the tail of EEPROM space.
+ ThisTode will be the first \mbox{\hyperlink{class_tode}{Tode}} at the start of EEPROM space.
+ Subsequent Remote \mbox{\hyperlink{class_tode}{Tode}} configuration will be stored after ThisTode from start.
+ We will no longer use Tode-\/UID but instead use RF-\/Addr + 15 Arduino ID from Peer.
+ Pinging will occur on FFFF but be filtered by the 1-\/nibble Arduino ID.
 \end{DoxyPre}
  \begin{DoxyAuthor}{Authors}
 2019-\/12-\/16 T\+Git-\/\+Tech Origin 
