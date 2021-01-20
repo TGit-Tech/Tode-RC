@@ -2,48 +2,42 @@
 \label{class_pin_select}\index{PinSelect@{PinSelect}}
 
 
-{\bfseries{I\+T\+EM}} adds \mbox{\hyperlink{group___i_o_h_d_w}{I\+O-\/\+Hardware}} specific On-\/\+Display Pick-\/\+A-\/\+Pin to \mbox{\hyperlink{class_menu_value}{Menu\+Value}}.  
+{\bfseries{I\+T\+EM}} \mbox{\hyperlink{class_menu_e_e_value}{Menu\+E\+E\+Value}}\+: Menu Pick-\/\+A-\/\+Pin of \mbox{\hyperlink{group___i_o_h_d_w}{I\+O-\/\+Hardware Options}} specific hardware.  
 
 
 
 
-{\ttfamily \#include $<$Dev\+Lib.\+h$>$}
+{\ttfamily \#include $<$mi\+Hdw.\+h$>$}
 
 Inheritance diagram for Pin\+Select\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{class_pin_select}
+\includegraphics[height=5.000000cm]{class_pin_select}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_pin_select_a9e9ff13e1df915c07cadf8423f392d66}\label{class_pin_select_a9e9ff13e1df915c07cadf8423f392d66}} 
-{\bfseries Pin\+Select} (const char $\ast$\+\_\+\+C\+Name, byte \+\_\+\+I\+O\+H\+DW=I\+O\+H\+D\+W\+\_\+\+W\+I\+NG, bool \+\_\+\+Name\+Settable=false)
+\mbox{\Hypertarget{class_pin_select_a9f2120b4bee32be45aa8975511dcf28c}\label{class_pin_select_a9f2120b4bee32be45aa8975511dcf28c}} 
+{\bfseries Pin\+Select} (const char $\ast$\+\_\+\+C\+Name, \mbox{\hyperlink{class_hdw_select}{Hdw\+Select}} $\ast$\+\_\+\+Hardware)
 \item 
-\mbox{\Hypertarget{class_pin_select_a32cceb7c37ea6808486ebb56be9dc28a}\label{class_pin_select_a32cceb7c37ea6808486ebb56be9dc28a}} 
-virtual byte \mbox{\hyperlink{class_pin_select_a32cceb7c37ea6808486ebb56be9dc28a}{Navigate}} (byte \+\_\+\+Key, byte \+\_\+\+Row=0) override
-\begin{DoxyCompactList}\small\item\em Keypad Navigate by \mbox{\hyperlink{group___k_e_y}{Navigate() Keys}}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_pin_select_a1d9d5f3ad6cbf9f1f1eb49dcd991c8e8}\label{class_pin_select_a1d9d5f3ad6cbf9f1f1eb49dcd991c8e8}} 
-virtual byte \mbox{\hyperlink{class_pin_select_a1d9d5f3ad6cbf9f1f1eb49dcd991c8e8}{Value\+Nav}} (byte \+\_\+\+Key, byte \+\_\+\+Row=0) override
-\begin{DoxyCompactList}\small\item\em Value Navigate. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_pin_select_ac008d0855c942d41444263284aa903fe}\label{class_pin_select_ac008d0855c942d41444263284aa903fe}} 
-virtual int \mbox{\hyperlink{class_pin_select_ac008d0855c942d41444263284aa903fe}{Value}} ()
-\begin{DoxyCompactList}\small\item\em G\+ET Item Value. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_pin_select_a78b56a7f3317b2c1cddad19f0c7b42ab}\label{class_pin_select_a78b56a7f3317b2c1cddad19f0c7b42ab}} 
-virtual void \mbox{\hyperlink{class_pin_select_a78b56a7f3317b2c1cddad19f0c7b42ab}{Value}} (int \+\_\+\+Value)
-\begin{DoxyCompactList}\small\item\em S\+ET Item Value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_pin_select_a114752a83ffc132d663912f9e697055f}\label{class_pin_select_a114752a83ffc132d663912f9e697055f}} 
+virtual byte \mbox{\hyperlink{class_pin_select_a114752a83ffc132d663912f9e697055f}{Nav\+Value\+Set}} (byte \+\_\+\+Key) override
+\begin{DoxyCompactList}\small\item\em Pin-\/\+Select Value-\/\+Set. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
-{\bfseries{I\+T\+EM}} adds \mbox{\hyperlink{group___i_o_h_d_w}{I\+O-\/\+Hardware}} specific On-\/\+Display Pick-\/\+A-\/\+Pin to \mbox{\hyperlink{class_menu_value}{Menu\+Value}}. 
+{\bfseries{I\+T\+EM}} \mbox{\hyperlink{class_menu_e_e_value}{Menu\+E\+E\+Value}}\+: Menu Pick-\/\+A-\/\+Pin of \mbox{\hyperlink{group___i_o_h_d_w}{I\+O-\/\+Hardware Options}} specific hardware. 
 
-Definition at line 39 of file Dev\+Lib.\+h.
+~\newline
+ 
+
+Definition at line 45 of file mi\+Hdw.\+h.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_dev_lib_8h}{Dev\+Lib.\+h}}\item 
-C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_dev_lib_8cpp}{Dev\+Lib.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+R\+C-\/211\+K/\mbox{\hyperlink{mi_hdw_8h}{mi\+Hdw.\+h}}\item 
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+R\+C-\/211\+K/\mbox{\hyperlink{mi_hdw_8cpp}{mi\+Hdw.\+cpp}}\end{DoxyCompactItemize}

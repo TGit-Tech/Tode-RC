@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['id_45',['ID',['../class_menu_item.html#a818c0496f05704ea9782a210bc0a3929',1,'MenuItem::ID()'],['../class_menu_item.html#a1775cbad11173d092ab73fd2f0c532d0',1,'MenuItem::ID(byte _ID)']]],
-  ['introduction_46',['Introduction',['../index.html',1,'']]],
-  ['io_2dhardware_47',['IO-Hardware',['../group___i_o_h_d_w.html',1,'']]],
-  ['item_2delement_20_27selected_27_48',['Item-Element &apos;Selected&apos;',['../group___s_e_l.html',1,'']]]
+  ['frequency_35',['Frequency',['../class_e32_radio.html#a61b3f973090f55c7b8113facff1392be',1,'E32Radio::Frequency(int _RFFrequency)'],['../class_e32_radio.html#a38fb5172cd119fecb5465db6a3abd826',1,'E32Radio::Frequency()'],['../class_radio_i.html#a4646f5ca0b7ebe4c3e832c63766cfdae',1,'RadioI::Frequency(int _RFFrequency)'],['../class_radio_i.html#a18acde21da7b6b35d5be8894059890cd',1,'RadioI::Frequency()']]]
 ];

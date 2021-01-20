@@ -85,17 +85,18 @@ $(document).ready(function(){initNavTree('_dev_lib_8h.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">DevLib.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Library that implements generic Device Control structures and IO-HDW Board Options.  
+<p>Library that implements generic <a class="el" href="class_device.html">Device</a> Control structures and IO-HDW Board Options.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_constants_8h_source.html">Constants.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;Const.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="_menu_lib_8h_source.html">MenuLib.h</a>&quot;</code><br />
-<code>#include &lt;EEPROM.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_radio_8h_source.html">Radio.h</a>&quot;</code><br />
 </div>
 <p><a href="_dev_lib_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -107,23 +108,23 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pin_select.html">PinSelect</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>ITEM</b> adds <a class="el" href="group___i_o_h_d_w.html">IO-Hardware</a> specific On-Display Pick-A-Pin to <a class="el" href="class_menu_value.html" title="ITEM adds VALUE to MenuName for a Name-&gt;Value Pair + Number-Naming ability.">MenuValue</a>.  <a href="class_pin_select.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_device.html">Device</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e32_p_c_conn.html">E32PCConn</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">On-Demand Connect RF-Radio Serial to Arduino USB Serial.  <a href="class_e32_p_c_conn.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e32_freq.html">E32Freq</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">E32 <a class="el" href="class_radio.html" title="Radio Interface.">Radio</a> Frequency Setting.  <a href="class_e32_freq.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a52239e726eabbd10b442f4b689c67ee8"><td class="memItemLeft" align="right" valign="top"><a id="a52239e726eabbd10b442f4b689c67ee8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RFV_EXPIRESMS</b>&#160;&#160;&#160;3000</td></tr>
+<tr class="separator:a52239e726eabbd10b442f4b689c67ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Library that implements generic Device Control structures and IO-HDW Board Options. </p>
-<p>Thinking of using E32 0xFFF Address + 0xFF.F for SecNet so all <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>'s same ID#.</p><ul>
-<li>EEPROM Organization ( see EE_ in <a class="el" href="_constants_8h.html" title="Constants to be included in all files.">Constants.h</a> )</li>
-</ul>
-<p>byte[0] = <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> Size in bytes <br  />
-</p><ul>
-<li>byte[1] = Version <br  />
-</li>
-<li>byte[2] = UID <br  />
-</li>
-<li>byte[3~12] = <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> Name 9-Chars + NULL <br  />
-</li>
-<li>byte[14] = 1st Device-Type Use-Size as device driver version compatibility? <br  />
- </li>
-</ul>
+<div class="textblock"><p>Library that implements generic <a class="el" href="class_device.html">Device</a> Control structures and IO-HDW Board Options. </p>
 
 <p class="definition">Definition in file <a class="el" href="_dev_lib_8h_source.html">DevLib.h</a>.</p>
 </div></div><!-- contents -->

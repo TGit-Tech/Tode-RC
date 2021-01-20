@@ -89,43 +89,30 @@ $(document).ready(function(){initNavTree('_devices_8h_source.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <a href="_devices_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************************************************/</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef _DEVICES_H</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define _DEVICES_H</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;EEPROM.h&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_constants_8h.html">Constants.h</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dev_lib_8h.html">DevLib.h</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/**********************************************************************************************/</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_on_off.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_on_off.html">OnOff</a> : <span class="keyword">public</span> <a class="code" href="class_menu_value.html">MenuValue</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_on_off.html">OnOff</a>(<span class="keywordtype">int</span> _EEDevAddr, <span class="keywordtype">byte</span> _DevID, <span class="keywordtype">bool</span> _IsLocal=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef _DEVICES_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define _DEVICES_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;EEPROM.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_constants_8h.html">Constants.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_dev_lib_8h.html">DevLib.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/**********************************************************************************************/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_on_off.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_on_off.html">OnOff</a> : <span class="keyword">public</span> <a class="code" href="class_device_value.html">DeviceValue</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_on_off.html">OnOff</a>(<span class="keywordtype">int</span> _EETargetTode, <span class="keywordtype">byte</span> _DevID);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>   <a class="code" href="class_on_off.html#a471fbaf7616bd20c1683cb0beaca77f7">Value</a>() <span class="keyword">override</span>;                       <span class="comment">// Stored on Tode</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>  <a class="code" href="class_on_off.html#a471fbaf7616bd20c1683cb0beaca77f7">Value</a>(<span class="keywordtype">int</span> _Value) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">//virtual byte  DevType(byte _DTPKey = DTP_DEVTYPE) override;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//byte Navigate(byte _Key, byte _Row=0) { return _Key; }</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>   <a class="code" href="class_on_off.html#a3c820893f83117ca017c62913057c478">Value</a>();                       <span class="comment">// Stored on Tode</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>  <a class="code" href="class_on_off.html#a3c820893f83117ca017c62913057c478">Value</a>(<span class="keywordtype">int</span> _Value);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">byte</span>  <a class="code" href="class_on_off.html#a6b840f30e5cf82c189347b28e29c6563">DevType</a>(<span class="keywordtype">byte</span> _DTPKey = <a class="code" href="group___d_t_p.html#ga86beaa067694390507a20326ec7d1b6e">DTP_DEVTYPE</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span>          IsLocal=<span class="keyword">false</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span>           EEDevAddr = -1;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">byte</span>          DevID = -1;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_menu_list.html">MenuList</a>*     Settings;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_menu_value.html">MenuValue</a>*    IOPin;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_menu_value.html">MenuValue</a>*    FBPin;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_menu_list_html"><div class="ttname"><a href="class_menu_list.html">MenuList</a></div><div class="ttdoc">LIST of Menu-Item (s) which can carry a List Name.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_8h_source.html#l00052">Menu.h:52</a></div></div>
 <div class="ttc" id="a_dev_lib_8h_html"><div class="ttname"><a href="_dev_lib_8h.html">DevLib.h</a></div><div class="ttdoc">Library that implements generic Device Control structures and IO-HDW Board Options.</div></div>
-<div class="ttc" id="aclass_on_off_html_a6b840f30e5cf82c189347b28e29c6563"><div class="ttname"><a href="class_on_off.html#a6b840f30e5cf82c189347b28e29c6563">OnOff::DevType</a></div><div class="ttdeci">virtual byte DevType(byte _DTPKey=DTP_DEVTYPE) override</div><div class="ttdoc">Device-Type Parameters.</div><div class="ttdef"><b>Definition:</b> <a href="_devices_8cpp_source.html#l00048">Devices.cpp:48</a></div></div>
-<div class="ttc" id="aclass_on_off_html"><div class="ttname"><a href="class_on_off.html">OnOff</a></div><div class="ttdoc">DEVICE Digital On/Off Value Control and Local Settings; inherits MenuValue.</div><div class="ttdef"><b>Definition:</b> <a href="_devices_8h_source.html#l00023">Devices.h:23</a></div></div>
-<div class="ttc" id="aclass_menu_value_html"><div class="ttname"><a href="class_menu_value.html">MenuValue</a></div><div class="ttdoc">ITEM adds VALUE to MenuName for a Name-&gt;Value Pair + Number-Naming ability.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_lib_8h_source.html#l00071">MenuLib.h:71</a></div></div>
-<div class="ttc" id="aclass_on_off_html_a3c820893f83117ca017c62913057c478"><div class="ttname"><a href="class_on_off.html#a3c820893f83117ca017c62913057c478">OnOff::Value</a></div><div class="ttdeci">virtual int Value()</div><div class="ttdoc">GET Item Value.</div><div class="ttdef"><b>Definition:</b> <a href="_devices_8cpp_source.html#l00027">Devices.cpp:27</a></div></div>
-<div class="ttc" id="agroup___d_t_p_html_ga86beaa067694390507a20326ec7d1b6e"><div class="ttname"><a href="group___d_t_p.html#ga86beaa067694390507a20326ec7d1b6e">DTP_DEVTYPE</a></div><div class="ttdeci">#define DTP_DEVTYPE</div><div class="ttdoc">Return Device Type.</div><div class="ttdef"><b>Definition:</b> <a href="_constants_8h_source.html#l00065">Constants.h:65</a></div></div>
+<div class="ttc" id="aclass_on_off_html_a471fbaf7616bd20c1683cb0beaca77f7"><div class="ttname"><a href="class_on_off.html#a471fbaf7616bd20c1683cb0beaca77f7">OnOff::Value</a></div><div class="ttdeci">virtual int Value() override</div><div class="ttdoc">GET Item Value.</div><div class="ttdef"><b>Definition:</b> <a href="_devices_8cpp_source.html#l00023">Devices.cpp:23</a></div></div>
+<div class="ttc" id="aclass_on_off_html"><div class="ttname"><a href="class_on_off.html">OnOff</a></div><div class="ttdoc">DEVICE Digital On/Off Value Control and Local Settings; inherits MenuValue.</div><div class="ttdef"><b>Definition:</b> <a href="_devices_8h_source.html#l00019">Devices.h:19</a></div></div>
+<div class="ttc" id="aclass_device_value_html"><div class="ttname"><a href="class_device_value.html">DeviceValue</a></div><div class="ttdoc">ITEM adds IO-Hardware specific On-Display Pick-A-Pin to MenuValue.</div><div class="ttdef"><b>Definition:</b> <a href="_dev_lib_8h_source.html#l00062">DevLib.h:62</a></div></div>
 <div class="ttc" id="a_constants_8h_html"><div class="ttname"><a href="_constants_8h.html">Constants.h</a></div><div class="ttdoc">Constants to be included in all files.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

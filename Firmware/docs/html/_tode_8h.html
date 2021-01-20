@@ -93,8 +93,8 @@ $(document).ready(function(){initNavTree('_tode_8h.html',''); initResizable(); }
 
 <p><a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> Class.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="_constants_8h_source.html">Constants.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_devices_8h_source.html">Devices.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;Const.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_dev_8h_source.html">Dev.h</a>&quot;</code><br />
 </div>
 <p><a href="_tode_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -107,15 +107,30 @@ Classes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> Class. </p>
 <pre>
- <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> class represents the 'Control' Configuration.  Any Device Settings are stored in System.
- All Radio Settings are stored in System except Radio Address.
- It is a '<a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can carry a List Name.">MenuList</a>' of Devices.</pre><pre> System Settings will be saved at the tail of EEPROM space.
+Two different types of <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> will exist.<ul>
+<li>ThisTode
+ EEPROM Configuration with accessable Remote Control at 0x0000
+ <a class="el" href="class_device.html">Device</a> Settings like IO-Pin stored in LOCAL SYSTEM SETTING EEPROM space. (Not Control Space)
+ All <a class="el" href="class_device.html">Device</a> Item Values will be gotten from HW-Control.  Those Values will need RF-requested</li>
+<li><p class="startli">Remote Todes
+ All Value SET/GET will be acheived through RF requests</p>
+<p class="startli"> System Settings will be saved at the tail of EEPROM space.
  ThisTode will be the first <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> at the start of EEPROM space.
  Subsequent Remote <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> configuration will be stored after ThisTode from start.
  We will no longer use Tode-UID but instead use RF-Addr + 15 Arduino ID from Peer.
  Pinging will occur on FFFF but be filtered by the 1-nibble Arduino ID.
-</pre> <dl class="section author"><dt>Authors</dt><dd>2019-12-16 TGit-Tech Origin </dd></dl>
 
+ </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd><ul>
+<li>AddDevice( with Multi-List of Controls ) and AddControl ( One Control )
+</li>
+</ul>
+</dd></dl>
+<dl class="section author"><dt>Authors</dt><dd>
+   2019-12-16  TGit-Tech   Origin
+</dd></dl>
+</li>
+</ul>
+</pre>
 <p class="definition">Definition in file <a class="el" href="_tode_8h_source.html">Tode.h</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

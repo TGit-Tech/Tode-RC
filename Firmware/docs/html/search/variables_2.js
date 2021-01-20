@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['radiosettings_166',['RadioSettings',['../class_main.html#a661c5c0fa9cdb1987fe01b8e7c841076',1,'Main']]],
-  ['rf_167',['RF',['../class_menu_item.html#a0152106d2fbda47744771691536589e0',1,'MenuItem']]]
+  ['devicelist_230',['DeviceList',['../class_sys.html#a4ea0d4d25f11e815d0cd1392537daf0a',1,'Sys']]],
+  ['devices_231',['Devices',['../class_tode.html#a787181e4171d6b641cf3e1728d943daa',1,'Tode']]],
+  ['display_232',['Display',['../class_menu_item.html#a7208787ab8bfe20c158f4118d057a1d6',1,'MenuItem']]]
 ];

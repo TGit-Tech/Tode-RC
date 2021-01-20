@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 20C9</span>
+   &#160;<span id="projectnumber">ver. 211K</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -103,7 +103,7 @@ Inheritance diagram for Navigator:</div>
  <div class="center">
   <img src="class_navigator.png" usemap="#Navigator_map" alt=""/>
   <map id="Navigator_map" name="Navigator_map">
-<area href="class_main.html" title="System Top-Level System for Setup, Todes, and ThisTode&#39;s HDW / Device Setup." alt="Main" shape="rect" coords="0,56,67,80"/>
+<area href="class_sys.html" title="Sys:Navigator Top-Level System for Setup, Todes &amp; ThisTode&#39;s HDW / Device Setup." alt="Sys" shape="rect" coords="0,56,67,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -115,12 +115,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a59230ab4698882f754d5ce275a1a4030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0d1892297a4f692061b93ef66aea1b7"><td class="memItemLeft" align="right" valign="top"><a id="ad0d1892297a4f692061b93ef66aea1b7"></a>
 virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_navigator.html#ad0d1892297a4f692061b93ef66aea1b7">Navigate</a> (byte _Key)</td></tr>
-<tr class="memdesc:ad0d1892297a4f692061b93ef66aea1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Navigate by <a class="el" href="group___k_e_y.html">Navigate() Keys</a>. <br /></td></tr>
+<tr class="memdesc:ad0d1892297a4f692061b93ef66aea1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Navigate by KEY. <br /></td></tr>
 <tr class="separator:ad0d1892297a4f692061b93ef66aea1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaaa1cd1724e60de126d081e711a40d73"><td class="memItemLeft" align="right" valign="top"><a id="aaaa1cd1724e60de126d081e711a40d73"></a>
 virtual <a class="el" href="class_menu_list.html">MenuList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_navigator.html#aaaa1cd1724e60de126d081e711a40d73">Add</a> (<a class="el" href="class_menu_list.html">MenuList</a> *_List)</td></tr>
 <tr class="memdesc:aaaa1cd1724e60de126d081e711a40d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADD <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can carry a List Name.">MenuList</a> to the <a class="el" href="class_navigator.html" title="LIST of LISTS Top-Level Navigator of multiple MenuList (s).">Navigator</a>. <br /></td></tr>
 <tr class="separator:aaaa1cd1724e60de126d081e711a40d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e2e60af29056821a014ad03ba6363f"><td class="memItemLeft" align="right" valign="top"><a id="a57e2e60af29056821a014ad03ba6363f"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Del</b> (<a class="el" href="class_menu_list.html">MenuList</a> *_List)</td></tr>
+<tr class="separator:a57e2e60af29056821a014ad03ba6363f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac88eb76ef3fcb95346b6a21c74a983c4"><td class="memItemLeft" align="right" valign="top"><a id="ac88eb76ef3fcb95346b6a21c74a983c4"></a>
 virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_navigator.html#ac88eb76ef3fcb95346b6a21c74a983c4">Loop</a> (byte _FinalKey)</td></tr>
 <tr class="memdesc:ac88eb76ef3fcb95346b6a21c74a983c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">System loop() <br /></td></tr>
@@ -137,15 +140,21 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:aae72c4270aa7f8f0f910380a80092a78"><td class="memItemLeft" align="right" valign="top"><a id="aae72c4270aa7f8f0f910380a80092a78"></a>
 <a class="el" href="class_menu_list.html">MenuList</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>CurrList</b> = 0</td></tr>
 <tr class="separator:aae72c4270aa7f8f0f910380a80092a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff3b409d59c0aa5e5cab1df792b981e5"><td class="memItemLeft" align="right" valign="top"><a id="aff3b409d59c0aa5e5cab1df792b981e5"></a>
+RFCLASS *&#160;</td><td class="memItemRight" valign="bottom"><b>RF</b> = 0</td></tr>
+<tr class="separator:aff3b409d59c0aa5e5cab1df792b981e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc55c63ecac365efaf0ff0376b68bf85"><td class="memItemLeft" align="right" valign="top"><a id="abc55c63ecac365efaf0ff0376b68bf85"></a>
+DSPCLASS *&#160;</td><td class="memItemRight" valign="bottom"><b>Display</b> = 0</td></tr>
+<tr class="separator:abc55c63ecac365efaf0ff0376b68bf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><b>LIST of LISTS</b> Top-Level <a class="el" href="class_navigator.html" title="LIST of LISTS Top-Level Navigator of multiple MenuList (s).">Navigator</a> of multiple <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can carry a List Name.">MenuList</a> (s). </p>
-<p>Navigation is preformed by sending keypad pressed to the Top-Level <a class="el" href="class_navigator.html" title="LIST of LISTS Top-Level Navigator of multiple MenuList (s).">Navigator</a>. The key will undergo a round-robin calling sequence to List-Navigate then Item-Navigate objects. If the object has <a class="el" href="group___s_e_l.html">Item-Element 'Selected'</a> the key is used by said object and a returning <em>command-type</em> non-keypad key is returned. See <a class="el" href="group___k_e_y.html">Navigate() Keys</a> </p>
+<p>Navigation is preformed by sending keypad pressed to the Top-Level <a class="el" href="class_navigator.html" title="LIST of LISTS Top-Level Navigator of multiple MenuList (s).">Navigator</a>. The key will undergo a round-robin calling sequence to List-Navigate then Item-Navigate objects. If the object has <a class="el" href="group___s_e_l.html">Item-Element 'NavSelected'</a> the key is used by said object and a returning <em>command-type</em> non-keypad key is returned. See KEY </p>
 
-<p class="definition">Definition at line <a class="el" href="_menu_8h_source.html#l00084">84</a> of file <a class="el" href="_menu_8h_source.html">Menu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_menu_8h_source.html#l00142">142</a> of file <a class="el" href="_menu_8h_source.html">Menu.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-E32-20C9/<a class="el" href="_menu_8h_source.html">Menu.h</a></li>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-E32-20C9/<a class="el" href="_menu_8cpp_source.html">Menu.cpp</a></li>
+<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="_menu_8h_source.html">Menu.h</a></li>
+<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="_menu_8cpp_source.html">Menu.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

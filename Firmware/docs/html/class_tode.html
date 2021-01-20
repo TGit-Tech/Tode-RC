@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 20C9</span>
+   &#160;<span id="projectnumber">ver. 211K</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('class_tode.html',''); initResizable();
 <p><b>LIST</b> of Devices per <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>  
  <a href="class_tode.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_tode_8h_source.html">Tode.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="ml_tode_8h_source.html">mlTode.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Tode:</div>
 <div class="dyncontent">
@@ -109,63 +109,66 @@ Inheritance diagram for Tode:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1412c399be8312d6ad3132c927a615b2"><td class="memItemLeft" align="right" valign="top"><a id="a1412c399be8312d6ad3132c927a615b2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a1412c399be8312d6ad3132c927a615b2">Tode</a> (int _TodeAddr)</td></tr>
-<tr class="memdesc:a1412c399be8312d6ad3132c927a615b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">EEPROM Address of <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> Configuration. <br /></td></tr>
-<tr class="separator:a1412c399be8312d6ad3132c927a615b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a4e10cf0eab8175165e84b11bea33a0"><td class="memItemLeft" align="right" valign="top"><a id="a0a4e10cf0eab8175165e84b11bea33a0"></a>
-virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a0a4e10cf0eab8175165e84b11bea33a0">Name</a> () override</td></tr>
-<tr class="memdesc:a0a4e10cf0eab8175165e84b11bea33a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET List Name. <br /></td></tr>
-<tr class="separator:a0a4e10cf0eab8175165e84b11bea33a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3a68700e75f21fa218aa62a065944a1"><td class="memItemLeft" align="right" valign="top"><a id="aa3a68700e75f21fa218aa62a065944a1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>UID</b> ()</td></tr>
-<tr class="separator:aa3a68700e75f21fa218aa62a065944a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89cee1bd9a0599fb98d38adaa5b36bc5"><td class="memItemLeft" align="right" valign="top"><a id="a89cee1bd9a0599fb98d38adaa5b36bc5"></a>
-virtual <a class="el" href="class_menu_item.html">MenuItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a89cee1bd9a0599fb98d38adaa5b36bc5">AddDevice</a> (byte _DTKey, byte _ID=BNONE)</td></tr>
-<tr class="memdesc:a89cee1bd9a0599fb98d38adaa5b36bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu add Device using <a class="el" href="group___k_e_y.html">Navigate() Keys</a>. <br /></td></tr>
-<tr class="separator:a89cee1bd9a0599fb98d38adaa5b36bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7409587221f62849fb08595c92dd1b46"><td class="memItemLeft" align="right" valign="top"><a id="a7409587221f62849fb08595c92dd1b46"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>EAddr</b> ()</td></tr>
-<tr class="separator:a7409587221f62849fb08595c92dd1b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a069864f6745185955b0bb2ee102d84a7"><td class="memItemLeft" align="right" valign="top"><a id="a069864f6745185955b0bb2ee102d84a7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a069864f6745185955b0bb2ee102d84a7">Tode</a> (byte _TodeIndex)</td></tr>
+<tr class="memdesc:a069864f6745185955b0bb2ee102d84a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">EEPROM Address of <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> Configuration. <br /></td></tr>
+<tr class="separator:a069864f6745185955b0bb2ee102d84a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f235e21355ea1329b7912175d51d3b9"><td class="memItemLeft" align="right" valign="top"><a id="a2f235e21355ea1329b7912175d51d3b9"></a>
+virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a2f235e21355ea1329b7912175d51d3b9">Title</a> () override</td></tr>
+<tr class="memdesc:a2f235e21355ea1329b7912175d51d3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points to TodeName-&gt;Name() <br /></td></tr>
+<tr class="separator:a2f235e21355ea1329b7912175d51d3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21061fd9e7758985baced2a3a5d530d9"><td class="memItemLeft" align="right" valign="top"><a id="a21061fd9e7758985baced2a3a5d530d9"></a>
+virtual <a class="el" href="class_menu_item.html">MenuItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a21061fd9e7758985baced2a3a5d530d9">NewDevice</a> (byte _DTKey)</td></tr>
+<tr class="memdesc:a21061fd9e7758985baced2a3a5d530d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates &amp; Adds a New <a class="el" href="class_device.html" title="ITEM for Remote and/or Local Values">Device</a>. <br /></td></tr>
+<tr class="separator:a21061fd9e7758985baced2a3a5d530d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec3a04f5a272f254da9d099b1cf752cd"><td class="memItemLeft" align="right" valign="top"><a id="aec3a04f5a272f254da9d099b1cf752cd"></a>
+virtual <a class="el" href="class_menu_item.html">MenuItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#aec3a04f5a272f254da9d099b1cf752cd">AddDevice</a> (byte _DTKey, byte _RFID)</td></tr>
+<tr class="memdesc:aec3a04f5a272f254da9d099b1cf752cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu add <a class="el" href="class_device.html" title="ITEM for Remote and/or Local Values">Device</a> using KEY. <br /></td></tr>
+<tr class="separator:aec3a04f5a272f254da9d099b1cf752cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27aca189000c3737a2f00fc2c2e897f7"><td class="memItemLeft" align="right" valign="top"><a id="a27aca189000c3737a2f00fc2c2e897f7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>EELoadDevices</b> ()</td></tr>
+<tr class="separator:a27aca189000c3737a2f00fc2c2e897f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81d7f948e226227cd24246884d9062fe"><td class="memItemLeft" align="right" valign="top"><a id="a81d7f948e226227cd24246884d9062fe"></a>
 virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a81d7f948e226227cd24246884d9062fe">RFAddr</a> ()</td></tr>
-<tr class="memdesc:a81d7f948e226227cd24246884d9062fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET RF-Address. <br /></td></tr>
+<tr class="memdesc:a81d7f948e226227cd24246884d9062fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET EEPROM RF-Address. <br /></td></tr>
 <tr class="separator:a81d7f948e226227cd24246884d9062fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1acb0c85fcbff9d2bcae19f8bbd177d6"><td class="memItemLeft" align="right" valign="top"><a id="a1acb0c85fcbff9d2bcae19f8bbd177d6"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a1acb0c85fcbff9d2bcae19f8bbd177d6">RFAddr</a> (unsigned int _RFAddr)</td></tr>
-<tr class="memdesc:a1acb0c85fcbff9d2bcae19f8bbd177d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">SET RF-Address. <br /></td></tr>
+<tr class="memdesc:a1acb0c85fcbff9d2bcae19f8bbd177d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">SET EEPROM RF-Address. <br /></td></tr>
 <tr class="separator:a1acb0c85fcbff9d2bcae19f8bbd177d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3873ab9f7a890ffa9bcc5218133fc6b3"><td class="memItemLeft" align="right" valign="top"><a id="a3873ab9f7a890ffa9bcc5218133fc6b3"></a>
-virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a3873ab9f7a890ffa9bcc5218133fc6b3">ConfigVersion</a> ()</td></tr>
-<tr class="memdesc:a3873ab9f7a890ffa9bcc5218133fc6b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>'s Configuration Ver. <br /></td></tr>
-<tr class="separator:a3873ab9f7a890ffa9bcc5218133fc6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab09ac9f0ebca87b2c8d17c4db1440af"><td class="memItemLeft" align="right" valign="top"><a id="aab09ac9f0ebca87b2c8d17c4db1440af"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#aab09ac9f0ebca87b2c8d17c4db1440af">ConfigVersion</a> (byte _Version)</td></tr>
-<tr class="memdesc:aab09ac9f0ebca87b2c8d17c4db1440af"><td class="mdescLeft">&#160;</td><td class="mdescRight">SET <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>'s Configuration Ver. <br /></td></tr>
-<tr class="separator:aab09ac9f0ebca87b2c8d17c4db1440af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd1da8e7751307d48120050c1a71011b"><td class="memItemLeft" align="right" valign="top"><a id="afd1da8e7751307d48120050c1a71011b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SendRF_Config</b> (int _RFTarget)</td></tr>
-<tr class="separator:afd1da8e7751307d48120050c1a71011b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a912aa3d7150bab0ec181ea7c3ffa784b"><td class="memItemLeft" align="right" valign="top"><a id="a912aa3d7150bab0ec181ea7c3ffa784b"></a>
+virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a912aa3d7150bab0ec181ea7c3ffa784b">Version</a> ()</td></tr>
+<tr class="memdesc:a912aa3d7150bab0ec181ea7c3ffa784b"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>'s Configuration Ver. <br /></td></tr>
+<tr class="separator:a912aa3d7150bab0ec181ea7c3ffa784b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a567b64456c4d62a8ef873ca2bef92e73"><td class="memItemLeft" align="right" valign="top"><a id="a567b64456c4d62a8ef873ca2bef92e73"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a567b64456c4d62a8ef873ca2bef92e73">Version</a> (byte _Version)</td></tr>
+<tr class="memdesc:a567b64456c4d62a8ef873ca2bef92e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">SET <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>'s Configuration Ver. <br /></td></tr>
+<tr class="separator:a567b64456c4d62a8ef873ca2bef92e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29c309ac735bc4477a6d84343c9331d5"><td class="memItemLeft" align="right" valign="top"><a id="a29c309ac735bc4477a6d84343c9331d5"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsLocal</b> ()</td></tr>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a29c309ac735bc4477a6d84343c9331d5">IsLocal</a> ()</td></tr>
+<tr class="memdesc:a29c309ac735bc4477a6d84343c9331d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET (EEAddress == 0) set in Constructor. <br /></td></tr>
 <tr class="separator:a29c309ac735bc4477a6d84343c9331d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e7fa4e787966eb0bd6aedf5f90bb25"><td class="memItemLeft" align="right" valign="top"><a id="a35e7fa4e787966eb0bd6aedf5f90bb25"></a>
+virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a35e7fa4e787966eb0bd6aedf5f90bb25">EEAddress</a> ()</td></tr>
+<tr class="memdesc:a35e7fa4e787966eb0bd6aedf5f90bb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET EEPROM Address of This <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> (Calc by TodeIndex) <br /></td></tr>
+<tr class="separator:a35e7fa4e787966eb0bd6aedf5f90bb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_menu_list"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_menu_list')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_menu_list.html">MenuList</a></td></tr>
-<tr class="memitem:ab1fc966b9385e748fc6ef00aaa3465a3 inherit pub_methods_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="ab1fc966b9385e748fc6ef00aaa3465a3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#ab1fc966b9385e748fc6ef00aaa3465a3">MenuList</a> (const char *_CName=0)</td></tr>
-<tr class="memdesc:ab1fc966b9385e748fc6ef00aaa3465a3 inherit pub_methods_class_menu_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">NEW List optional Name. <br /></td></tr>
-<tr class="separator:ab1fc966b9385e748fc6ef00aaa3465a3 inherit pub_methods_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe01717aad9a3300cd72fe3076a36672 inherit pub_methods_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="abe01717aad9a3300cd72fe3076a36672"></a>
-virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#abe01717aad9a3300cd72fe3076a36672">Navigate</a> (byte _Key, byte _Row=0)</td></tr>
-<tr class="memdesc:abe01717aad9a3300cd72fe3076a36672 inherit pub_methods_class_menu_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Navigate by <a class="el" href="group___k_e_y.html">Navigate() Keys</a>. <br /></td></tr>
-<tr class="separator:abe01717aad9a3300cd72fe3076a36672 inherit pub_methods_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86325cd98b3ca2a7c0cc26fe14392d52 inherit pub_methods_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="a86325cd98b3ca2a7c0cc26fe14392d52"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a86325cd98b3ca2a7c0cc26fe14392d52">Command</a> (byte _ItemID, byte _CMD, int _Value)</td></tr>
-<tr class="memdesc:a86325cd98b3ca2a7c0cc26fe14392d52 inherit pub_methods_class_menu_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command Console. <br /></td></tr>
-<tr class="separator:a86325cd98b3ca2a7c0cc26fe14392d52 inherit pub_methods_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f45754baebab8080dd0a4bbf075d7e3 inherit pub_methods_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="a7f45754baebab8080dd0a4bbf075d7e3"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a7f45754baebab8080dd0a4bbf075d7e3">MenuList</a> (const char *_CTitle=0)</td></tr>
+<tr class="memdesc:a7f45754baebab8080dd0a4bbf075d7e3 inherit pub_methods_class_menu_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">NEW List optional Title Name. <br /></td></tr>
+<tr class="separator:a7f45754baebab8080dd0a4bbf075d7e3 inherit pub_methods_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89cba35cb735956d275b2cbcc4d490cd inherit pub_methods_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="a89cba35cb735956d275b2cbcc4d490cd"></a>
+virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a89cba35cb735956d275b2cbcc4d490cd">Navigate</a> (byte _Key)</td></tr>
+<tr class="memdesc:a89cba35cb735956d275b2cbcc4d490cd inherit pub_methods_class_menu_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Navigate by KEY. <br /></td></tr>
+<tr class="separator:a89cba35cb735956d275b2cbcc4d490cd inherit pub_methods_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d088285e715923069ead8e0c5a54d78 inherit pub_methods_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="a2d088285e715923069ead8e0c5a54d78"></a>
 virtual <a class="el" href="class_menu_item.html">MenuItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a2d088285e715923069ead8e0c5a54d78">Add</a> (<a class="el" href="class_menu_item.html">MenuItem</a> *_Item)</td></tr>
 <tr class="memdesc:a2d088285e715923069ead8e0c5a54d78 inherit pub_methods_class_menu_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADD <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a> to the <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can carry a List Name.">MenuList</a>. <br /></td></tr>
 <tr class="separator:a2d088285e715923069ead8e0c5a54d78 inherit pub_methods_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cca626cbd7a5c1b9167af44c334010c inherit pub_methods_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="a2cca626cbd7a5c1b9167af44c334010c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a2cca626cbd7a5c1b9167af44c334010c">Del</a> (<a class="el" href="class_menu_item.html">MenuItem</a> *_Item)</td></tr>
+<tr class="memdesc:a2cca626cbd7a5c1b9167af44c334010c inherit pub_methods_class_menu_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEL <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a> from the <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can carry a List Name.">MenuList</a>. <br /></td></tr>
+<tr class="separator:a2cca626cbd7a5c1b9167af44c334010c inherit pub_methods_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca1747bceb5bf14f233ae128a1437e8c inherit pub_methods_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="aca1747bceb5bf14f233ae128a1437e8c"></a>
 virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#aca1747bceb5bf14f233ae128a1437e8c">Loop</a> ()</td></tr>
 <tr class="memdesc:aca1747bceb5bf14f233ae128a1437e8c inherit pub_methods_class_menu_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">System loop() <br /></td></tr>
@@ -173,10 +176,25 @@ virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a000c37a5281ed26da19b174280a040d6"><td class="memItemLeft" align="right" valign="top"><a id="a000c37a5281ed26da19b174280a040d6"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><b>TodeIndex</b> = <a class="el" href="_r_f_c_8h.html#a2750a00190636997d66cf567af774f97">BNONE</a></td></tr>
+<tr class="separator:a000c37a5281ed26da19b174280a040d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a311f4a58136f34356fbbf5a1feb7895e"><td class="memItemLeft" align="right" valign="top"><a id="a311f4a58136f34356fbbf5a1feb7895e"></a>
-<a class="el" href="class_menu_name.html">MenuName</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>TodeName</b> =0</td></tr>
+<a class="el" href="class_menu_name.html">MenuName</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a311f4a58136f34356fbbf5a1feb7895e">TodeName</a> =0</td></tr>
+<tr class="memdesc:a311f4a58136f34356fbbf5a1feb7895e"><td class="mdescLeft">&#160;</td><td class="mdescRight">TodeName Menu-Item. <br /></td></tr>
 <tr class="separator:a311f4a58136f34356fbbf5a1feb7895e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787181e4171d6b641cf3e1728d943daa"><td class="memItemLeft" align="right" valign="top"><a id="a787181e4171d6b641cf3e1728d943daa"></a>
+<a class="el" href="class_device.html">Device</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a787181e4171d6b641cf3e1728d943daa">Devices</a> [AEB_MAXDEVICES] = {0}</td></tr>
+<tr class="memdesc:a787181e4171d6b641cf3e1728d943daa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_device.html" title="ITEM for Remote and/or Local Values">Device</a> Pointers - Index is RFID. <br /></td></tr>
+<tr class="separator:a787181e4171d6b641cf3e1728d943daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f13c0a8b6b80a6563e39cd4a11c1ce5"><td class="memItemLeft" align="right" valign="top"><a id="a5f13c0a8b6b80a6563e39cd4a11c1ce5"></a>
+<a class="el" href="class_hdw_select.html">HdwSelect</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tode.html#a5f13c0a8b6b80a6563e39cd4a11c1ce5">Hardware</a> = 0</td></tr>
+<tr class="memdesc:a5f13c0a8b6b80a6563e39cd4a11c1ce5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>'s Hardware Attached Menu-Item. <br /></td></tr>
+<tr class="separator:a5f13c0a8b6b80a6563e39cd4a11c1ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_menu_list"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_menu_list')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_menu_list.html">MenuList</a></td></tr>
+<tr class="memitem:a900de49c779b834b378eb310a6bae4ee inherit pub_attribs_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="a900de49c779b834b378eb310a6bae4ee"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><b>RFID</b> = 0xFF</td></tr>
+<tr class="separator:a900de49c779b834b378eb310a6bae4ee inherit pub_attribs_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee6e82442ea3ddf1b2702413b1949103 inherit pub_attribs_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="aee6e82442ea3ddf1b2702413b1949103"></a>
 <a class="el" href="class_menu_list.html">MenuList</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>NextList</b> = 0</td></tr>
 <tr class="separator:aee6e82442ea3ddf1b2702413b1949103 inherit pub_attribs_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,12 +205,12 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_class_menu_list"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_menu_list')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_menu_list.html">MenuList</a></td></tr>
-<tr class="memitem:a3d375f4bb212075a6820f62b9711a9a7 inherit pro_attribs_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="a3d375f4bb212075a6820f62b9711a9a7"></a>
-DSPCLASS *&#160;</td><td class="memItemRight" valign="bottom"><b>Display</b> = 0</td></tr>
-<tr class="separator:a3d375f4bb212075a6820f62b9711a9a7 inherit pro_attribs_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e44fd3a455fdd96c764fc78da41fde6 inherit pro_attribs_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="a1e44fd3a455fdd96c764fc78da41fde6"></a>
 RFCLASS *&#160;</td><td class="memItemRight" valign="bottom"><b>RF</b> = 0</td></tr>
 <tr class="separator:a1e44fd3a455fdd96c764fc78da41fde6 inherit pro_attribs_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d375f4bb212075a6820f62b9711a9a7 inherit pro_attribs_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="a3d375f4bb212075a6820f62b9711a9a7"></a>
+DSPCLASS *&#160;</td><td class="memItemRight" valign="bottom"><b>Display</b> = 0</td></tr>
+<tr class="separator:a3d375f4bb212075a6820f62b9711a9a7 inherit pro_attribs_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb4c6d40e4ac35561021cc533d6b2283 inherit pro_attribs_class_menu_list"><td class="memItemLeft" align="right" valign="top"><a id="abb4c6d40e4ac35561021cc533d6b2283"></a>
 <a class="el" href="class_menu_item.html">MenuItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FirstItem</b> = 0</td></tr>
 <tr class="separator:abb4c6d40e4ac35561021cc533d6b2283 inherit pro_attribs_class_menu_list"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,10 +224,10 @@ RFCLASS *&#160;</td><td class="memItemRight" valign="bottom"><b>RF</b> = 0</td><
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><b>LIST</b> of Devices per <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="_tode_8h_source.html#l00033">33</a> of file <a class="el" href="_tode_8h_source.html">Tode.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ml_tode_8h_source.html#l00023">23</a> of file <a class="el" href="ml_tode_8h_source.html">mlTode.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-E32-20C9/<a class="el" href="_tode_8h_source.html">Tode.h</a></li>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-E32-20C9/<a class="el" href="_tode_8cpp_source.html">Tode.cpp</a></li>
+<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="ml_tode_8h_source.html">mlTode.h</a></li>
+<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="ml_tode_8cpp_source.html">mlTode.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

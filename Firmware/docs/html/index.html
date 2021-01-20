@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tode: Introduction</title>
+<title>Tode: Main Page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 20C9</span>
+   &#160;<span id="projectnumber">ver. 211K</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -85,10 +85,30 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Introduction </div>  </div>
+<div class="title">Main Page </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="Overview"></a>
+<div class="textblock"><h1><a class="anchor" id="Files"></a>
+Files &amp; Abreviations</h1>
+<ul>
+<li>Firmware DateCode [YYMD]<ul>
+<li>YY = Last two digits of the Year</li>
+<li>M = (1-9 is Jan-Sept),(A-C is Oct-Dec)</li>
+<li>D = (1-9 is 1-9),(A-V is 10-31)</li>
+</ul>
+</li>
+<li>ABC = Analog Button Capture</li>
+<li>DB = Debug directives</li>
+<li>Disp = Instantiates the Display Object to use</li>
+<li>E32 = Control of the EBYTE E32-Radio Module</li>
+<li>RFC = RF Control Protocol Implementation ( <a class="el" href="class_rx_packet.html" title="Receiving Byte Protocol for RF-Radio.">RxPacket</a>, <a class="el" href="class_tx_packet.html" title="Transmission Byte Protocol for RF-Radio.">TxPacket</a>, <a class="el" href="class_radio_i.html" title="Common Interface Base-Class for various RF-Radios.">RadioI</a> )</li>
+<li>Menu = Menu Base Classes ( <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a>, <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can carry a List Name.">MenuList</a>, <a class="el" href="class_navigator.html" title="LIST of LISTS Top-Level Navigator of multiple MenuList (s).">Navigator</a> )</li>
+<li>miLib = [m]enu-[i]tem(s) for Basic Name-to-Value Operations</li>
+<li>miHdw = [m]enu-[i]tem(s) for Hardware Selection</li>
+<li>miDev = [m]enu-[i]tem(s) for IO Devices</li>
+<li>miRF = [m]enu-[i]tem(s) for a Radio Module</li>
+</ul>
+<h1><a class="anchor" id="Overview"></a>
 Conceptual Overview</h1>
 <p>Just as variables point to values in memory every device will have a collection of specific-use class variable types that contain various counts of link-list dynamic Name-&gt;Value pairs.</p>
 <ul>
@@ -97,7 +117,7 @@ Conceptual Overview</h1>
 </ul>
 </li>
 <li>Values ( Also contains <a class="el" href="class_menu_name.html" title="ITEM adds NAME to MenuItem stored in either MEM or EEPROM determined by Constructor.">MenuName</a> )<ul>
-<li><a class="el" href="class_m_v_digit_set.html" title="ITEM adds On-Display Per-Digit SET feature to MenuValue.">MVDigitSet</a> for number values with ability to set them by Menu</li>
+<li>MenuValueDigSet for number values with ability to set them by Menu</li>
 <li>MVOptions for selectable values showing text options</li>
 </ul>
 </li>
@@ -112,7 +132,7 @@ Conceptual Overview</h1>
 <h1><a class="anchor" id="Display"></a>
 Display-Type Encapsulation</h1>
 <ul>
-<li>Encapsulated and changeable in <a class="el" href="_display_8h.html" title="Itemize various Display differences.">Display.h</a><ul>
+<li>Encapsulated and changeable in Display.h<ul>
 <li>Creates static object <em>oDisplay</em> that is assigned to <em>Display</em> in every Constructor</li>
 <li>DSPCLASS Constant is used to change Display Libraries</li>
 <li>Implements various display call changes by Constants</li>
@@ -121,22 +141,22 @@ Display-Type Encapsulation</h1>
 </ul>
 <h1><a class="anchor" id="Navigation"></a>
 User-Navigation</h1>
-<p>The round-robin <a class="el" href="group___k_e_y.html">Navigate() Keys</a> processing is done by passing the KEY down to the deepest Link-List pointer level available at which point the KEY is either USED, REPLACED or RETURNED back up the Link-List tree. The display is also controlled by Navigate() calls.</p>
+<p>The round-robin KEY processing is done by passing the KEY down to the deepest Link-List pointer level available at which point the KEY is either USED, REPLACED or RETURNED back up the Link-List tree. The display is also controlled by Navigate() calls.</p>
 <ul>
-<li><a class="el" href="class_navigator.html#ad0d1892297a4f692061b93ef66aea1b7" title="Keypad Navigate by Navigate() Keys.">Navigator::Navigate</a><ol type="1">
+<li><a class="el" href="class_navigator.html#ad0d1892297a4f692061b93ef66aea1b7" title="Keypad Navigate by KEY.">Navigator::Navigate</a><ol type="1">
 <li>SENDS the KEY to CurrList</li>
-<li>RETURN Changes the CurrList if KEYRIGHT or KEYLEFT or GOTO_SUBLIST</li>
+<li>RETURN Changes the CurrList if NAVKEYRIGHT or NAVKEYLEFT or NAVGOTOSUBLIST</li>
 </ol>
 </li>
-<li><a class="el" href="class_menu_list.html#abe01717aad9a3300cd72fe3076a36672" title="Keypad Navigate by Navigate() Keys.">MenuList::Navigate</a><ol type="1">
+<li><a class="el" href="class_menu_list.html#a89cba35cb735956d275b2cbcc4d490cd" title="Keypad Navigate by KEY.">MenuList::Navigate</a><ol type="1">
 <li>SENDS the KEY to CurrItem if one is selected.</li>
-<li>RETURN Changes CurrItem if KEYUP or KEYDOWN</li>
+<li>RETURN Changes CurrItem if NAVKEYUP or NAVKEYDOWN</li>
 </ol>
 </li>
-<li><a class="el" href="class_menu_item.html#adb14928626ae7067fda6a1d4e05aae64" title="Keypad Navigate by Navigate() Keys.">MenuItem::Navigate</a> (Handled by Each Item as coded)<ol type="1">
+<li><a class="el" href="class_menu_item.html#a24e844a0e9a399f588d5d11a34847b1f" title="Keypad Navigate by KEY.">MenuItem::Navigate</a> (Handled by Each Item as coded)<ol type="1">
 <li>Depending on <em>Selected</em> Item-Component</li>
-<li>KEYRIGHT changes 'Selected' Item-Component</li>
-<li>KEYOKAY checks for <em>SubList</em> and returns GOTO_SUBLIST</li>
+<li>NAVKEYRIGHT changes 'Selected' Item-Component</li>
+<li>NAVKEYOKAY checks for <em>SubList</em> and returns NAVGOTOSUBLIST</li>
 <li>If nothing handles the key within Item it gets returned back to List</li>
 </ol>
 </li>
@@ -150,15 +170,25 @@ New Devices</h1>
 <li><em>All</em> Devices have <em>Control</em> (i.e. On/Off and Read-Only)</li>
 </ul>
 </li>
-<li>Each Device-Type has a <a class="el" href="group___k_e_y.html">Navigate() Keys</a></li>
-<li><a class="el" href="_tode_8cpp.html" title="Ref.h.">Tode.cpp</a> AddDevice</li>
-<li><a class="el" href="_main_8cpp.html" title="Ref.h.">Main.cpp</a> FinalKey</li>
+<li>Each Device-Type has a KEY</li>
+<li>Tode.cpp AddDevice</li>
+<li><a class="el" href="_sys_8cpp.html" title="Ref.h.">Sys.cpp</a> FinalKey</li>
 </ul>
+<h1><a class="anchor" id="EEPROM"></a>
+EEPROM Allocation Map</h1>
+<ol type="1">
+<li>ThisTode Configuration will always start from the beginning of EEPROM Space</li>
+<li>Remote <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>'s</li>
+<li>System Settings<ul>
+<li>Including ThisTode's <a class="el" href="class_device.html" title="ITEM for Remote and/or Local Values">Device</a> Settings (not control)</li>
+</ul>
+</li>
+</ol>
 <h1><a class="anchor" id="IO-HDW"></a>
 New IO-HDW</h1>
 <ul>
 <li>Create (2) 32-bit longs and (1) byte and assign bit-wise usable Pins<ol type="1">
-<li>Used in <a class="el" href="_dev_lib_8cpp.html" title="Ref.h.">DevLib.cpp</a> PinSelect::ChangeSetTo</li>
+<li>Used in DevLib.cpp PinSelect::ChangeSetTo</li>
 <li>Name Pin Usage in PinSelect::PinSelect Constructor </li>
 </ol>
 </li>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vnumbase_172',['VNumBase',['../class_menu_value.html#ac28878b83954e4313250949d17ce1a1c',1,'MenuValue']]]
+  ['isetto_234',['iSetTo',['../class_menu_value.html#a135ff18dee270b21344652ce2708aabc',1,'MenuValue']]],
+  ['ivalue_235',['iValue',['../class_menu_value.html#ad159ea001ff3f601ef5ac29fa8579117',1,'MenuValue']]]
 ];

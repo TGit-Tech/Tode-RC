@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('class_menu_name_key.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
-<p><b>ITEM</b> injects <a class="el" href="group___k_e_y.html">Navigate() Keys</a> when KEYOKAY is pressed on Name (Used to add devices).  
+<p><b>ITEM</b> injects KEY when NAVKEYOKAY is pressed on Name (Used to add devices).  
  <a href="class_menu_name_key.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_menu_lib_8h_source.html">MenuLib.h</a>&gt;</code></p>
@@ -114,17 +114,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a668c6eeaa9814975edaf7adfe55ff517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa19b2893102eef9a013563120cac6741"><td class="memItemLeft" align="right" valign="top"><a id="aa19b2893102eef9a013563120cac6741"></a>
 virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_name_key.html#aa19b2893102eef9a013563120cac6741">Navigate</a> (byte _Key, byte _Row=0) override</td></tr>
-<tr class="memdesc:aa19b2893102eef9a013563120cac6741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Navigate by <a class="el" href="group___k_e_y.html">Navigate() Keys</a>. <br /></td></tr>
+<tr class="memdesc:aa19b2893102eef9a013563120cac6741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Navigate by KEY. <br /></td></tr>
 <tr class="separator:aa19b2893102eef9a013563120cac6741"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_menu_name"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_menu_name')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_menu_name.html">MenuName</a></td></tr>
 <tr class="memitem:a151948c2c8bc1d75c3291cc6f3c7fdd4 inherit pub_methods_class_menu_name"><td class="memItemLeft" align="right" valign="top"><a id="a151948c2c8bc1d75c3291cc6f3c7fdd4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_name.html#a151948c2c8bc1d75c3291cc6f3c7fdd4">MenuName</a> (const char *_CName, <a class="el" href="class_menu_list.html">MenuList</a> *_SubList=0)</td></tr>
 <tr class="memdesc:a151948c2c8bc1d75c3291cc6f3c7fdd4 inherit pub_methods_class_menu_name"><td class="mdescLeft">&#160;</td><td class="mdescRight">MEM Name Constructor. <br /></td></tr>
 <tr class="separator:a151948c2c8bc1d75c3291cc6f3c7fdd4 inherit pub_methods_class_menu_name"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00720648360b4811fee178950921986e inherit pub_methods_class_menu_name"><td class="memItemLeft" align="right" valign="top"><a id="a00720648360b4811fee178950921986e"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_name.html#a00720648360b4811fee178950921986e">MenuName</a> (int _NAddr, byte _NSize, bool _NameSettable=false, const char *_TLine=0)</td></tr>
-<tr class="memdesc:a00720648360b4811fee178950921986e inherit pub_methods_class_menu_name"><td class="mdescLeft">&#160;</td><td class="mdescRight">EEPROM Name Constructor. <br /></td></tr>
-<tr class="separator:a00720648360b4811fee178950921986e inherit pub_methods_class_menu_name"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a311cad00a44238aadc51dee5ad11ec80 inherit pub_methods_class_menu_name"><td class="memItemLeft" align="right" valign="top"><a id="a311cad00a44238aadc51dee5ad11ec80"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_name.html#a311cad00a44238aadc51dee5ad11ec80">MenuName</a> (int _ENameAddr, byte _ENameSize, bool _NameSettable=false, const char *_TLine=0)</td></tr>
+<tr class="memdesc:a311cad00a44238aadc51dee5ad11ec80 inherit pub_methods_class_menu_name"><td class="mdescLeft">&#160;</td><td class="mdescRight">EEPROM Name Constructor. <br /></td></tr>
+<tr class="separator:a311cad00a44238aadc51dee5ad11ec80 inherit pub_methods_class_menu_name"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac264ee7b15a8b82106650bf6321085 inherit pub_methods_class_menu_name"><td class="memItemLeft" align="right" valign="top"><a id="a6ac264ee7b15a8b82106650bf6321085"></a>
 virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_name.html#a6ac264ee7b15a8b82106650bf6321085">Name</a> ()</td></tr>
 <tr class="memdesc:a6ac264ee7b15a8b82106650bf6321085 inherit pub_methods_class_menu_name"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET Item Name. <br /></td></tr>
@@ -134,33 +134,22 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:ad89c47b06305869a909b3aa4bf8163ae inherit pub_methods_class_menu_name"><td class="mdescLeft">&#160;</td><td class="mdescRight">SET Item Name. <br /></td></tr>
 <tr class="separator:ad89c47b06305869a909b3aa4bf8163ae inherit pub_methods_class_menu_name"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_menu_item"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_menu_item')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_menu_item.html">MenuItem</a></td></tr>
-<tr class="memitem:ac7ba5b4db5814dc98244bf4b4b1a33dd inherit pub_methods_class_menu_item"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#ac7ba5b4db5814dc98244bf4b4b1a33dd">Command</a> (byte _CMD, int _Value)</td></tr>
-<tr class="memdesc:ac7ba5b4db5814dc98244bf4b4b1a33dd inherit pub_methods_class_menu_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Item Command Console.  <a href="class_menu_item.html#ac7ba5b4db5814dc98244bf4b4b1a33dd">More...</a><br /></td></tr>
-<tr class="separator:ac7ba5b4db5814dc98244bf4b4b1a33dd inherit pub_methods_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2867e9ded0724551f7f585b8f5a62f06 inherit pub_methods_class_menu_item"><td class="memItemLeft" align="right" valign="top"><a id="a2867e9ded0724551f7f585b8f5a62f06"></a>
-virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a2867e9ded0724551f7f585b8f5a62f06">DevType</a> (byte _DTPKey=<a class="el" href="group___d_t_p.html#ga86beaa067694390507a20326ec7d1b6e">DTP_DEVTYPE</a>)</td></tr>
-<tr class="memdesc:a2867e9ded0724551f7f585b8f5a62f06 inherit pub_methods_class_menu_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device-Type Parameters. <br /></td></tr>
-<tr class="separator:a2867e9ded0724551f7f585b8f5a62f06 inherit pub_methods_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af51f75c5c9587ba6e9d96fe8a67fad12 inherit pub_methods_class_menu_item"><td class="memItemLeft" align="right" valign="top"><a id="af51f75c5c9587ba6e9d96fe8a67fad12"></a>
 virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#af51f75c5c9587ba6e9d96fe8a67fad12">Loop</a> ()</td></tr>
 <tr class="memdesc:af51f75c5c9587ba6e9d96fe8a67fad12 inherit pub_methods_class_menu_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">System loop() <br /></td></tr>
 <tr class="separator:af51f75c5c9587ba6e9d96fe8a67fad12 inherit pub_methods_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a818c0496f05704ea9782a210bc0a3929 inherit pub_methods_class_menu_item"><td class="memItemLeft" align="right" valign="top"><a id="a818c0496f05704ea9782a210bc0a3929"></a>
-virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a818c0496f05704ea9782a210bc0a3929">ID</a> ()</td></tr>
-<tr class="memdesc:a818c0496f05704ea9782a210bc0a3929 inherit pub_methods_class_menu_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET Numeric Item ID. <br /></td></tr>
-<tr class="separator:a818c0496f05704ea9782a210bc0a3929 inherit pub_methods_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1775cbad11173d092ab73fd2f0c532d0 inherit pub_methods_class_menu_item"><td class="memItemLeft" align="right" valign="top"><a id="a1775cbad11173d092ab73fd2f0c532d0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a1775cbad11173d092ab73fd2f0c532d0">ID</a> (byte _ID)</td></tr>
-<tr class="memdesc:a1775cbad11173d092ab73fd2f0c532d0 inherit pub_methods_class_menu_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">SET Numeric Item ID. <br /></td></tr>
-<tr class="separator:a1775cbad11173d092ab73fd2f0c532d0 inherit pub_methods_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_menu_item"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_menu_item')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_menu_item.html">MenuItem</a></td></tr>
+<tr class="memitem:a6aabade2f36187ef7ba2ae129642aaa2 inherit pub_attribs_class_menu_item"><td class="memItemLeft" align="right" valign="top"><a id="a6aabade2f36187ef7ba2ae129642aaa2"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><b>Index</b> = BNONE</td></tr>
+<tr class="separator:a6aabade2f36187ef7ba2ae129642aaa2 inherit pub_attribs_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_menu_name"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_menu_name')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_menu_name.html">MenuName</a></td></tr>
-<tr class="memitem:a04bb70b30722a79b2669c7b8409fa4d8 inherit pro_methods_class_menu_name"><td class="memItemLeft" align="right" valign="top"><a id="a04bb70b30722a79b2669c7b8409fa4d8"></a>
-virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_name.html#a04bb70b30722a79b2669c7b8409fa4d8">NameNav</a> (byte _Key, byte _Row=0)</td></tr>
-<tr class="memdesc:a04bb70b30722a79b2669c7b8409fa4d8 inherit pro_methods_class_menu_name"><td class="mdescLeft">&#160;</td><td class="mdescRight">NAME Navigate. <br /></td></tr>
-<tr class="separator:a04bb70b30722a79b2669c7b8409fa4d8 inherit pro_methods_class_menu_name"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6b28c3a23d9217643cdd24825bc363 inherit pro_methods_class_menu_name"><td class="memItemLeft" align="right" valign="top"><a id="a7d6b28c3a23d9217643cdd24825bc363"></a>
+virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_name.html#a7d6b28c3a23d9217643cdd24825bc363">NavName</a> (byte _Key, byte _Row=0)</td></tr>
+<tr class="memdesc:a7d6b28c3a23d9217643cdd24825bc363 inherit pro_methods_class_menu_name"><td class="mdescLeft">&#160;</td><td class="mdescRight">NAME Navigate. <br /></td></tr>
+<tr class="separator:a7d6b28c3a23d9217643cdd24825bc363 inherit pro_methods_class_menu_name"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_menu_item"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_menu_item')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_menu_item.html">MenuItem</a></td></tr>
 <tr class="memitem:a8191cc6be97c9d7f0ea4ce6934a97dfc inherit pro_attribs_class_menu_item"><td class="memItemLeft" align="right" valign="top"><a id="a8191cc6be97c9d7f0ea4ce6934a97dfc"></a>
 <a class="el" href="class_menu_list.html">MenuList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a8191cc6be97c9d7f0ea4ce6934a97dfc">SubList</a> = 0</td></tr>
@@ -170,19 +159,19 @@ virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 DSPCLASS *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a7208787ab8bfe20c158f4118d057a1d6">Display</a> = 0</td></tr>
 <tr class="memdesc:a7208787ab8bfe20c158f4118d057a1d6 inherit pro_attribs_class_menu_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display Object Pointer. <br /></td></tr>
 <tr class="separator:a7208787ab8bfe20c158f4118d057a1d6 inherit pro_attribs_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0152106d2fbda47744771691536589e0 inherit pro_attribs_class_menu_item"><td class="memItemLeft" align="right" valign="top"><a id="a0152106d2fbda47744771691536589e0"></a>
-RFCLASS *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a0152106d2fbda47744771691536589e0">RF</a> = 0</td></tr>
-<tr class="memdesc:a0152106d2fbda47744771691536589e0 inherit pro_attribs_class_menu_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">RF-Radio Object Pointer. <br /></td></tr>
-<tr class="separator:a0152106d2fbda47744771691536589e0 inherit pro_attribs_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacef53fc8798a4e7db7250a39d04db3e inherit pro_attribs_class_menu_item"><td class="memItemLeft" align="right" valign="top"><a id="aacef53fc8798a4e7db7250a39d04db3e"></a>
+<a class="el" href="class_radio.html">Radio</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#aacef53fc8798a4e7db7250a39d04db3e">RF</a> = 0</td></tr>
+<tr class="memdesc:aacef53fc8798a4e7db7250a39d04db3e inherit pro_attribs_class_menu_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">RF-Radio Object Pointer. <br /></td></tr>
+<tr class="separator:aacef53fc8798a4e7db7250a39d04db3e inherit pro_attribs_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a693c9800858365738aa83011cfb16ffd inherit pro_attribs_class_menu_item"><td class="memItemLeft" align="right" valign="top"><a id="a693c9800858365738aa83011cfb16ffd"></a>
 byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a693c9800858365738aa83011cfb16ffd">Selected</a> = <a class="el" href="group___s_e_l.html#ga09d444abc77ba9f4bf20f632cd585918">SEL_NONE</a></td></tr>
 <tr class="memdesc:a693c9800858365738aa83011cfb16ffd inherit pro_attribs_class_menu_item"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display focus point. <br /></td></tr>
 <tr class="separator:a693c9800858365738aa83011cfb16ffd inherit pro_attribs_class_menu_item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><b>ITEM</b> injects <a class="el" href="group___k_e_y.html">Navigate() Keys</a> when KEYOKAY is pressed on Name (Used to add devices). </p>
+<div class="textblock"><p><b>ITEM</b> injects KEY when NAVKEYOKAY is pressed on Name (Used to add devices). </p>
 
-<p class="definition">Definition at line <a class="el" href="_menu_lib_8h_source.html#l00058">58</a> of file <a class="el" href="_menu_lib_8h_source.html">MenuLib.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_menu_lib_8h_source.html#l00061">61</a> of file <a class="el" href="_menu_lib_8h_source.html">MenuLib.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-E32-20C9/<a class="el" href="_menu_lib_8h_source.html">MenuLib.h</a></li>
 <li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-E32-20C9/<a class="el" href="_menu_lib_8cpp_source.html">MenuLib.cpp</a></li>

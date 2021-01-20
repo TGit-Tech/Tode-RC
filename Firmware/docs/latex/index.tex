@@ -1,4 +1,23 @@
-\hypertarget{index_Overview}{}\doxysection{Conceptual Overview}\label{index_Overview}
+\hypertarget{index_Files}{}\doxysection{Files \& Abreviations}\label{index_Files}
+
+\begin{DoxyItemize}
+\item Firmware Date\+Code \mbox{[}Y\+Y\+MD\mbox{]}
+\begin{DoxyItemize}
+\item YY = Last two digits of the Year
+\item M = (1-\/9 is Jan-\/\+Sept),(A-\/C is Oct-\/\+Dec)
+\item D = (1-\/9 is 1-\/9),(A-\/V is 10-\/31)
+\end{DoxyItemize}
+\item A\+BC = Analog Button Capture
+\item DB = Debug directives
+\item Disp = Instantiates the Display Object to use
+\item E32 = Control of the E\+B\+Y\+TE E32-\/\+Radio Module
+\item R\+FC = RF Control Protocol Implementation ( \mbox{\hyperlink{class_rx_packet}{Rx\+Packet}}, \mbox{\hyperlink{class_tx_packet}{Tx\+Packet}}, \mbox{\hyperlink{class_radio_i}{RadioI}} )
+\item Menu = Menu Base Classes ( \mbox{\hyperlink{class_menu_item}{Menu\+Item}}, \mbox{\hyperlink{class_menu_list}{Menu\+List}}, \mbox{\hyperlink{class_navigator}{Navigator}} )
+\item mi\+Lib = \mbox{[}m\mbox{]}enu-\/\mbox{[}i\mbox{]}tem(s) for Basic Name-\/to-\/\+Value Operations
+\item mi\+Hdw = \mbox{[}m\mbox{]}enu-\/\mbox{[}i\mbox{]}tem(s) for Hardware Selection
+\item mi\+Dev = \mbox{[}m\mbox{]}enu-\/\mbox{[}i\mbox{]}tem(s) for IO Devices
+\item mi\+RF = \mbox{[}m\mbox{]}enu-\/\mbox{[}i\mbox{]}tem(s) for a Radio Module
+\end{DoxyItemize}\hypertarget{index_Overview}{}\doxysection{Conceptual Overview}\label{index_Overview}
 Just as variables point to values in memory every device will have a collection of specific-\/use class variable types that contain various counts of link-\/list dynamic Name-\/$>$Value pairs.
 
 
@@ -9,7 +28,7 @@ Just as variables point to values in memory every device will have a collection 
 \end{DoxyItemize}
 \item Values ( Also contains \mbox{\hyperlink{class_menu_name}{Menu\+Name}} )
 \begin{DoxyItemize}
-\item \mbox{\hyperlink{class_m_v_digit_set}{M\+V\+Digit\+Set}} for number values with ability to set them by Menu
+\item Menu\+Value\+Dig\+Set for number values with ability to set them by Menu
 \item M\+V\+Options for selectable values showing text options
 \end{DoxyItemize}
 \item Common Accronyms in Code
@@ -22,32 +41,32 @@ Just as variables point to values in memory every device will have a collection 
 \end{DoxyItemize}\hypertarget{index_Display}{}\doxysection{Display-\/\+Type Encapsulation}\label{index_Display}
 
 \begin{DoxyItemize}
-\item Encapsulated and changeable in \mbox{\hyperlink{_display_8h}{Display.\+h}}
+\item Encapsulated and changeable in Display.\+h
 \begin{DoxyItemize}
 \item Creates static object {\itshape o\+Display} that is assigned to {\itshape Display} in every Constructor
 \item D\+S\+P\+C\+L\+A\+SS Constant is used to change Display Libraries
 \item Implements various display call changes by Constants
 \end{DoxyItemize}
 \end{DoxyItemize}\hypertarget{index_Navigation}{}\doxysection{User-\/\+Navigation}\label{index_Navigation}
-The round-\/robin \mbox{\hyperlink{group___k_e_y}{Navigate() Keys}} processing is done by passing the K\+EY down to the deepest Link-\/\+List pointer level available at which point the K\+EY is either U\+S\+ED, R\+E\+P\+L\+A\+C\+ED or R\+E\+T\+U\+R\+N\+ED back up the Link-\/\+List tree. The display is also controlled by Navigate() calls.
+The round-\/robin K\+EY processing is done by passing the K\+EY down to the deepest Link-\/\+List pointer level available at which point the K\+EY is either U\+S\+ED, R\+E\+P\+L\+A\+C\+ED or R\+E\+T\+U\+R\+N\+ED back up the Link-\/\+List tree. The display is also controlled by Navigate() calls.
 
 
 \begin{DoxyItemize}
 \item \mbox{\hyperlink{class_navigator_ad0d1892297a4f692061b93ef66aea1b7}{Navigator\+::\+Navigate}}
 \begin{DoxyEnumerate}
 \item S\+E\+N\+DS the K\+EY to Curr\+List
-\item R\+E\+T\+U\+RN Changes the Curr\+List if K\+E\+Y\+R\+I\+G\+HT or K\+E\+Y\+L\+E\+FT or G\+O\+T\+O\+\_\+\+S\+U\+B\+L\+I\+ST
+\item R\+E\+T\+U\+RN Changes the Curr\+List if N\+A\+V\+K\+E\+Y\+R\+I\+G\+HT or N\+A\+V\+K\+E\+Y\+L\+E\+FT or N\+A\+V\+G\+O\+T\+O\+S\+U\+B\+L\+I\+ST
 \end{DoxyEnumerate}
-\item \mbox{\hyperlink{class_menu_list_abe01717aad9a3300cd72fe3076a36672}{Menu\+List\+::\+Navigate}}
+\item \mbox{\hyperlink{class_menu_list_a89cba35cb735956d275b2cbcc4d490cd}{Menu\+List\+::\+Navigate}}
 \begin{DoxyEnumerate}
 \item S\+E\+N\+DS the K\+EY to Curr\+Item if one is selected.
-\item R\+E\+T\+U\+RN Changes Curr\+Item if K\+E\+Y\+UP or K\+E\+Y\+D\+O\+WN
+\item R\+E\+T\+U\+RN Changes Curr\+Item if N\+A\+V\+K\+E\+Y\+UP or N\+A\+V\+K\+E\+Y\+D\+O\+WN
 \end{DoxyEnumerate}
-\item \mbox{\hyperlink{class_menu_item_adb14928626ae7067fda6a1d4e05aae64}{Menu\+Item\+::\+Navigate}} (Handled by Each Item as coded)
+\item \mbox{\hyperlink{class_menu_item_a24e844a0e9a399f588d5d11a34847b1f}{Menu\+Item\+::\+Navigate}} (Handled by Each Item as coded)
 \begin{DoxyEnumerate}
 \item Depending on {\itshape Selected} Item-\/\+Component
-\item K\+E\+Y\+R\+I\+G\+HT changes \textquotesingle{}Selected\textquotesingle{} Item-\/\+Component
-\item K\+E\+Y\+O\+K\+AY checks for {\itshape Sub\+List} and returns G\+O\+T\+O\+\_\+\+S\+U\+B\+L\+I\+ST
+\item N\+A\+V\+K\+E\+Y\+R\+I\+G\+HT changes \textquotesingle{}Selected\textquotesingle{} Item-\/\+Component
+\item N\+A\+V\+K\+E\+Y\+O\+K\+AY checks for {\itshape Sub\+List} and returns N\+A\+V\+G\+O\+T\+O\+S\+U\+B\+L\+I\+ST
 \item If nothing handles the key within Item it gets returned back to List
 \end{DoxyEnumerate}
 \end{DoxyItemize}\hypertarget{index_DEVICE}{}\doxysection{New Devices}\label{index_DEVICE}
@@ -59,15 +78,24 @@ The round-\/robin \mbox{\hyperlink{group___k_e_y}{Navigate() Keys}} processing i
 \item {\itshape Local} Devices has device {\itshape Settings} (i.\+e. I\+O-\/\+Pin)
 \item {\itshape All} Devices have {\itshape Control} (i.\+e. On/\+Off and Read-\/\+Only)
 \end{DoxyItemize}
-\item Each Device-\/\+Type has a \mbox{\hyperlink{group___k_e_y}{Navigate() Keys}}
-\item \mbox{\hyperlink{_tode_8cpp}{Tode.\+cpp}} Add\+Device
-\item \mbox{\hyperlink{_main_8cpp}{Main.\+cpp}} Final\+Key
-\end{DoxyItemize}\hypertarget{index_IO-HDW}{}\doxysection{New I\+O-\/\+H\+DW}\label{index_IO-HDW}
+\item Each Device-\/\+Type has a K\+EY
+\item Tode.\+cpp Add\+Device
+\item \mbox{\hyperlink{_sys_8cpp}{Sys.\+cpp}} Final\+Key
+\end{DoxyItemize}\hypertarget{index_EEPROM}{}\doxysection{E\+E\+P\+R\+O\+M Allocation Map}\label{index_EEPROM}
+
+\begin{DoxyEnumerate}
+\item This\+Tode Configuration will always start from the beginning of E\+E\+P\+R\+OM Space
+\item Remote \mbox{\hyperlink{class_tode}{Tode}}\textquotesingle{}s
+\item System Settings
+\begin{DoxyItemize}
+\item Including This\+Tode\textquotesingle{}s \mbox{\hyperlink{class_device}{Device}} Settings (not control)
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{index_IO-HDW}{}\doxysection{New I\+O-\/\+H\+DW}\label{index_IO-HDW}
 
 \begin{DoxyItemize}
 \item Create (2) 32-\/bit longs and (1) byte and assign bit-\/wise usable Pins
 \begin{DoxyEnumerate}
-\item Used in \mbox{\hyperlink{_dev_lib_8cpp}{Dev\+Lib.\+cpp}} Pin\+Select\+::\+Change\+Set\+To
+\item Used in Dev\+Lib.\+cpp Pin\+Select\+::\+Change\+Set\+To
 \item Name Pin Usage in Pin\+Select\+::\+Pin\+Select Constructor 
 \end{DoxyEnumerate}
 \end{DoxyItemize}

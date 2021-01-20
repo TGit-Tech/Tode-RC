@@ -1,6 +1,6 @@
 var class_m_v_digit_set =
 [
-    [ "MVDigitSet", "class_m_v_digit_set.html#a40d87d32c94c599d789c5e3cb65c4139", null ],
-    [ "MVDigitSet", "class_m_v_digit_set.html#a70a354c6e57991395e3057c6fe545220", null ],
-    [ "ValueNav", "class_m_v_digit_set.html#a532d63d5c50451e26dd400667577b505", null ]
+    [ "MVDigitSet", "class_m_v_digit_set.html#a052cbf35f3f3bbc8f45d54e03c3a3651", null ],
+    [ "MVDigitSet", "class_m_v_digit_set.html#a0f317011860feb9b76bd2db24e46f4e7", null ],
+    [ "NavValue", "class_m_v_digit_set.html#acce2d213bbaa7633205c651f74e3b931", null ]
 ];

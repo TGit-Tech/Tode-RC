@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 20C9</span>
+   &#160;<span id="projectnumber">ver. 211K</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -86,11 +86,12 @@ $(document).ready(function(){initNavTree('class_menu_item.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="class_menu_item-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">MenuItem Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">MenuItem Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -104,62 +105,66 @@ Inheritance diagram for MenuItem:</div>
  <div class="center">
   <img src="class_menu_item.png" usemap="#MenuItem_map" alt=""/>
   <map id="MenuItem_map" name="MenuItem_map">
-<area href="class_menu_name.html" title="ITEM adds NAME to MenuItem stored in either MEM or EEPROM determined by Constructor." alt="MenuName" shape="rect" coords="108,56,206,80"/>
-<area href="class_e32_p_c_conn.html" title="On-Demand Connect RF-Radio Serial to Arduino USB Serial." alt="E32PCConn" shape="rect" coords="0,112,98,136"/>
-<area href="class_menu_name_key.html" title="ITEM injects Navigate() Keys when KEYOKAY is pressed on Name (Used to add devices)." alt="MenuNameKey" shape="rect" coords="108,112,206,136"/>
-<area href="class_menu_value.html" title="ITEM adds VALUE to MenuName for a Name-&gt;Value Pair + Number-Naming ability." alt="MenuValue" shape="rect" coords="216,112,314,136"/>
-<area href="class_e32_freq.html" title="E32 Radio Frequency Setting." alt="E32Freq" shape="rect" coords="54,168,152,192"/>
-<area href="class_m_v_digit_set.html" title="ITEM adds On-Display Per-Digit SET feature to MenuValue." alt="MVDigitSet" shape="rect" coords="162,168,260,192"/>
-<area href="class_on_off.html" title="DEVICE Digital On/Off Value Control and Local Settings; inherits MenuValue." alt="OnOff" shape="rect" coords="270,168,368,192"/>
-<area href="class_pin_select.html" title="ITEM adds IO-Hardware specific On-Display Pick-A-Pin to MenuValue." alt="PinSelect" shape="rect" coords="378,168,476,192"/>
-<area href="class_set_net.html" title="On-Demand initialized Item-Object Tool used to set Textual Names on a new screen." alt="SetNet" shape="rect" coords="162,224,260,248"/>
+<area href="class_menu_name.html" title="ITEM adds NAME to MenuItem stored in either MEM or EEPROM determined by Constructor." alt="MenuName" shape="rect" coords="402,56,507,80"/>
+<area href="class_menu_value.html" title="ITEM adds local VALUE to MenuName for &#39;Name-&gt;Value&#39; Pairs Offers Number-Naming ability Offers Value S..." alt="MenuValue" shape="rect" coords="402,112,507,136"/>
+<area href="class_add_tode.html" alt="AddTode" shape="rect" coords="0,168,105,192"/>
+<area href="class_device.html" title="ITEM for Remote and/or Local Values" alt="Device" shape="rect" coords="115,168,220,192"/>
+<area href="class_menu_e_e_value.html" title="ITEM adds On-Display Per-Digit SET feature to MenuValue." alt="MenuEEValue" shape="rect" coords="287,168,392,192"/>
+<area href="class_radio_address.html" title="On-Demand initialized Item-Object Tool used to set Textual Names on a new screen." alt="RadioAddress" shape="rect" coords="402,168,507,192"/>
+<area href="class_radio_frequency.html" title="Radio Frequency Setting." alt="RadioFrequency" shape="rect" coords="517,168,622,192"/>
+<area href="class_radio_p_c_conn.html" title="On-Demand Connect RF-Radio Serial to Arduino USB Serial." alt="RadioPCConn" shape="rect" coords="632,168,737,192"/>
+<area href="class_radio_tx_power.html" title="Radio Tx Power Setting." alt="RadioTxPower" shape="rect" coords="747,168,852,192"/>
+<area href="class_on_off.html" title="DEVICE Digital On/Off Value Control and Local Settings; inherits MenuValue." alt="OnOff" shape="rect" coords="115,224,220,248"/>
+<area href="class_hdw_select.html" title="ITEM MenuEEValue: Menu Select attached IO-Hardware Options (SIDEIO board, BP-BackPlane)." alt="HdwSelect" shape="rect" coords="230,224,335,248"/>
+<area href="class_pin_select.html" title="ITEM MenuEEValue: Menu Pick-A-Pin of IO-Hardware Options specific hardware." alt="PinSelect" shape="rect" coords="345,224,450,248"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adb14928626ae7067fda6a1d4e05aae64"><td class="memItemLeft" align="right" valign="top"><a id="adb14928626ae7067fda6a1d4e05aae64"></a>
-virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#adb14928626ae7067fda6a1d4e05aae64">Navigate</a> (byte _Key, byte _Row=0)=0</td></tr>
-<tr class="memdesc:adb14928626ae7067fda6a1d4e05aae64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Navigate by <a class="el" href="group___k_e_y.html">Navigate() Keys</a>. <br /></td></tr>
-<tr class="separator:adb14928626ae7067fda6a1d4e05aae64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7ba5b4db5814dc98244bf4b4b1a33dd"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#ac7ba5b4db5814dc98244bf4b4b1a33dd">Command</a> (byte _CMD, int _Value)</td></tr>
-<tr class="memdesc:ac7ba5b4db5814dc98244bf4b4b1a33dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Item Command Console.  <a href="class_menu_item.html#ac7ba5b4db5814dc98244bf4b4b1a33dd">More...</a><br /></td></tr>
-<tr class="separator:ac7ba5b4db5814dc98244bf4b4b1a33dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2867e9ded0724551f7f585b8f5a62f06"><td class="memItemLeft" align="right" valign="top"><a id="a2867e9ded0724551f7f585b8f5a62f06"></a>
-virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a2867e9ded0724551f7f585b8f5a62f06">DevType</a> (byte _DTPKey=<a class="el" href="group___d_t_p.html#ga86beaa067694390507a20326ec7d1b6e">DTP_DEVTYPE</a>)</td></tr>
-<tr class="memdesc:a2867e9ded0724551f7f585b8f5a62f06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device-Type Parameters. <br /></td></tr>
-<tr class="separator:a2867e9ded0724551f7f585b8f5a62f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24e844a0e9a399f588d5d11a34847b1f"><td class="memItemLeft" align="right" valign="top"><a id="a24e844a0e9a399f588d5d11a34847b1f"></a>
+virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a24e844a0e9a399f588d5d11a34847b1f">Navigate</a> (byte _Key)</td></tr>
+<tr class="memdesc:a24e844a0e9a399f588d5d11a34847b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Navigate by KEY. <br /></td></tr>
+<tr class="separator:a24e844a0e9a399f588d5d11a34847b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1049641bfade577631108d8a936fe0f5"><td class="memItemLeft" align="right" valign="top"><a id="a1049641bfade577631108d8a936fe0f5"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a1049641bfade577631108d8a936fe0f5">Show</a> (byte _XPos=0, byte _YPos=0)</td></tr>
+<tr class="memdesc:a1049641bfade577631108d8a936fe0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the Item. <br /></td></tr>
+<tr class="separator:a1049641bfade577631108d8a936fe0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af51f75c5c9587ba6e9d96fe8a67fad12"><td class="memItemLeft" align="right" valign="top"><a id="af51f75c5c9587ba6e9d96fe8a67fad12"></a>
 virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#af51f75c5c9587ba6e9d96fe8a67fad12">Loop</a> ()</td></tr>
 <tr class="memdesc:af51f75c5c9587ba6e9d96fe8a67fad12"><td class="mdescLeft">&#160;</td><td class="mdescRight">System loop() <br /></td></tr>
 <tr class="separator:af51f75c5c9587ba6e9d96fe8a67fad12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a818c0496f05704ea9782a210bc0a3929"><td class="memItemLeft" align="right" valign="top"><a id="a818c0496f05704ea9782a210bc0a3929"></a>
-virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a818c0496f05704ea9782a210bc0a3929">ID</a> ()</td></tr>
-<tr class="memdesc:a818c0496f05704ea9782a210bc0a3929"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET Numeric Item ID. <br /></td></tr>
-<tr class="separator:a818c0496f05704ea9782a210bc0a3929"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1775cbad11173d092ab73fd2f0c532d0"><td class="memItemLeft" align="right" valign="top"><a id="a1775cbad11173d092ab73fd2f0c532d0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a1775cbad11173d092ab73fd2f0c532d0">ID</a> (byte _ID)</td></tr>
-<tr class="memdesc:a1775cbad11173d092ab73fd2f0c532d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">SET Numeric Item ID. <br /></td></tr>
-<tr class="separator:a1775cbad11173d092ab73fd2f0c532d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ae5e0303720cd3769efdfd3f681ec0c86"><td class="memItemLeft" align="right" valign="top"><a id="ae5e0303720cd3769efdfd3f681ec0c86"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#ae5e0303720cd3769efdfd3f681ec0c86">NavSelected</a> = <a class="el" href="group___s_e_l.html#ga09d444abc77ba9f4bf20f632cd585918">SEL_NONE</a></td></tr>
+<tr class="memdesc:ae5e0303720cd3769efdfd3f681ec0c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display focus point. <br /></td></tr>
+<tr class="separator:ae5e0303720cd3769efdfd3f681ec0c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6faaa6829a842bd3c47e6a56b74ee99"><td class="memItemLeft" align="right" valign="top"><a id="ad6faaa6829a842bd3c47e6a56b74ee99"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#ad6faaa6829a842bd3c47e6a56b74ee99">RFID</a> = 0xFF</td></tr>
+<tr class="memdesc:ad6faaa6829a842bd3c47e6a56b74ee99"><td class="mdescLeft">&#160;</td><td class="mdescRight">RFID of Item for RxTx. <br /></td></tr>
+<tr class="separator:ad6faaa6829a842bd3c47e6a56b74ee99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8191cc6be97c9d7f0ea4ce6934a97dfc"><td class="memItemLeft" align="right" valign="top"><a id="a8191cc6be97c9d7f0ea4ce6934a97dfc"></a>
 <a class="el" href="class_menu_list.html">MenuList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a8191cc6be97c9d7f0ea4ce6934a97dfc">SubList</a> = 0</td></tr>
 <tr class="memdesc:a8191cc6be97c9d7f0ea4ce6934a97dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Item links-&gt;to a Link-List. <br /></td></tr>
 <tr class="separator:a8191cc6be97c9d7f0ea4ce6934a97dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
 <tr class="memitem:a7208787ab8bfe20c158f4118d057a1d6"><td class="memItemLeft" align="right" valign="top"><a id="a7208787ab8bfe20c158f4118d057a1d6"></a>
 DSPCLASS *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a7208787ab8bfe20c158f4118d057a1d6">Display</a> = 0</td></tr>
 <tr class="memdesc:a7208787ab8bfe20c158f4118d057a1d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display Object Pointer. <br /></td></tr>
 <tr class="separator:a7208787ab8bfe20c158f4118d057a1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0152106d2fbda47744771691536589e0"><td class="memItemLeft" align="right" valign="top"><a id="a0152106d2fbda47744771691536589e0"></a>
-RFCLASS *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a0152106d2fbda47744771691536589e0">RF</a> = 0</td></tr>
-<tr class="memdesc:a0152106d2fbda47744771691536589e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">RF-Radio Object Pointer. <br /></td></tr>
+RFCLASS *&#160;</td><td class="memItemRight" valign="bottom"><b>RF</b> = 0</td></tr>
 <tr class="separator:a0152106d2fbda47744771691536589e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a693c9800858365738aa83011cfb16ffd"><td class="memItemLeft" align="right" valign="top"><a id="a693c9800858365738aa83011cfb16ffd"></a>
-byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_item.html#a693c9800858365738aa83011cfb16ffd">Selected</a> = <a class="el" href="group___s_e_l.html#ga09d444abc77ba9f4bf20f632cd585918">SEL_NONE</a></td></tr>
-<tr class="memdesc:a693c9800858365738aa83011cfb16ffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display focus point. <br /></td></tr>
-<tr class="separator:a693c9800858365738aa83011cfb16ffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4db9efe17f296b3ac7b85c1798c29dc"><td class="memItemLeft" align="right" valign="top"><a id="ad4db9efe17f296b3ac7b85c1798c29dc"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><b>XPos</b> =0</td></tr>
+<tr class="separator:ad4db9efe17f296b3ac7b85c1798c29dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78e75642e212a0be0da1ea960e86dae7"><td class="memItemLeft" align="right" valign="top"><a id="a78e75642e212a0be0da1ea960e86dae7"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><b>YPos</b> =0</td></tr>
+<tr class="separator:a78e75642e212a0be0da1ea960e86dae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -173,55 +178,13 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Navigator</b></td></
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><b>ITEM</b> Menu-Item Base Class ie <em>Interface</em>. </p>
 <ol type="1">
-<li>Object 'Display' is available in every Item assigned by Constructor. Each Item-Type can rely on 'Display' being defined but each Item must contain its own implementation of <a class="el" href="class_menu_item.html#adb14928626ae7067fda6a1d4e05aae64" title="Keypad Navigate by Navigate() Keys.">Navigate()</a> and corresponding Display methods. </li>
+<li>Object 'Display' is available in every Item assigned by Constructor. Each Item-Type can rely on 'Display' being defined but each Item must contain its own implementation of <a class="el" href="class_menu_item.html#a24e844a0e9a399f588d5d11a34847b1f" title="Keypad Navigate by KEY.">Navigate()</a> and corresponding Display methods. </li>
 </ol>
 
-<p class="definition">Definition at line <a class="el" href="_menu_8h_source.html#l00024">24</a> of file <a class="el" href="_menu_8h_source.html">Menu.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac7ba5b4db5814dc98244bf4b4b1a33dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7ba5b4db5814dc98244bf4b4b1a33dd">&#9670;&nbsp;</a></span>Command()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int MenuItem::Command </td>
-          <td>(</td>
-          <td class="paramtype">byte&#160;</td>
-          <td class="paramname"><em>_CMD</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>_Value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Item Command Console. </p>
-<p>Command Console. </p>
-
-<p class="definition">Definition at line <a class="el" href="_menu_8cpp_source.html#l00014">14</a> of file <a class="el" href="_menu_8cpp_source.html">Menu.cpp</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-E32-20C9/<a class="el" href="_menu_8h_source.html">Menu.h</a></li>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-E32-20C9/<a class="el" href="_menu_8cpp_source.html">Menu.cpp</a></li>
+<p class="definition">Definition at line <a class="el" href="_menu_8h_source.html#l00078">78</a> of file <a class="el" href="_menu_8h_source.html">Menu.h</a>.</p>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="_menu_8h_source.html">Menu.h</a></li>
+<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="_menu_8cpp_source.html">Menu.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

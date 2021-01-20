@@ -5,8 +5,8 @@
 \mbox{\hyperlink{class_tode}{Tode}} Class.  
 
 
-{\ttfamily \#include \char`\"{}Constants.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Devices.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Const.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Dev.\+h\char`\"{}}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -19,18 +19,31 @@ class \mbox{\hyperlink{class_tode}{Tode}}
 
 
 \begin{DoxyPre}
- \mbox{\hyperlink{class_tode}{Tode}} class represents the 'Control' Configuration.  Any Device Settings are stored in System.
- All Radio Settings are stored in System except Radio Address.
- It is a '\mbox{\hyperlink{class_menu_list}{MenuList}}' of Devices.\end{DoxyPre}
+Two different types of \mbox{\hyperlink{class_tode}{Tode}} will exist.
+\begin{DoxyItemize}
+\item ThisTode
+ EEPROM Configuration with accessable Remote Control at 0x0000
+ \mbox{\hyperlink{class_device}{Device}} Settings like IO-\/Pin stored in LOCAL SYSTEM SETTING EEPROM space. (Not Control Space)
+ All \mbox{\hyperlink{class_device}{Device}} Item Values will be gotten from HW-\/Control.  Those Values will need RF-\/requested
+\item Remote Todes
+ All Value SET/GET will be acheived through RF requests
 
-
-
-\begin{DoxyPre} System Settings will be saved at the tail of EEPROM space.
+ System Settings will be saved at the tail of EEPROM space.
  ThisTode will be the first \mbox{\hyperlink{class_tode}{Tode}} at the start of EEPROM space.
  Subsequent Remote \mbox{\hyperlink{class_tode}{Tode}} configuration will be stored after ThisTode from start.
  We will no longer use Tode-\/UID but instead use RF-\/Addr + 15 Arduino ID from Peer.
  Pinging will occur on FFFF but be filtered by the 1-\/nibble Arduino ID.
-\end{DoxyPre}
- \begin{DoxyAuthor}{Authors}
-2019-\/12-\/16 T\+Git-\/\+Tech Origin 
+
+ \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]
+\begin{DoxyItemize}
+\item AddDevice( with Multi-\/List of Controls ) and AddControl ( One Control )
+
+\end{DoxyItemize}\end{DoxyRefDesc}
+\begin{DoxyAuthor}{Authors}
+
+   2019-\/12-\/16  TGit-\/Tech   Origin
+
 \end{DoxyAuthor}
+
+\end{DoxyItemize}\end{DoxyPre}

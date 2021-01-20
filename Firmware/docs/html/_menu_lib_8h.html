@@ -94,6 +94,7 @@ $(document).ready(function(){initNavTree('_menu_lib_8h.html',''); initResizable(
 <p>Library to expand <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a> class for specific usage.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_menu_8h_source.html">Menu.h</a>&quot;</code><br />
+<code>#include &lt;EEPROM.h&gt;</code><br />
 </div>
 <p><a href="_menu_lib_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -106,7 +107,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>ITEM</b> adds <em>NAME</em> to <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a> stored in either MEM or EEPROM determined by Constructor.  <a href="class_menu_name.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_name_key.html">MenuNameKey</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>ITEM</b> injects <a class="el" href="group___k_e_y.html">Navigate() Keys</a> when KEYOKAY is pressed on Name (Used to add devices).  <a href="class_menu_name_key.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>ITEM</b> injects KEY when NAVKEYOKAY is pressed on Name (Used to add devices).  <a href="class_menu_name_key.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_value.html">MenuValue</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>ITEM</b> adds <em>VALUE</em> to <a class="el" href="class_menu_name.html" title="ITEM adds NAME to MenuItem stored in either MEM or EEPROM determined by Constructor.">MenuName</a> for a Name-&gt;Value Pair + Number-Naming ability.  <a href="class_menu_value.html#details">More...</a><br /></td></tr>
@@ -114,8 +115,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_menu_value_1_1_number_name.html">MenuValue::NumberName</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Text-Name Numbers.  <a href="struct_menu_value_1_1_number_name.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_v_digit_set.html">MVDigitSet</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>ITEM</b> adds On-Display <em>Per-Digit</em> SET feature to <a class="el" href="class_menu_value.html" title="ITEM adds VALUE to MenuName for a Name-&gt;Value Pair + Number-Naming ability.">MenuValue</a>.  <a href="class_m_v_digit_set.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_value_dig_set.html">MenuValueDigSet</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>ITEM</b> adds On-Display <em>Per-Digit</em> SET feature to <a class="el" href="class_menu_value.html" title="ITEM adds VALUE to MenuName for a Name-&gt;Value Pair + Number-Naming ability.">MenuValue</a>.  <a href="class_menu_value_dig_set.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

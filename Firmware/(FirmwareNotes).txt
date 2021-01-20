@@ -62,3 +62,29 @@ Tode-E32-20C9
 -------------------------
 Setup E32Lib and GetParam
 EEPROM updates and Tode AddDevice
+
+-------------------------
+Tode-E32-20CR
+-------------------------
+This version is a re-organization.
+Tried multiple opproaches for a global RF object
+Resolved to use RF pointer set by Navigator->Add, List->Add, and Item->Add
+Divided DB.h into it's own file
+Gave Menu item files a 'mi' prefix and Menu lists 'ml' prefix
+filename change Main to Sys
+RFC for RF Protocol Handling in seperate files
+Extracted EEPROM definitions to EEMap.h
+RF GET/GOT Config Partially working with TodeName & Devices but missing devices and scrambled
+
+-------------------------
+Tode-E32-211I
+-------------------------
+Small CONFIG [58] byte Add Tode - Semi working
+Remote Control on OnOFf Switch working
+MenuRFValue merged with Device
+VTHEX+VTINT Setting mostly correct (still jumps no. on first digit)
+
+-------------------------
+Tode-E32-211K
+-------------------------
+

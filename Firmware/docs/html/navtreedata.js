@@ -25,13 +25,16 @@
 var NAVTREE =
 [
   [ "Tode", "index.html", [
-    [ "Introduction", "index.html", [
+    [ "Main Page", "index.html", [
+      [ "Files & Abreviations", "index.html#Files", null ],
       [ "Conceptual Overview", "index.html#Overview", null ],
       [ "Display-Type Encapsulation", "index.html#Display", null ],
       [ "User-Navigation", "index.html#Navigation", null ],
       [ "New Devices", "index.html#DEVICE", null ],
+      [ "EEPROM Allocation Map", "index.html#EEPROM", null ],
       [ "New IO-HDW", "index.html#IO-HDW", null ]
     ] ],
+    [ "Todo List", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -56,8 +59,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"___doxy_intro_8h_source.html",
-"group___a_e_b.html#gac3cb7b1b0d6ce41d662a0e54a8a19145"
+"___doxy_8h_source.html",
+"group___d_s_p_c_o_l_o_r_s.html#ga07fc0f45feae04b5da68627d5cf3ac62"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

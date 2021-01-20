@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 20C9</span>
+   &#160;<span id="projectnumber">ver. 211K</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -91,13 +91,13 @@ $(document).ready(function(){initNavTree('group___d_s_p_s_e_t_t_i_n_g_s.html',''
 </div><!--header-->
 <div class="contents">
 
-<p>In <a class="el" href="_display_8h.html" title="Itemize various Display differences.">Display.h</a>.  
+<p>In Display.h.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ga72f44a6630396e0a1fa288d4452dd2e0"><td class="memItemLeft" align="right" valign="top"><a id="ga72f44a6630396e0a1fa288d4452dd2e0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>VALCOL</b>&#160;&#160;&#160;72</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VALCOL</b>&#160;&#160;&#160;80</td></tr>
 <tr class="separator:ga72f44a6630396e0a1fa288d4452dd2e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gada0cc738d27aad251151e69cb8d250e1"><td class="memItemLeft" align="right" valign="top"><a id="gada0cc738d27aad251151e69cb8d250e1"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SCREENWIDTH</b>&#160;&#160;&#160;128</td></tr>
@@ -114,6 +114,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gad9019b4c84fe67c59118b7a5699a6b1c"><td class="memItemLeft" align="right" valign="top"><a id="gad9019b4c84fe67c59118b7a5699a6b1c"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>TITLECHARHEIGHT</b>&#160;&#160;&#160;13</td></tr>
 <tr class="separator:gad9019b4c84fe67c59118b7a5699a6b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf17910f131ca6864a8dcfa17538b1eb2"><td class="memItemLeft" align="right" valign="top"><a id="gaf17910f131ca6864a8dcfa17538b1eb2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TITLECHARWIDTH</b>&#160;&#160;&#160;11</td></tr>
+<tr class="separator:gaf17910f131ca6864a8dcfa17538b1eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga71b31a895bcf5bb2853a807cbe6fd04e"><td class="memItemLeft" align="right" valign="top"><a id="ga71b31a895bcf5bb2853a807cbe6fd04e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DSP_BEGIN</b>&#160;&#160;&#160;initR(INITR_BLACKTAB)</td></tr>
 <tr class="separator:ga71b31a895bcf5bb2853a807cbe6fd04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,15 +135,33 @@ Macros</h2></td></tr>
 <tr class="memitem:ga646d3625c8f6e3b946a80a158aead56e"><td class="memItemLeft" align="right" valign="top"><a id="ga646d3625c8f6e3b946a80a158aead56e"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>SETCURSOR</b>&#160;&#160;&#160;setCursor</td></tr>
 <tr class="separator:ga646d3625c8f6e3b946a80a158aead56e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab814d2aa388b74d504673d0068cab196"><td class="memItemLeft" align="right" valign="top"><a id="gab814d2aa388b74d504673d0068cab196"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>HIGHLIGHT</b>&#160;&#160;&#160;setTextColor(GREENYELLOW)</td></tr>
-<tr class="separator:gab814d2aa388b74d504673d0068cab196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1291f416b069313021b519eea62d5bf1"><td class="memItemLeft" align="right" valign="top"><a id="ga1291f416b069313021b519eea62d5bf1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>NORMAL</b>&#160;&#160;&#160;setTextColor(WHITE, RED)</td></tr>
-<tr class="separator:ga1291f416b069313021b519eea62d5bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga289a6675272a5b9fba762870915a83ee"><td class="memItemLeft" align="right" valign="top"><a id="ga289a6675272a5b9fba762870915a83ee"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TXTNORM</b>&#160;&#160;&#160;setTextColor(WHITE)</td></tr>
+<tr class="separator:ga289a6675272a5b9fba762870915a83ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga230b951846140284a5beb368139e17c0"><td class="memItemLeft" align="right" valign="top"><a id="ga230b951846140284a5beb368139e17c0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TXTSELT</b>&#160;&#160;&#160;setTextColor(YELLOW)</td></tr>
+<tr class="separator:ga230b951846140284a5beb368139e17c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacec30a446c59267a21f63ffe152bf985"><td class="memItemLeft" align="right" valign="top"><a id="gacec30a446c59267a21f63ffe152bf985"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TXTSET</b>&#160;&#160;&#160;setTextColor(MAROON)</td></tr>
+<tr class="separator:gacec30a446c59267a21f63ffe152bf985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c93f9a6a0dee6f129a032477d0350c1"><td class="memItemLeft" align="right" valign="top"><a id="ga7c93f9a6a0dee6f129a032477d0350c1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BGNAMESELT</b>&#160;&#160;&#160;fillRect(XPos,YPos-ITEMCHARHEIGHT+2,VALCOL,ITEMCHARHEIGHT,BLUE)</td></tr>
+<tr class="separator:ga7c93f9a6a0dee6f129a032477d0350c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4c73e16bb56349273e2616ae9dbc5f3"><td class="memItemLeft" align="right" valign="top"><a id="gae4c73e16bb56349273e2616ae9dbc5f3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BGNAMENORM</b>&#160;&#160;&#160;fillRect(XPos,YPos-ITEMCHARHEIGHT+2,VALCOL,ITEMCHARHEIGHT,BLACK)</td></tr>
+<tr class="separator:gae4c73e16bb56349273e2616ae9dbc5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c9c247636baeed3bfe7c3341b81c60e"><td class="memItemLeft" align="right" valign="top"><a id="ga5c9c247636baeed3bfe7c3341b81c60e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BGVALSELT</b>&#160;&#160;&#160;fillRect(XPos+VALCOL,YPos-ITEMCHARHEIGHT+2,SCREENWIDTH-VALCOL,ITEMCHARHEIGHT,BLUE)</td></tr>
+<tr class="separator:ga5c9c247636baeed3bfe7c3341b81c60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadfe7d700b18a137dd7662d858821e6b2"><td class="memItemLeft" align="right" valign="top"><a id="gadfe7d700b18a137dd7662d858821e6b2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BGVST</b>&#160;&#160;&#160;fillRect(XPos+VALCOL,YPos-ITEMCHARHEIGHT+2,SCREENWIDTH-VALCOL,ITEMCHARHEIGHT,YELLOW)</td></tr>
+<tr class="separator:gadfe7d700b18a137dd7662d858821e6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaab1620065a8e3cab0bc4a42200576dd"><td class="memItemLeft" align="right" valign="top"><a id="gaaab1620065a8e3cab0bc4a42200576dd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BGVALNORM</b>&#160;&#160;&#160;fillRect(XPos+VALCOL,YPos-ITEMCHARHEIGHT+2,SCREENWIDTH-VALCOL,ITEMCHARHEIGHT,BLACK)</td></tr>
+<tr class="separator:gaaab1620065a8e3cab0bc4a42200576dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>In <a class="el" href="_display_8h.html" title="Itemize various Display differences.">Display.h</a>. </p>
+<p>In Display.h. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -12,44 +12,48 @@
 Inheritance diagram for Menu\+Item\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=5.000000cm]{class_menu_item}
+\includegraphics[height=3.097345cm]{class_menu_item}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_menu_item_adb14928626ae7067fda6a1d4e05aae64}\label{class_menu_item_adb14928626ae7067fda6a1d4e05aae64}} 
-virtual byte \mbox{\hyperlink{class_menu_item_adb14928626ae7067fda6a1d4e05aae64}{Navigate}} (byte \+\_\+\+Key, byte \+\_\+\+Row=0)=0
-\begin{DoxyCompactList}\small\item\em Keypad Navigate by \mbox{\hyperlink{group___k_e_y}{Navigate() Keys}}. \end{DoxyCompactList}\item 
-virtual int \mbox{\hyperlink{class_menu_item_ac7ba5b4db5814dc98244bf4b4b1a33dd}{Command}} (byte \+\_\+\+C\+MD, int \+\_\+\+Value)
-\begin{DoxyCompactList}\small\item\em Item Command Console. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_menu_item_a2867e9ded0724551f7f585b8f5a62f06}\label{class_menu_item_a2867e9ded0724551f7f585b8f5a62f06}} 
-virtual byte \mbox{\hyperlink{class_menu_item_a2867e9ded0724551f7f585b8f5a62f06}{Dev\+Type}} (byte \+\_\+\+D\+T\+P\+Key=\mbox{\hyperlink{group___d_t_p_ga86beaa067694390507a20326ec7d1b6e}{D\+T\+P\+\_\+\+D\+E\+V\+T\+Y\+PE}})
-\begin{DoxyCompactList}\small\item\em Device-\/\+Type Parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_item_a24e844a0e9a399f588d5d11a34847b1f}\label{class_menu_item_a24e844a0e9a399f588d5d11a34847b1f}} 
+virtual byte \mbox{\hyperlink{class_menu_item_a24e844a0e9a399f588d5d11a34847b1f}{Navigate}} (byte \+\_\+\+Key)
+\begin{DoxyCompactList}\small\item\em Keypad Navigate by K\+EY. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_item_a1049641bfade577631108d8a936fe0f5}\label{class_menu_item_a1049641bfade577631108d8a936fe0f5}} 
+virtual void \mbox{\hyperlink{class_menu_item_a1049641bfade577631108d8a936fe0f5}{Show}} (byte \+\_\+\+X\+Pos=0, byte \+\_\+\+Y\+Pos=0)
+\begin{DoxyCompactList}\small\item\em Display the Item. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_menu_item_af51f75c5c9587ba6e9d96fe8a67fad12}\label{class_menu_item_af51f75c5c9587ba6e9d96fe8a67fad12}} 
 virtual byte \mbox{\hyperlink{class_menu_item_af51f75c5c9587ba6e9d96fe8a67fad12}{Loop}} ()
-\begin{DoxyCompactList}\small\item\em System loop() \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_menu_item_a818c0496f05704ea9782a210bc0a3929}\label{class_menu_item_a818c0496f05704ea9782a210bc0a3929}} 
-virtual byte \mbox{\hyperlink{class_menu_item_a818c0496f05704ea9782a210bc0a3929}{ID}} ()
-\begin{DoxyCompactList}\small\item\em G\+ET Numeric Item ID. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_menu_item_a1775cbad11173d092ab73fd2f0c532d0}\label{class_menu_item_a1775cbad11173d092ab73fd2f0c532d0}} 
-virtual void \mbox{\hyperlink{class_menu_item_a1775cbad11173d092ab73fd2f0c532d0}{ID}} (byte \+\_\+\+ID)
-\begin{DoxyCompactList}\small\item\em S\+ET Numeric Item ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em System loop() \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_item_ae5e0303720cd3769efdfd3f681ec0c86}\label{class_menu_item_ae5e0303720cd3769efdfd3f681ec0c86}} 
+byte \mbox{\hyperlink{class_menu_item_ae5e0303720cd3769efdfd3f681ec0c86}{Nav\+Selected}} = \mbox{\hyperlink{group___s_e_l_ga09d444abc77ba9f4bf20f632cd585918}{S\+E\+L\+\_\+\+N\+O\+NE}}
+\begin{DoxyCompactList}\small\item\em Display focus point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_item_ad6faaa6829a842bd3c47e6a56b74ee99}\label{class_menu_item_ad6faaa6829a842bd3c47e6a56b74ee99}} 
+byte \mbox{\hyperlink{class_menu_item_ad6faaa6829a842bd3c47e6a56b74ee99}{R\+F\+ID}} = 0x\+FF
+\begin{DoxyCompactList}\small\item\em R\+F\+ID of Item for Rx\+Tx. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_item_a8191cc6be97c9d7f0ea4ce6934a97dfc}\label{class_menu_item_a8191cc6be97c9d7f0ea4ce6934a97dfc}} 
+\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ \mbox{\hyperlink{class_menu_item_a8191cc6be97c9d7f0ea4ce6934a97dfc}{Sub\+List}} = 0
+\begin{DoxyCompactList}\small\item\em Item links-\/$>$to a Link-\/\+List. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_menu_item_a8191cc6be97c9d7f0ea4ce6934a97dfc}\label{class_menu_item_a8191cc6be97c9d7f0ea4ce6934a97dfc}} 
-\mbox{\hyperlink{class_menu_list}{Menu\+List}} $\ast$ \mbox{\hyperlink{class_menu_item_a8191cc6be97c9d7f0ea4ce6934a97dfc}{Sub\+List}} = 0
-\begin{DoxyCompactList}\small\item\em Item links-\/$>$to a Link-\/\+List. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_menu_item_a7208787ab8bfe20c158f4118d057a1d6}\label{class_menu_item_a7208787ab8bfe20c158f4118d057a1d6}} 
 D\+S\+P\+C\+L\+A\+SS $\ast$ \mbox{\hyperlink{class_menu_item_a7208787ab8bfe20c158f4118d057a1d6}{Display}} = 0
 \begin{DoxyCompactList}\small\item\em Display Object Pointer. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_menu_item_a0152106d2fbda47744771691536589e0}\label{class_menu_item_a0152106d2fbda47744771691536589e0}} 
-R\+F\+C\+L\+A\+SS $\ast$ \mbox{\hyperlink{class_menu_item_a0152106d2fbda47744771691536589e0}{RF}} = 0
-\begin{DoxyCompactList}\small\item\em R\+F-\/\+Radio Object Pointer. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_menu_item_a693c9800858365738aa83011cfb16ffd}\label{class_menu_item_a693c9800858365738aa83011cfb16ffd}} 
-byte \mbox{\hyperlink{class_menu_item_a693c9800858365738aa83011cfb16ffd}{Selected}} = \mbox{\hyperlink{group___s_e_l_ga09d444abc77ba9f4bf20f632cd585918}{S\+E\+L\+\_\+\+N\+O\+NE}}
-\begin{DoxyCompactList}\small\item\em Display focus point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+R\+F\+C\+L\+A\+SS $\ast$ {\bfseries RF} = 0
+\item 
+\mbox{\Hypertarget{class_menu_item_ad4db9efe17f296b3ac7b85c1798c29dc}\label{class_menu_item_ad4db9efe17f296b3ac7b85c1798c29dc}} 
+byte {\bfseries X\+Pos} =0
+\item 
+\mbox{\Hypertarget{class_menu_item_a78e75642e212a0be0da1ea960e86dae7}\label{class_menu_item_a78e75642e212a0be0da1ea960e86dae7}} 
+byte {\bfseries Y\+Pos} =0
+\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,31 +70,14 @@ class {\bfseries Navigator}
 
 
 \begin{DoxyEnumerate}
-\item Object \textquotesingle{}Display\textquotesingle{} is available in every Item assigned by Constructor. Each Item-\/\+Type can rely on \textquotesingle{}Display\textquotesingle{} being defined but each Item must contain its own implementation of \mbox{\hyperlink{class_menu_item_adb14928626ae7067fda6a1d4e05aae64}{Navigate()}} and corresponding Display methods. 
+\item Object \textquotesingle{}Display\textquotesingle{} is available in every Item assigned by Constructor. Each Item-\/\+Type can rely on \textquotesingle{}Display\textquotesingle{} being defined but each Item must contain its own implementation of \mbox{\hyperlink{class_menu_item_a24e844a0e9a399f588d5d11a34847b1f}{Navigate()}} and corresponding Display methods. 
 \end{DoxyEnumerate}
 
-Definition at line 24 of file Menu.\+h.
-
-
-
-\doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_menu_item_ac7ba5b4db5814dc98244bf4b4b1a33dd}\label{class_menu_item_ac7ba5b4db5814dc98244bf4b4b1a33dd}} 
-\index{MenuItem@{MenuItem}!Command@{Command}}
-\index{Command@{Command}!MenuItem@{MenuItem}}
-\doxysubsubsection{\texorpdfstring{Command()}{Command()}}
-{\footnotesize\ttfamily int Menu\+Item\+::\+Command (\begin{DoxyParamCaption}\item[{byte}]{\+\_\+\+C\+MD,  }\item[{int}]{\+\_\+\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Item Command Console. 
-
-Command Console. 
-
-Definition at line 14 of file Menu.\+cpp.
+Definition at line 78 of file Menu.\+h.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_menu_8h}{Menu.\+h}}\item 
-C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+E32-\/20\+C9/\mbox{\hyperlink{_menu_8cpp}{Menu.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+R\+C-\/211\+K/\mbox{\hyperlink{_menu_8h}{Menu.\+h}}\item 
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+R\+C-\/211\+K/\mbox{\hyperlink{_menu_8cpp}{Menu.\+cpp}}\end{DoxyCompactItemize}
