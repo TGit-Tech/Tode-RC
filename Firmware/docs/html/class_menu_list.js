@@ -6,6 +6,7 @@ var class_menu_list =
     [ "Loop", "class_menu_list.html#aca1747bceb5bf14f233ae128a1437e8c", null ],
     [ "Navigate", "class_menu_list.html#a89cba35cb735956d275b2cbcc4d490cd", null ],
     [ "Title", "class_menu_list.html#ac14ecf727b009c14b8fc584560f384da", null ],
+    [ "Update", "class_menu_list.html#a7b91de670e0cdc42348b574a8a51a5a8", null ],
     [ "Navigator", "class_menu_list.html#a1c39e2e7a194cc6a61b868bc08f8b3c8", null ],
     [ "CurrItem", "class_menu_list.html#aa6b013621b7b33231a9d7bed44a5f119", null ],
     [ "Display", "class_menu_list.html#a3d375f4bb212075a6820f62b9711a9a7", null ],

@@ -41,8 +41,16 @@ bool RxPacket::IsValid() {
   return true;
 }
 //-----------------------------------------------------------------------------------------------------
-int RxPacket::Value(byte _RFID) {             DBENTERAL(("RadioPacket::Value GET"),(_RFID))
-  return 0;
+int RxPacket::Value(byte _RFID) {             DBENTERAL(("RxPacket::Value(GET) RFID: "),(_RFID))
+  // Check bytes for RFID then return Value
+  for ( int i=PKB_RFID; i<Size; i=i+3 ) {
+    if ( Bytes[i]==_RFID ) {
+      DBINFOL(("RxPacket::Value(GET) RFID Found."))
+      return word(Bytes[i+1],Bytes[i+2]);
+    }
+  }
+  DBERRORL(("RxPacket::Value(GET) RFID NOT Found."))
+  return VALNOTSET;
 }
 //-----------------------------------------------------------------------------------------------------
 void RxPacket::SaveTodeConfig(int _EEAddress) {      
@@ -70,6 +78,7 @@ TxPacket::TxPacket(byte _SecNet, byte _Type, int _ToRF, byte _Ver, byte _DevRFID
   else if ( _Type == PKT_SETVAL )     { DBINFOL(("TxPacket::TxPacket PKT_SETVAL")) Size = 12; }
   
   else if ( _Type == PKT_GOTCONFIG )  { DBINFOL(("TxPacket::TxPacket PKT_GOTCONFIG")) Size=PKB_TODECONFIG; }    // Start TodeConfig at Byte[9]
+  else if ( _Type == PKT_GOTVALS ) { DBINFOL(("TxPacket::TxPacket PKT_GOTVALS")) Size=PKB_RFID; }               // Start Values at Byte[9]
   
   else { DBERRORAL(("UNIDENTIFIED Packet Type : "),(_Type)) return; }
 
@@ -123,6 +132,12 @@ void TxPacket::AddTodeConfig(int _EEAddress) {
     if ( Size>57 ) { DBERRORL(("TxPacket::TodeConfig Size>57")) break; }
   }
   DBINFOAL(("TxPacket::AddTodeConfig Size = "),(Size))
+}
+//-----------------------------------------------------------------------------------------------------
+void TxPacket::AddValue(byte _RFID, int _Value) {
+  Bytes[Size] = _RFID; Size++;
+  Bytes[Size] = highByte(_Value); Size++;
+  Bytes[Size] = lowByte(_Value); Size++;
 }
 //_____________________________________________________________________________________________________________________
 #endif

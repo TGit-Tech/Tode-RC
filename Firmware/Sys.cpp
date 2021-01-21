@@ -158,6 +158,7 @@ byte Sys::Loop(byte _FinalKey) {
     //#define DT_RO_PRESS   0x7C    ///< Pressure Device
     //#define DT_RO_TEMP    0x7B    ///< Temperature Device
     //#define DT_RO_DIST    0x7A    ///< Distance Sensing Device
+
   if ( 0x7A <= _FinalKey && _FinalKey <= 0x7E ) {
     int BeforeMEM = freeMemory();
     //DeviceList->Add( ThisTode->NewDevice(_FinalKey) );  // Add the Requested Device
@@ -212,8 +213,38 @@ void Sys::RFLoop() {
       if ( dev==0 ) { DBERRORL(("Sys::RFLoop PKT_SETVAL dev==0")) return; }
       DBINFOAL(("Sys::RFLoop PKT_SETVAL dev->Value(SET): "),(RF->Packet->SetValue()))
       dev->Value(RF->Packet->SetValue());
-    }
     //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    } else if ( RF->Packet->Type() == PKT_GETVALS ) {
+      DBINFOL(("Sys::RFLoop RF->Packet->Type() == PKT_GETVALS"))
+      if ( ThisTode == 0 ) { DBERRORL(("Sys::RFLoop PKT_GETVALS ThisTode == 0")) return; }
+      
+      // 1. Append every ThisTode Device Value to Packet and Send
+      TxPacket Pkt(EEPROM.read(EMC_SECNET), PKT_GOTVALS, RF->Packet->FromRF(), ThisTode->Version() );
+      for ( int i=0; i<AEB_MAXDEVICES; i++ ) {
+        if ( ThisTode->Devices[i]!=0 ) {
+          if ( ThisTode->Devices[i]->RFID<AEB_MAXDEVICES ) {
+            Pkt.AddValue(ThisTode->Devices[i]->RFID, ThisTode->Devices[i]->Value() ); }
+        }
+      }
+      RF->Send(&Pkt);
+    //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    } else if ( RF->Packet->Type() == PKT_GOTVALS ) {
+      DBINFOL(("Sys::RFLoop RF->Packet->Type() == PKT_GOTVALS"))
+
+      // 1.  Which Tode are these values for?
+      Tode* td = RFTode( RF->Packet->FromRF() );
+      if ( td==0 ) { DBERRORL(("Sys::RFLoop PKT_GOTVALS NO-TODE td==0: ")) return; }      
+      // 2.  Record the Values in the Devices
+      for ( int i=0; i<AEB_MAXDEVICES; i++ ) {
+        if ( td->Devices[i]!=0 ) {
+          td->Devices[i]->RxValue( RF->Packet->Value( td->Devices[i]->RFID ) );
+          DBINFOAL(("Sys::RFLoop PKT_GOTVALS RxValue(RFID): "),(td->Devices[i]->RFID))
+        }
+      }
+      // 3. Update the Dispaly
+      Navigate( NAVDSPLIST );
+    }
+    
     // Delete Packet after Processing
     delete(RF->Packet); RF->Packet = 0;
   }

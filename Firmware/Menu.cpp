@@ -18,6 +18,7 @@ void MenuItem::Show(byte _XPos, byte _YPos) { if (_XPos!=0) XPos=_XPos; if (_YPo
 MenuList::MenuList(const char* _CTitle) { CTitle = _CTitle; this->Display = &oDisplay; }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 byte MenuList::Loop() { return 0; }
+void MenuList::Update() { return; }
 const char* MenuList::Title() { if (CTitle==0) return "?Name?"; return CTitle; }
 //-----------------------------------------------------------------------------------------------------
 MenuItem* MenuList::Add(MenuItem* _Item) {
@@ -97,17 +98,11 @@ byte MenuList::Navigate(byte _Key) {                        DBENTERAL(("MenuList
       CurrItem->NavSelected = SEL_NONE; CurrItem->Show();
       CurrItem = CurrItem->NextItem;
       CurrItem->NavSelected = SEL_NAME; CurrItem->Show();
-    } 
-    //_Key = NAVDSPLIST;
-    
-  } /* else if ( _Key == NAVKEYOKAY ) {
-    if ( 1<=this->RFID && this->RFID<=9 ) {
-      int RFTodeAddr = word(EEPROM.read(this->RFID*AEB_TODEALLOC+1),EEPROM.read(this->RFID*AEB_TODEALLOC));
-      byte TodeVer = EEPROM.read(this->RFID*AEB_TODEALLOC+2);
-      RF->Send(PKT_GETVALS, RFTodeAddr, TodeVer);
-    }
-    // This section needs moved OUT of Menu.cpp I think - Higher more implemented place?
-  } */
+    }   
+  } else if ( _Key == NAVKEYOKAY ) {
+    Update();
+    return NAVKEYNONE;
+  }
   
   //------------------------------------------------------
   if (_Key==NAVDSPLIST || _Key==NAVDSPNEWLIST) {            // Update the Display

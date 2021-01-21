@@ -25,7 +25,8 @@ class Tode : public MenuList {
     Tode(byte _TodeIndex);                                      ///< EEPROM Address of Tode Configuration
     
     virtual const char*   Title() override;                     ///< Points to TodeName->Name()
-
+    virtual void          Update() override;                    ///< Update the Tode Information
+    
     virtual MenuItem*     NewDevice(byte _DTKey);               ///< Creates & Adds a New Device
     virtual MenuItem*     AddDevice(byte _DTKey, byte _RFID);   ///< Menu add Device using \ref KEY
     virtual void          EELoadDevices();

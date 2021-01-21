@@ -30,5 +30,6 @@ var _r_f_c_8h =
     [ "PKT_PING", "group___p_k_t.html#ga2751abd34957b4a985fb464d09aa2077", null ],
     [ "PKT_PINGBACK", "group___p_k_t.html#ga823b78928e0529b2537d8d93b614378b", null ],
     [ "PKT_SETVAL", "group___p_k_t.html#ga1a44749b87157655be7d0ab3dc206612", null ],
-    [ "PKV_EXPIRE_TIME", "group___p_k_v.html#ga296513293cf451f0886d2f07ce43f44c", null ]
+    [ "PKV_EXPIRE_TIME", "group___p_k_v.html#ga296513293cf451f0886d2f07ce43f44c", null ],
+    [ "VALNOTSET", "_r_f_c_8h.html#ad54662a2f85767d6698c5c0aa32e9997", null ]
 ];

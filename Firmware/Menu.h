@@ -29,7 +29,6 @@
   #define NAVKEYDOWN        0xFB
   #define NAVKEYSET         0xFA
   #define NAVKEYOKAY        0xF9
-  #define KEYPRESSmiN       0xF0
   ///@}
   /******************************************************************************//**
   * @defgroup NAVDSP Display Navigate() Constants
@@ -50,7 +49,6 @@
   #define NAVGOTOSUBLIST    0xCF    ///< Activated in NavName() of MenuName
   #define NAVEXITNAMESET    0xCE
   #define NAVSAVENAMESET    0xCD
-  #define NAVGETREMVALS     0xCC
   #define NAVDELTODE        0xCB
   //#define NAVRFPCCONNGO     0xCB    ///< Loop the Radio PC Connection
   //#define NAVRFPCCONNSTOP   0xCA    ///< Stop Looping the Radio PC Connection
@@ -111,6 +109,7 @@ class MenuList {
     virtual byte          Navigate(byte _Key);                ///< Keypad Navigate by \ref KEY
     virtual MenuItem*     Add(MenuItem* _Item);               ///< ADD MenuItem to the MenuList
     virtual void          Del(MenuItem* _Item);               ///< DEL MenuItem from the MenuList
+    virtual void          Update();                           ///< Preform updates on Current List
     virtual byte          Loop();                             ///< System loop()
             
     virtual const char*   Title();                            ///< GET List Title/Name

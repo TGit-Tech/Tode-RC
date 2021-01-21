@@ -9,6 +9,7 @@ var class_tode =
     [ "RFAddr", "class_tode.html#a81d7f948e226227cd24246884d9062fe", null ],
     [ "RFAddr", "class_tode.html#a1acb0c85fcbff9d2bcae19f8bbd177d6", null ],
     [ "Title", "class_tode.html#a2f235e21355ea1329b7912175d51d3b9", null ],
+    [ "Update", "class_tode.html#a1aa0525a38f53d2795606b83459d227d", null ],
     [ "Version", "class_tode.html#a912aa3d7150bab0ec181ea7c3ffa784b", null ],
     [ "Version", "class_tode.html#a567b64456c4d62a8ef873ca2bef92e73", null ],
     [ "Devices", "class_tode.html#a787181e4171d6b641cf3e1728d943daa", null ],

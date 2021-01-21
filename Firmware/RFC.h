@@ -12,6 +12,7 @@
 
 #define BNONE         0xFF      ///< Byte NONE/UNSET
 #define INONE         0xFFFF    ///< Integer NONE/UNSET
+#define VALNOTSET     0x8000
 
 /*********************************************//**
  * @defgroup PKT Radio Packet Types
@@ -106,6 +107,7 @@ class TxPacket {
     int     Secure();
     int     Size = 0;
     void    AddTodeConfig(int _EEAddress);
+    void    AddValue(byte _RFID, int _Value);
 
     struct  llBytes {                                               ///< Struct for Extra Bytes (Large Transfer)
       byte Byte = 0xFF; 

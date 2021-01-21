@@ -87,4 +87,8 @@ VTHEX+VTINT Setting mostly correct (still jumps no. on first digit)
 -------------------------
 Tode-E32-211K
 -------------------------
+Remote Value Gets and Set Working
 
+-------------------------
+Tode-E32-211L
+-------------------------

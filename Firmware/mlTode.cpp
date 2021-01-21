@@ -57,10 +57,17 @@ void Tode::EELoadDevices() {
       devType = EEPROM.read(this->EEAddress()+AEB_TODEHEAD+(devIdx*AEB_DEVALLOC));
       if ( devType==BNONE ) { 
         DBINFOA(("Tode::Tode NO Device at"),(devIdx))
-        DBINFOAL(("EEPROM"),(this->EEAddress()+AEB_TODEHEAD+(devIdx*AEB_DEVALLOC),HEX))
+        DBINFOAL(("EEPROM"),(this->EEAddress()+AEB_TODEHEAD+(devIdx*AEB_DEVALLOC)))
       }
       else { this->AddDevice(devType, devIdx); }
     }  
+}
+//-----------------------------------------------------------------------------------------------------
+void Tode::Update() {                                                     DBENTERL(("Tode::Update()"))
+   
+  if ( RF==0 ) { DBERRORL(("Tode::RFGetVals RF==0")) return; }
+  RF->Send(new TxPacket( EEPROM.read(EMC_SECNET), PKT_GETVALS, RFAddr(), Version() ));
+  //TxPacket(byte _SecNet, byte _Type, int _ToRF, byte _Ver=BNONE, byte _DevRFID=BNONE, int _Value = INONE) 
 }
 //-----------------------------------------------------------------------------------------------------
 MenuItem* Tode::NewDevice(byte _DTKey) {                    DBENTERAL(("Tode::NewDevice"),(_DTKey,HEX))

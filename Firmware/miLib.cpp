@@ -53,7 +53,11 @@ byte MenuName::Navigate(byte _Key) {
   if ( NavSelected == SEL_NONE ) { _Key = NavNone(_Key); }
   if ( NavSelected == SEL_NAME ) { _Key = NavName(_Key); }
   if ( NavSelected == SEL_SETNAME ) { _Key = NavNameSet(_Key); }
-  if ( _Key == NAVEXITNAMESET ) { NavSelected=SEL_NAME; return NAVDSPNEWLIST; }
+  if ( _Key == NAVEXITNAMESET ) { 
+    DBINFOL(("MenuName::Navigate Key == NAVEXITNAMESET"))
+    NavSelected=SEL_NAME; 
+    return NAVDSPNEWLIST; 
+  }
   return _Key;
 }
 //-----------------------------------------------------------------------------------------------------
@@ -214,6 +218,11 @@ byte MenuValue::Navigate(byte _Key) {          DBENTERAL(("MenuValue::Navigate")
   if ( NavSelected == SEL_SETNAME ) { _Key = NavNameSet(_Key); }
   if ( NavSelected == SEL_VALUE ) { _Key = NavValue(_Key); }
   if ( NavSelected == SEL_SETVALUE ) { _Key = NavValueSet(_Key); }
+  if ( _Key == NAVEXITNAMESET ) { 
+    DBINFOL(("MenuName::Navigate Key == NAVEXITNAMESET"))
+    NavSelected=SEL_NAME; 
+    return NAVDSPNEWLIST; 
+  }  
   return _Key;
 }
 //-----------------------------------------------------------------------------------------------------

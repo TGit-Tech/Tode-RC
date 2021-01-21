@@ -60,7 +60,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "___doxy_8h_source.html",
-"group___d_s_p_c_o_l_o_r_s.html#ga07fc0f45feae04b5da68627d5cf3ac62"
+"group___b_v.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
