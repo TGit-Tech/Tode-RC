@@ -1,6 +1,13 @@
 /******************************************************************************************************************//**
  * @file E32.h
  * @brief Radio Communication for EBYTE E32 Radio Modules
+ * @notes Communication Only works when Radio Settings are as follow.
+ *        UartRate: 9600bps       FEC:        Enable      Address:  (Set via Menu)
+ *        Parity:   8N1           Fixed Mode: Enable      Channel:  (Set via Menu - MHz)
+ *        AirRate:  2.4kbps       WOR timing: 250ms
+ *        Power:    (Set Menu)    IO mode:    PushPull
+ *        ** Had a hard time figuring out that New Radio installs had to be in 'Fixed Mode'!
+ *        ** Use Radio Menu PC Connect to verify/change be sure to turn off DEBUG and set both Serials to 9600.
  *********************************************************************************************************************/
 #ifndef _E32_H
 #define _E32_H
@@ -8,7 +15,6 @@
 #include "arduino.h"
 #include "RFC.h"
 #define RFCLASS E32Radio
-//#define RFSERIAL Serial1
 
 /*********************************************//**
  * @defgroup E32BYTES Ebyte-E32 Configuration

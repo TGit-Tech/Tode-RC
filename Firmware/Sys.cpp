@@ -24,27 +24,29 @@ int freeMemory() {
 }
 //#####################################################################################################################
 Sys::Sys():
-  Navigator() {                                                                                   DBINITL(("Sys::Sys"))
+  Navigator() {                                                         DBINITL(("Sys::Sys"))
 
-  RF = new E32Radio(/*M0*/22, /*M1*/20, /*TX*/18, /*RX*/19, /*AUX*/21);   // Initialize RF
-  SetupMenu = this->Add(new MenuList("Setup"));                           // Setup
-  ThisTode = this->NewTode(0);                                            // Create ThisTode adds to 'this'
-    
+  // Initialize RF Radio
+  RF = new E32Radio(/*M0*/22, /*M1*/20, /*TX*/18, /*RX*/19, /*AUX*/21);
   RF->Mode(E32_SLEEPMODE);
   DBINFOAL(("Sys::Sys Radio Address: "), (RF->Address(),HEX))
   DBINFOAL(("Sys::Sys Radio Freq[mhz]: "), (RF->Frequency()))
   DBINFOAL(("Sys::Sys Radio Power[db]: "), (RF->TxPower()))
   RF->Mode(E32_NORMMODE);
-  
+
+  // Check ThisTode EEPROM RF-Settings = Actual RF Radio
+  ThisTode = this->NewTode(0);
+  DBINFOAL(("EEPROM RF->Address() = "),((unsigned int)ThisTode->RFAddr(),HEX))
+  if ( RF->Address() != ThisTode->RFAddr() ) { 
+    DBINFOAL(("Sys::Sys UPDATING EEPROM - RF->RadioAddress() != ThisTode->RFAddr()"),(ThisTode->RFAddr(),HEX))
+    ThisTode->RFAddr(RF->Address()); 
+  } else { DBINFOL(("Sys::Sys EEPROM RF-Address Okay - RF->Address() == ThisTode->RFAddr()")) }
+
+  // Build the Setup Menu
+  SetupMenu = this->Add(new MenuList("Setup"));
   BuildSetupMenu();
 
-  // Get ThisTode RFAddr if not same as RF's Update EEPROM
-  if ( RF->Address() != ThisTode->RFAddr() ) { 
-    DBINFOAL(("Sys::Sys RF->RadioAddress() != ThisTode->RFAddr()"),(ThisTode->RFAddr(),HEX))
-    ThisTode->RFAddr(RF->Address()); 
-  } else { DBINFOL(("Sys::Sys RF->Address() == ThisTode->RFAddr()")) }
-
-  // Load Todes from EEPROM
+  // Load Remote Todes from EEPROM
   for ( int i=1; i<AEB_MAXTODES; i++ ) {
     if ( EEPROM.read(i*AEB_TODEALLOC) != BNONE ) {  
       DBINFOAL(("Sys::Sys Tode@EEPROM: "),(i*AEB_TODEALLOC)) 
@@ -97,7 +99,7 @@ Tode* Sys::RFTode(unsigned int RFAddress, bool Create) {  DBENTERAAL(("Sys::RFTo
 //-----------------------------------------------------------------------------------------------------
 // WARNING! : In order to preserve internal object Items/List must be added in hierarcy order.
 //-----------------------------------------------------------------------------------------------------
-void Sys::BuildSetupMenu() {
+void Sys::BuildSetupMenu() {                                    DBENTERL(("Sys::BuildSetupMenu"))
 
   // 1. TodeName
   //MenuEEValue(const char* _CName, int _EEValAddress, byte _ValueType)
@@ -112,17 +114,17 @@ void Sys::BuildSetupMenu() {
   RadioSettings->Add(new RadioTxPower());
   RFPCConn = RadioSettings->Add(new RadioPCConn());
 
-  // 3. Del Device
+  // 3. Devices MenuList
   if (ThisTode==0) { DBERRORL(("Sys::BuildSetupMenu ThisTode==0")) }                            // 2.2 ThisTode Devices
   else {
-    SetupMenu->Add(new MenuName("Devices", DeviceList = new MenuList("Del Device")));                                                                                        
+    SetupMenu->Add(new MenuName("Devices", DeviceList = new MenuList("Devices")));                                                                                        
     for ( int i=0; i<30; i++ ) {                                                                //    *doesn't exit nameset*
       if ( ThisTode->Devices[i]!=0 ) { DeviceList->Add(ThisTode->Devices[i]); }                 //    Add DeviceList
     }
   }
 
-  // 4. Del Todes
-  SetupMenu->Add(new MenuName("Todes", DelTodesList = new MenuList("Del Tode")));
+  // 4. Todes MenuList
+  SetupMenu->Add(new MenuName("Todes", DelTodesList = new MenuList("Todes")));
   
   // 5. Add Device
   //SetupMenu->Add(new MenuName("Devices", DeviceList = new MenuList("Devices")));                // 2. Devices
@@ -131,8 +133,9 @@ void Sys::BuildSetupMenu() {
   AddDeviceList->Add(new MenuName("Pressure",  DT_RO_PRESS));                                   //  2.1.2 Pressure
   AddDeviceList->Add(new MenuName("Temp",      DT_RO_TEMP));                                    //  2.1.3 Temp
   AddDeviceList->Add(new MenuName("Distance",  DT_RO_DIST));                                    //  2.1.4 Distance
+  AddDeviceList->Add(new MenuName("STSTP3W",   DT_RW_STSTP3W));                                 //  2.1.5 Distance
 
-  // 6. Add Tode
+  // 6. AddATode Menu Item
   SetupMenu->Add(AddATode = new AddTode());
 
   // 7. IO-Hdw
@@ -142,26 +145,34 @@ void Sys::BuildSetupMenu() {
   SetupMenu->Add(new MenuName(FIRMWARE));                                                       // FIRMWARE
 
 }
-//-----------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 byte Sys::Loop(byte _FinalKey) {
 
   RFLoop();
+
+  // Loop local devices
+  if ( ThisTode!=0 ) {
+    for ( int i=0; i<AEB_MAXDEVICES; i++ ) {
+      if ( ThisTode->Devices[i]!=0 ) ThisTode->Devices[i]->Loop();
+    }
+  }
   
   // [Specific] -----------------------------------------------
   if ( _FinalKey==0xFF ) return _FinalKey;
   DBINFOAL(("Sys::Loop SPECIFIC FinalKey = "),(_FinalKey,HEX))
-  // Should we call Loop() in Every Tode?
+  // Should we call Loop() in Every Tode? - Just local Tode
   
-  // Add Device (KEYS in miDev.h)
+  
+  // Add Device (KEYS in iDev.h)
     //#define DT_RW_ONOFF   0x7E    ///< On/Off Switching Device
     //#define DT_RO_ONOFF   0x7D    ///< On/Off Monitoring Device
     //#define DT_RO_PRESS   0x7C    ///< Pressure Device
     //#define DT_RO_TEMP    0x7B    ///< Temperature Device
     //#define DT_RO_DIST    0x7A    ///< Distance Sensing Device
 
-  if ( 0x7A <= _FinalKey && _FinalKey <= 0x7E ) {
+  if ( 0x79 <= _FinalKey && _FinalKey <= 0x7E ) {
     int BeforeMEM = freeMemory();
-    //DeviceList->Add( ThisTode->NewDevice(_FinalKey) );  // Add the Requested Device
+    DeviceList->Add( ThisTode->NewDevice(_FinalKey) );  // Add the Requested Device
 
     int AfterMEM = freeMemory();
     DBINFOAL(("Object Size (kb)-> "), (BeforeMEM-AfterMEM))
@@ -173,82 +184,100 @@ byte Sys::Loop(byte _FinalKey) {
   }
   
 }
-//-----------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 void Sys::RFLoop() {
+  
   // Receive RF Data
   if ( RF==0 ) { DBERRORL(("Sys::RFLoop RF==0")) return 0; }
   if ( RFPCConn!=0 ) { if ( RFPCConn->Value()==1 ) { RFPCConn->Loop(); return;} }   // Loop for Radio->PC Connection 
-                                                                                    // Normal Conn Down 
-  if ( RF->PacketAvailable() ) { 
-    
-    if ( RF->Packet->Type() == PKT_GETCONFIG ) {
-      DBINFOL(("Sys::RFLoop RF->Packet->Type() == PKT_GETCONFIG"))
-      
-      //TxPacket(byte _SecNet, byte _Type, int _ToRF, byte _Ver=BNONE, byte _DevRFID=BNONE, int _Value = INONE)
-      TxPacket Pkt(EEPROM.read(EMC_SECNET), PKT_GOTCONFIG, RF->Packet->FromRF(), ThisTode->Version() );
-      Pkt.AddTodeConfig( ThisTode->EEAddress() );
-      RF->Send(&Pkt);
-    //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    } else if ( RF->Packet->Type() == PKT_GOTCONFIG ) {
-      
-      Tode* td = RFTode( RF->Packet->FromRF(), true );
-      DBINFOAL(("Sys::RFLoop PKT_GOTCONFIG for TodeIndex: "),(td->TodeIndex))
-      RF->Packet->SaveTodeConfig( td->EEAddress() );
-    //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    } else if ( RF->Packet->Type() == PKT_SETVAL ) {
-      DBINFOL(("Sys::RFLoop RF->Packet->Type() == PKT_SETVAL"))
-      
-      // RF command a Value Set on This Tode
-      // 1. Check Version
-      if ( ThisTode == 0 ) { DBERRORL(("Sys::RFLoop PKT_SETVAL ThisTode == 0")) return; }
-      if ( ThisTode->Version() != RF->Packet->Version() ) {
-          DBERRORAAL(("Sys::RFLoop PKT_SETVAL ThisTode->Version() != RF->Packet->Version(): "),
-                                             (ThisTode->Version()), (RF->Packet->Version()))
-          return;
-      }
-      // 2. Get Device by RFID & Set the Value
-      int rfid = RF->Packet->RFID();
-      if ( 0>rfid || rfid>=AEB_MAXDEVICES ) { DBERRORAL(("Sys::RFLoop PKT_SETVAL 0>rfid || rfid>=AEB_MAXDEVICES: "),(rfid)) return; }
-      Device* dev = ThisTode->Devices[RF->Packet->RFID()];
-      if ( dev==0 ) { DBERRORL(("Sys::RFLoop PKT_SETVAL dev==0")) return; }
-      DBINFOAL(("Sys::RFLoop PKT_SETVAL dev->Value(SET): "),(RF->Packet->SetValue()))
-      dev->Value(RF->Packet->SetValue());
-    //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    } else if ( RF->Packet->Type() == PKT_GETVALS ) {
-      DBINFOL(("Sys::RFLoop RF->Packet->Type() == PKT_GETVALS"))
-      if ( ThisTode == 0 ) { DBERRORL(("Sys::RFLoop PKT_GETVALS ThisTode == 0")) return; }
-      
-      // 1. Append every ThisTode Device Value to Packet and Send
-      TxPacket Pkt(EEPROM.read(EMC_SECNET), PKT_GOTVALS, RF->Packet->FromRF(), ThisTode->Version() );
-      for ( int i=0; i<AEB_MAXDEVICES; i++ ) {
-        if ( ThisTode->Devices[i]!=0 ) {
-          if ( ThisTode->Devices[i]->RFID<AEB_MAXDEVICES ) {
-            Pkt.AddValue(ThisTode->Devices[i]->RFID, ThisTode->Devices[i]->Value() ); }
-        }
-      }
-      RF->Send(&Pkt);
-    //'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-    } else if ( RF->Packet->Type() == PKT_GOTVALS ) {
-      DBINFOL(("Sys::RFLoop RF->Packet->Type() == PKT_GOTVALS"))
+  if ( !RF->PacketAvailable() ) return;                                             // Collect till Available
+  
+  // 1. Check Packet has an assigned Type
+  if ( RF->Packet->Type() == PKT_NOTSET ) { 
+    DBERRORL(("Sys::RFLoop PKT_NOTSET")) 
+    delete(RF->Packet); RF->Packet = 0; return; 
+  } else { DBINFOAL(("Sys::RFLoop RF->Packet->Type() = "),(RF->Packet->Type(),HEX)) }
 
-      // 1.  Which Tode are these values for?
-      Tode* td = RFTode( RF->Packet->FromRF() );
-      if ( td==0 ) { DBERRORL(("Sys::RFLoop PKT_GOTVALS NO-TODE td==0: ")) return; }      
-      // 2.  Record the Values in the Devices
-      for ( int i=0; i<AEB_MAXDEVICES; i++ ) {
-        if ( td->Devices[i]!=0 ) {
-          td->Devices[i]->RxValue( RF->Packet->Value( td->Devices[i]->RFID ) );
-          DBINFOAL(("Sys::RFLoop PKT_GOTVALS RxValue(RFID): "),(td->Devices[i]->RFID))
-        }
-      }
-      // 3. Update the Dispaly
-      Navigate( NAVDSPLIST );
-    }
+  // 2. Obtain TargetTode
+  Tode* TargetTode=0;                                                                   // Set Packets TargetTode
+  if ( bitRead(RF->Packet->Type(),5) == 1 ) { TargetTode = ThisTode; }                  // GET/SET = ThisTode
+  else { TargetTode=RFTode(RF->Packet->FromRF(),(RF->Packet->Type()==PKT_GOTCONFIG)); } // GOTS FromRF (GOTCONFIG Create)
+  if ( TargetTode==0 ) {                                                                // Check Target Tode
+    DBERRORAL(("Sys::RFLoop TargetTode==0 PacketType:"),(RF->Packet->Type())) 
+    delete(RF->Packet); RF->Packet = 0; return; 
+  }
+  DBINFOAL(("Sys::RFLoop TargetTode->TodeIndex:"),(TargetTode->TodeIndex))
+
+  //------------------------- CONFIG ( No version control )----------------------------------------------------------
+  if ( RF->Packet->Type() == PKT_GOTCONFIG ) {                                DBINFOL(("Sys::RFLoop PKT_GOTCONFIG"))
+    RF->Packet->SaveTodeConfig( TargetTode->EEAddress() );                    // Save the Tode Configuration
+    TargetTode->EELoadDevices();                                              // Reload Tode
+    delete(RF->Packet); RF->Packet = 0; return;                               // Exit
+  }
+  if ( RF->Packet->Type() == PKT_GETCONFIG ) {                                DBINFOL(("Sys::RFLoop PKT_GETCONFIG"))
+    TxPacket Pkt(EEPROM.read(EMC_SECNET), PKT_GOTCONFIG, 
+                 RF->Packet->FromRF(), TargetTode->Version() );               // Create TxPacket
+    Pkt.AddTodeConfig( TargetTode->EEAddress() );                             // Load TxPacket with Configuration
+    RF->Send(&Pkt);                                                           // Send Reply
+    delete(RF->Packet); RF->Packet = 0; return;                               // Exit
+  }
+
+  //-------------------------------- VERSION MATCH ------------------------------------------------------------------
+  if ( TargetTode->Version() != RF->Packet->Version() ) {                     // Check Version MATCH
+    DBERRORAAL(("Sys::RFLoop Tode PACKET Version Mismatch(TodeVer,PktVer): "),
+               (TargetTode->Version()), (RF->Packet->Version()))              // Show MISMATCH
+    TxPacket Pkt(EEPROM.read(EMC_SECNET), PKT_GOTCONFIG, 
+                 RF->Packet->FromRF(), TargetTode->Version() );               // MISMATCH Tx Update Config
+    Pkt.AddTodeConfig( TargetTode->EEAddress() );                             // Tx Add Tode Config
+    RF->Send(&Pkt);                                                           // Send Tode Config
+    delete(RF->Packet); RF->Packet = 0; return;                               // Exit
+  }
+
+  //-------------------------------- SINGLE DEVICE -------------------------------------------------------------------
+  if ( RF->Packet->Type() == PKT_SETVAL || RF->Packet->Type() == PKT_GOTVAL ) {
     
-    // Delete Packet after Processing
-    delete(RF->Packet); RF->Packet = 0;
+    Device* TargetDev=0;
+    int rfid = RF->Packet->RFID();
+    if ( 0<=rfid && rfid<AEB_MAXDEVICES ) TargetDev = TargetTode->Devices[rfid];    // Get TargetDev
+    if ( TargetDev==0 ) {                                                           // Check TargetDev
+      DBERRORL(("Sys::RFLoop TargetDev==0"))
+      delete(RF->Packet); RF->Packet = 0; return;                                   // ERROR Exit
+    }
+
+    if ( RF->Packet->Type() == PKT_SETVAL ) {                                       DBINFOL(("Sys::RFLoop PKT_SETVAL"))
+      TargetDev->Value(RF->Packet->SetValue(), STSRFSET);                           // Set Device Value & Reply
+      TxPacket Pkt(EEPROM.read(EMC_SECNET), PKT_GOTVAL, RF->Packet->FromRF(), 
+                   TargetTode->Version(), TargetDev->RFID, TargetDev->Value() );    // GOTVAL the Set Value
+      RF->Send(&Pkt);                                                               // Send the Reply
+      
+    } else if ( RF->Packet->Type() == PKT_GOTVAL ) {                                DBINFOL(("Sys::RFLoop PKT_GOTVAL"))
+      TargetDev->Value( RF->Packet->Value( TargetDev->RFID ), STSRFGOT );           // Set GOT Value
+    } 
+    delete(RF->Packet); RF->Packet = 0; return;
   }
   
+  //-------------------------------- MULTI DEVICE ---------------------------------------------------------------------
+  if (RF->Packet->Type() == PKT_GETVALS ) {                                         DBINFOL(("Sys::RFLoop PKT_GETVALS"))
+    TxPacket Pkt(EEPROM.read(EMC_SECNET), PKT_GOTVALS, RF->Packet->FromRF(), TargetTode->Version() );
+    for ( int i=0; i<AEB_MAXDEVICES; i++ ) {                                        // Append every Device Value
+      if ( TargetTode->Devices[i]!=0 ) {                                            // Iterate Devices[]
+        if ( TargetTode->Devices[i]->RFID<AEB_MAXDEVICES ) {                        // Check Device RFID
+          Pkt.AddValue(TargetTode->Devices[i]->RFID, TargetTode->Devices[i]->Value() ); }
+      }
+    }
+    RF->Send(&Pkt);                                                                 // Send Packet
+    
+  } else if ( RF->Packet->Type() == PKT_GOTVALS ) {                                 DBINFOL(("Sys::RFLoop PKT_GOTVALS"))
+    for ( int i=0; i<AEB_MAXDEVICES; i++ ) {                                        // Iterate Devices
+      if ( TargetTode->Devices[i]!=0 ) {                                            // Assign Device Value
+        TargetTode->Devices[i]->Value(RF->Packet->Value(TargetTode->Devices[i]->RFID),STSRFGOT);
+        if ( CurrList==TargetTode ) TargetTode->Devices[i]->DisplayValue();         // Update Display
+        DBINFOAL(("Sys::RFLoop PKT_GOTVALS RFID: "),(TargetTode->Devices[i]->RFID))
+      }
+    }
+  }
+  // Delete Packet after Processing
+  delete(RF->Packet); RF->Packet = 0;
 }
 //_____________________________________________________________________________________________________________________
 #endif

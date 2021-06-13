@@ -9,11 +9,21 @@
 //#####################################################################################################################
 MenuItem::MenuItem() { this->Display = &oDisplay; }
 //-----------------------------------------------------------------------------------------------------
+byte MenuItem::Status() { return bStatus; }
+void MenuItem::Status(byte _Status) { bStatus = _Status; }
+//-----------------------------------------------------------------------------------------------------
 byte MenuItem::Navigate(byte _Key) { return _Key; }
 //-----------------------------------------------------------------------------------------------------
 byte MenuItem::Loop() { return 0; }
 //-----------------------------------------------------------------------------------------------------
-void MenuItem::Show(byte _XPos, byte _YPos) { if (_XPos!=0) XPos=_XPos; if (_YPos!=0) YPos=_YPos; }
+void MenuItem::DispItem(byte _XPos, byte _YPos) { 
+  if (_XPos!=0) XPos=_XPos; 
+  if (_YPos!=0) YPos=_YPos; 
+  OnDisplay(true); 
+}
+//-----------------------------------------------------------------------------------------------------
+void MenuItem::OnDisplay(bool _OnDisplay) { bOnDisplay = _OnDisplay; }
+bool MenuItem::OnDisplay() { return bOnDisplay; }
 //#####################################################################################################################
 MenuList::MenuList(const char* _CTitle) { CTitle = _CTitle; this->Display = &oDisplay; }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -67,37 +77,50 @@ void MenuList::Del(MenuItem* _Item) {
   
 }
 //-----------------------------------------------------------------------------------------------------
+void MenuList::DelAllItems() {
+  CurrItem = FirstItem;
+  MenuItem* Next;
+  while ( CurrItem != NULL ) {
+    Next = CurrItem->NextItem;
+    free(CurrItem);
+    CurrItem = Next;
+  }
+  FirstItem = 0;
+  LastItem = 0;
+  CurrItem = 0;
+}
+//-----------------------------------------------------------------------------------------------------
 byte MenuList::Navigate(byte _Key) {                        DBENTERAL(("MenuList::Navigate"),(_Key,HEX))
 
-  if ( Display==0 ) { DBERRORL(("Display==0")) return 0; }
-  if ( CurrItem != 0 ) _Key = CurrItem->Navigate(_Key);         // Key the current Item
-  if ( _Key == NAVKEYNONE ) return _Key;                        // If Item used Key exit
+  if ( Display==0 ) { DBERRORL(("Display==0")) return NAVKEYNONE; }
+  if ( CurrItem != 0 ) _Key = CurrItem->Navigate(_Key);             // Key the current Item
+  if ( _Key == NAVKEYNONE ) return _Key;                            // If Item used Key exit
   
   if ( _Key == NAVKEYUP ) {                                 DBINFOL(("MenuList::Navigate NAVKEYUP"))
-    if (CurrItem == 0) return _Key;                                             // Top of List? Exit.
-    CurrItem->NavSelected = SEL_NONE; CurrItem->Show();                         // Reset Current
-    CurrItem = CurrItem->PrevItem;                                              // Move to Previous
-    if (CurrItem != 0) { CurrItem->NavSelected = SEL_NAME; CurrItem->Show(); }  // Show
-    else {                                                                      // Refresh Title
+    if (CurrItem == 0) return _Key;                                                 // Top of List? Exit.
+    CurrItem->NavSelected = SEL_NONE; CurrItem->DispItem();                         // Reset Current
+    CurrItem = CurrItem->PrevItem;                                                  // Move to Previous
+    if (CurrItem != 0) { CurrItem->NavSelected = SEL_NAME; CurrItem->DispItem(); }  // Show
+    else {                                                                          // Refresh Title
       Display->fillRect(0,0,SCREENWIDTH,TITLECHARHEIGHT+6, (CurrItem==0)? BLUE: LIGHTGREY);
       Display->SETCURSOR(2, TITLECHARHEIGHT); Display->TXTNORM;
       Display->TITLEFONT; Display->print(Title());Display->ITEMFONT;
     }
   
   } else if ( _Key == NAVKEYDOWN ) {                        DBINFOL(("MenuList::Navigate NAVKEYDOWN"))
-    if (CurrItem == 0) {                                                        // Start of List
-      CurrItem = FirstItem;                                                     // Pick First Item
+    if (CurrItem == 0) {
+      CurrItem = FirstItem;                                     // FirstItem
       if (CurrItem != 0) {                                                      // Refresh Title
         Display->fillRect(0,0,SCREENWIDTH,TITLECHARHEIGHT+6, (CurrItem==0)? BLUE: LIGHTGREY);
         Display->SETCURSOR(2, TITLECHARHEIGHT); Display->TXTNORM;
         Display->TITLEFONT; Display->print(Title());Display->ITEMFONT;
         CurrItem->NavSelected = SEL_NAME;  
-        CurrItem->Show();                                                       // Show Item
+        CurrItem->DispItem();                                                       // Show Item
       }
-    } else if (CurrItem->NextItem != 0) { 
-      CurrItem->NavSelected = SEL_NONE; CurrItem->Show();
+    } else if (CurrItem->NextItem != 0) {                       // NextItem 
+      CurrItem->NavSelected = SEL_NONE; CurrItem->DispItem();
       CurrItem = CurrItem->NextItem;
-      CurrItem->NavSelected = SEL_NAME; CurrItem->Show();
+      CurrItem->NavSelected = SEL_NAME; CurrItem->DispItem();
     }   
   } else if ( _Key == NAVKEYOKAY ) {
     Update();
@@ -105,38 +128,47 @@ byte MenuList::Navigate(byte _Key) {                        DBENTERAL(("MenuList
   }
   
   //------------------------------------------------------
-  if (_Key==NAVDSPLIST || _Key==NAVDSPNEWLIST) {            // Update the Display
-    
-    if (_Key==NAVDSPNEWLIST) { Display->CLEARSCREEN; DBINFOL(("MenuList::Navigate NAVDSPNEWLIST"))} 
-    else { DBINFOL(("MenuList::Navigate NAVDSPLIST")) }
-    MenuItem* pItem = 0;
-
-      // Display List Title
-      Display->fillRect(0,0,SCREENWIDTH,TITLECHARHEIGHT+6, (CurrItem==0)? BLUE: LIGHTGREY);
-      Display->SETCURSOR(2, TITLECHARHEIGHT); Display->TXTNORM;
-      Display->TITLEFONT; Display->print(Title());Display->ITEMFONT;
-
-      // --- Show EACH Item ---
-      
-      Display->ITEMFONT;
-      pItem = FirstItem; byte Row = TITLECHARHEIGHT+20;
-      while ( pItem != 0 ) {
-        pItem->Show(0,Row);
-        //pItem->Navigate(NAVDSPROW, Row);
-        Row = Row + ITEMCHARHEIGHT +2;
-        pItem = pItem->NextItem;
-      }
-
-    return BNONE;
-  }
+  if ( _Key==NAVDSPLIST ) { DispList(); return NAVKEYNONE; }
+  if ( _Key==NAVDSPNEWLIST ) { DispList(true); return NAVKEYNONE; }
   return _Key;
+}
+//-----------------------------------------------------------------------------------------------------
+void MenuList::DispList(bool Clear, byte _XPos, byte _YPos) { DBENTERAL(("MenuList::DispList(CLEAR):"),(Clear))
+  if ( Clear ) Display->CLEARSCREEN;
+  if ( _XPos != 0 ) XPos = _XPos;
+  if ( _YPos != 0 ) YPos = _YPos;
+    
+  MenuItem* pItem = 0;
+
+  // Display List Title
+  Display->fillRect(0,0,SCREENWIDTH,TITLECHARHEIGHT+6, (CurrItem==0)? BLUE: LIGHTGREY);
+  Display->SETCURSOR(2, TITLECHARHEIGHT); Display->TXTNORM;
+  Display->TITLEFONT; Display->print(Title());Display->ITEMFONT;
+
+  // --- Show EACH Item ---
+  Display->ITEMFONT;
+  pItem = FirstItem; byte Row = TITLECHARHEIGHT+20;
+  while ( pItem != 0 ) {
+    pItem->DispItem(0,Row);
+    Row = Row + ITEMCHARHEIGHT +2;
+    pItem = pItem->NextItem;
+  }
+}
+//-----------------------------------------------------------------------------------------------------
+void MenuList::OffDisplay() {                                       DBENTERL(("MenuList::OffDisplay"))
+  MenuItem* pItem = FirstItem;
+  while ( pItem != 0 ) {
+    pItem->OnDisplay(false);
+    pItem = pItem->NextItem;
+  }
+  CurrItem = 0;  
 }
 //#####################################################################################################################
 Navigator::Navigator() { this->Display = &oDisplay; }
 //-----------------------------------------------------------------------------------------------------
 byte Loop(byte _FinalKey) { return 0; }           ///< System Loop
 //-----------------------------------------------------------------------------------------------------
-byte Navigator::Navigate(byte _Key) { 
+byte Navigator::Navigate(byte _Key) {                     
 
   if (!StartScreen) { DBINFOL(("Start Screen"))
     if (_Key == NAVKEYNONE) _Key=NAVDSPNEWLIST;
@@ -145,49 +177,39 @@ byte Navigator::Navigate(byte _Key) {
     Display->DSP_SETROTATION;
     Display->ITEMFONT;
     if (CurrList == 0) CurrList = FirstList;
-    if (CurrList != 0) CurrList->Navigate(_Key);
   }
-  
-  if (_Key == NAVKEYNONE || CurrList == 0) return _Key;        // Exit on NOKEY or No List
-  switch (_Key) {
-    case NAVKEYRIGHT:  DBINFO(("NAVKEYRIGHT")); break;
-    case NAVKEYLEFT:   DBINFO(("NAVKEYLEFT")); break;
-    case NAVKEYUP:     DBINFO(("NAVKEYUP")); break;
-    case NAVKEYDOWN:   DBINFO(("NAVKEYDOWN")); break;
-    case NAVKEYSET:    DBINFO(("NAVKEYSET")); break;
-    case NAVKEYOKAY:   DBINFO(("NAVKEYOKAY")); break;
-  }
-  
-  
-  //--------------------------------------------------------------------------
-  // SEND KEY TO LIST
-  //--------------------------------------------------------------------------
-  //DBENTERAL(("Navigator::Navigate"),(_Key))
-  if (CurrList !=0) {
-    _Key = CurrList->Navigate(_Key);
-  }
+  if (_Key == NAVKEYNONE || CurrList == 0) return _Key;       // Exit on NOKEY or No List
+  DBINFOAL(("Navigator::Navigate"),(_Key,HEX))  
+  if (CurrList != 0) _Key = CurrList->Navigate(_Key);         // Sent KEY to List
 
   //--------------------------------------------------------------------------
-  // PROCESS RETURNED KEY
+  // PROCESS RETURNED KEY (Sublist needs fixed)
   //--------------------------------------------------------------------------
   if ( _Key == NAVGOTOSUBLIST ) {
-    CurrList->CurrItem->NavSelected = SEL_NAME;
+    MenuList* pList = CurrList;
+    if ( CurrList == 0 ) { DBERRORL(("Navigator::Navigate NAVGOTOSUBLIST CurrList == 0")) return NAVKEYNONE; }
+    if ( CurrList->CurrItem == 0 ) { DBERRORL(("Navigator::Navigate NAVGOTOSUBLIST CurrList->CurrItem == 0")) return NAVKEYNONE; }
+    if ( CurrList->CurrItem->SubList == 0 ) { DBERRORL(("Navigator::Navigate NAVGOTOSUBLIST CurrList->CurrItem->SubList == 0")) return NAVKEYNONE; }
+    DBINFOL(("Navigator::Navigate NAVGOTOSUBLIST"))
     CurrList = CurrList->CurrItem->SubList;
-    CurrList->Navigate(NAVDSPNEWLIST);
-    return BNONE;
+    if ( pList != 0 ) pList->OffDisplay();
+    CurrList->DispList(true);
+    return NAVKEYNONE;
   }
-  if ( _Key == NAVKEYRIGHT ) {
+  else if ( _Key == NAVKEYRIGHT ) {
     if (CurrList->NextList != 0) {
+      if (CurrList != 0) CurrList->OffDisplay();
       CurrList = CurrList->NextList;
-      CurrList->Navigate(NAVDSPNEWLIST);
-      return BNONE;
+      CurrList->DispList(true);
+      return NAVKEYNONE;
     }
   }
-  if ( _Key == NAVKEYLEFT ) {
+  else if ( _Key == NAVKEYLEFT ) {
     if (this->CurrList->PrevList != 0) {
+      if (CurrList != 0) CurrList->OffDisplay();
       CurrList = CurrList->PrevList;
-      CurrList->Navigate(NAVDSPNEWLIST);
-      return BNONE;
+      CurrList->DispList(true);
+      return NAVKEYNONE;
     }
   }
   return _Key;

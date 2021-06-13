@@ -12,6 +12,7 @@
 #ifndef _ABC_H
 #define _ABC_H
 
+//#define BUZZER
 #include "arduino.h"
 #include "DB.h"
 

@@ -9,6 +9,7 @@
 #include "lib/DB.h"
 #include "lib/EEMap.h"
 #include <EEPROM.h>
+#include <ArduinoQueue.h>
 
 #define BNONE         0xFF      ///< Byte NONE/UNSET
 #define INONE         0xFFFF    ///< Integer NONE/UNSET
@@ -19,17 +20,17 @@
  * @{
  ************************************************/
 #define PKT_NOTSET        0xFF
-// Tx
-#define PKT_PING          0x7F    // 0b0111 1111
-#define PKT_GETCONFIG     0x7E    // 0b0111 1110
-#define PKT_GETVALS       0x7D    
-#define PKT_GETVAL        0x7C
-#define PKT_SETVAL        0x70
-// Rx
-#define PKT_PINGBACK      0x5F    // 0b0101 1111 (bit-5 unset)
-#define PKT_GOTCONFIG     0x5E
-#define PKT_GOTVALS       0x5D
-#define PKT_GOTVAL        0x5C    
+
+// THIS-TODE Information Packets
+#define PKT_GETCONFIG     0x7F    // 0b0111 1111 (bit-5 set)
+#define PKT_GETVALS       0x7E    // 0b0111 1110    
+#define PKT_GETVAL        0x7D
+#define PKT_SETVAL        0x7C
+
+// VARIOUS TODES
+#define PKT_GOTCONFIG     0x5F    // 0b0101 1111 (bit-5 unset)
+#define PKT_GOTVALS       0x5E
+#define PKT_GOTVAL        0x5D    
 ///@}
 /*********************************************//**
  * @defgroup PKB Radio Packet Common Byte RFIDes
@@ -45,7 +46,7 @@
 #define PKB_FROM_RFL    7
 #define PKB_TODEVER     8
 #define PKB_TODECONFIG  9     // Start Tode Config Data
-#define PKB_RFID        9
+#define PKB_RFID        9     // First RFID on GETVALS
 #define PKB_VALUEH      10
 #define PKB_VALUEL      11
 ///@}
@@ -53,12 +54,8 @@
  * @defgroup PKV Radio Packet Value Constants
  * @{
  ************************************************/
-#define PKV_EXPIRE_TIME  30000   ///< How long a GOT value till marked expired
-//#define PKV_NONE         0xFEFE  // 65,278
-//#define PKV_EXPIRED      0xFEFD  // 65,277
-//#define RF_ITEM_NONE          0xFE    // 254 
+#define PKV_EXPIRE_TIME  30000   ///< How long a GOT value till marked expired 
 ///@}
-
 /******************************************************************************************************************//**
  * @class   RxPacket
  * @brief   Receiving Byte Protocol for RF-Radio
@@ -76,15 +73,13 @@ class RxPacket {
     byte          Version();
     byte          RFID();
 
-    int           SetValue();                                       ///< PKT_SETVAL Value
-    int           Value(byte _RFID);
-    unsigned long PacketStartTimeMS = 0;
-    void          SaveTodeConfig(int _EEAddress);
-
-    struct  llBytes {                                               ///< Struct for Extra Bytes (Large Transfer)
-      byte Byte = 0xFF; 
-      llBytes* Next = 0; 
-    };      
+    int                   SetValue();                                       ///< PKT_SETVAL Value
+    int                   Value(byte _RFID);
+    unsigned long         PacketStartTimeMS = 0;
+    void                  SaveTodeConfig(int _EEAddress);
+    
+    ArduinoQueue<byte>*   ExtraBytes = 0;
+    
     byte    Bytes[58] = {255,255,255,255,255,255,255,255,255,255,
                          255,255,255,255,255,255,255,255,255,255,
                          255,255,255,255,255,255,255,255,255,255,
@@ -94,7 +89,7 @@ class RxPacket {
 
   private:
     bool    IsSecure();
-    byte    NextIdx = 3;         // Start at 3 No-To(0,1)/Chn(2) (0 - 57)...[Idx.0 - 57]
+    int     NextIdx = 3;         // Start at 3 No-To(0,1)/Chn(2) (0 - 57)...[Idx.0 - 57]
 };
 /******************************************************************************************************************//**
  * @class   TxPacket
@@ -104,15 +99,14 @@ class TxPacket {
   public:
     TxPacket(byte _SecNet, byte _Type, int _ToRF, byte _Ver=BNONE, byte _DevRFID=BNONE, int _Value = INONE);
 
-    int     Secure();
-    int     Size = 0;
-    void    AddTodeConfig(int _EEAddress);
-    void    AddValue(byte _RFID, int _Value);
-
-    struct  llBytes {                                               ///< Struct for Extra Bytes (Large Transfer)
-      byte Byte = 0xFF; 
-      llBytes* Next = 0; 
-    };      
+    void          TxByte(byte _Byte);
+    int           Secure();
+    int           Size = 0;
+    void          AddTodeConfig(int _EEAddress);
+    void          AddValue(byte _RFID, int _Value);
+    
+    ArduinoQueue<byte>*   ExtraBytes = 0;
+        
     byte    Bytes[58] = {255,255,255,255,255,255,255,255,255,255,
                          255,255,255,255,255,255,255,255,255,255,
                          255,255,255,255,255,255,255,255,255,255,

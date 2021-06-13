@@ -5,35 +5,50 @@
  *    - YY = Last two digits of the Year
  *    - M = (1-9 is Jan-Sept),(A-C is Oct-Dec)
  *    - D = (1-9 is 1-9),(A-V is 10-31)
- *  - ABC   = Analog Button Capture
- *  - DB    = Debug directives
- *  - Disp  = Instantiates the Display Object to use
- *  - E32   = Control of the EBYTE E32-Radio Module
- *  - RFC   = RF Control Protocol Implementation ( RxPacket, TxPacket, RadioI )
- *  - Menu  = Menu Base Classes ( MenuItem, MenuList, Navigator )
- *  - miLib = [m]enu-[i]tem(s) for Basic Name-to-Value Operations
- *  - miHdw = [m]enu-[i]tem(s) for Hardware Selection
- *  - miDev = [m]enu-[i]tem(s) for IO Devices
- *  - miRF  = [m]enu-[i]tem(s) for a Radio Module
+ *  <br><br>
+ *  - lib/ABC   = Analog Button Capture
+ *  - lib/DB    = Debug messages directives
+ *  - Disp      = Instantiates the Display Object to use
+ *  - E32       = Control of the EBYTE E32-Radio Module
+ *  - RFC       = RF Control Protocol Implementation ( RxPacket, TxPacket, RadioI )
+ *  - Menu      = Menu Base Classes ( MenuItem, MenuList, Navigator )
+ *  <br><u><b>Menu-[L]ists</b></u><br>
+ *  - LHdw      = Tode, TodeList
+ *  <br><u><b>Menu-[i]tems</b></u><br>
+ *  - iLib      = MenuName, MenuValue; for Basic Name-to-Value Operations
+ *  - iHdw      = PinSelect, Device; for Hardware Selection and Device Interface
+ *  - iDev      = OnOff; for IO devices control
+ *  - iRF       = E32Radio; puts E32 Controls on the Menu
  *  
  *
  * \section Overview Conceptual Overview
- * Just as variables point to values in memory every device will have a collection of specific-use class variable types
- * that contain various counts of link-list dynamic Name->Value pairs.
+ *  Every IO-Device Control is a functionally expanded Menu-Item
  *  
- *  - Names
- *    - MenuName      for use when no value is needed (like a menu line allows linking to other 'SubList' of items)
+ *  - MenuName      for use when no value is needed; like a menu line that allows linking to other 
+ *                    'SubList' of items or carrying out a specified \ref NAV Command.
  *  
- *  - Values ( Also contains MenuName )
- *    - MenuValueDigSet    for number values with ability to set them by Menu
- *    - MVOptions     for selectable values showing text options
+ *  - MenuValue     Inherits MenuName; The Value() is stored as a variable in MEM
+ *    
+ *    - \ref VT Value Type Properties
+ *      - VTRW    = Value is Read & Writable on the Menu
+ *      - VTDIG   = Per Digit Setable on the Menu
+ *      - VTHEX   = Value is displayed as a Positive Hexadecimal Value on the Menu
+ *      - VTBYTE  = Value is a single Positive Byte Size
+ *    
+ *  - MenuEEValue   Inherits MenuValue; The Value() is stored in an EEPROM Location for Power On/Off persistance
+ *  - Device        Inherits MenuValue; The Value() is coordinated by RF-Communications or by local IO-depending on 'IsLocal'
  *    
  *  - Common Accronyms in Code
  *      - AEB         [A]llocation-Size of [E]EPROM in [B]ytes
  *      - EEA         [EE]PROM [A]ddress
  *      - EMC         [E]EPROM [M]emory [C]onstants
  *      - EMO         [E]EPROM [M]emory Address [O]ffsets
- *
+ * 
+ * \section IO-HDW New IO-HDW
+ *    - Create (2) 32-bit longs and (1) byte and assign bit-wise usable Pins
+ *        1. Used in DevLib.cpp PinSelect::ChangeSetTo
+ *        2. Name Pin Usage in PinSelect::PinSelect Constructor
+ *        
  * \section Display Display-Type Encapsulation
  *    - Encapsulated and changeable in Display.h 
  *        - Creates static object *oDisplay* that is assigned to *Display* in every Constructor
@@ -71,8 +86,11 @@
  *    3.  System Settings
  *        - Including ThisTode's Device Settings (not control)
  *    
- * \section IO-HDW New IO-HDW
- *    - Create (2) 32-bit longs and (1) byte and assign bit-wise usable Pins
- *        1. Used in DevLib.cpp PinSelect::ChangeSetTo
- *        2. Name Pin Usage in PinSelect::PinSelect Constructor
+ * \section STRUCTURES STRUCTURES How EEPROM, INDEX, and RFID are related
+ *    1.  TodeIndex (0-9) 10-Total is exactly equivalent to EEPROM Address by Calculation
+ *    2.  However; TodeIndex is only static to ThisTode (Todes can have different Index on different Todes)
+ *    3.  Network-wise the Tode Address is it's unique identifier and stored first on Tode's local EEPROM config
+ *    4.  RFID for Devices is stored at paticular and equivalent EEPROM Addresses by Calculation
+ *    5.  RFID is also static by TodeAddress::RFID so RFID 1 is always 1 on all Todes
+ *    6.  
  */

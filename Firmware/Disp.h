@@ -21,7 +21,7 @@ static DSPCLASS oDisplay = DSPCLASS(49, 47, 23);            //TFT(cs, dc(rs)(cd)
 
 /******************************************************************************//**
  * @defgroup DSPCOLORS Display Colors
- *           In Display.h
+ *           Defined in Disp.h
  * @{
  *********************************************************************************/
 #define BLACK 0x0000
@@ -46,7 +46,7 @@ static DSPCLASS oDisplay = DSPCLASS(49, 47, 23);            //TFT(cs, dc(rs)(cd)
 ///@}
 /******************************************************************************//**
  * @defgroup DSPSETTINGS Display Settings
- *           In Display.h
+ *           Defined in Disp.h
  * @{
  *********************************************************************************/
 //---[ ASSIGNMENTS ]----------------------------------------------------

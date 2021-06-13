@@ -202,10 +202,6 @@ Wire Wire Line
 Wire Wire Line
 	5600 3600 6000 3600
 Wire Wire Line
-	5050 2400 5050 2900
-Wire Wire Line
-	3900 2500 3900 2900
-Wire Wire Line
 	3900 3600 3950 3600
 Wire Wire Line
 	3950 3250 3900 3250
@@ -220,8 +216,6 @@ Wire Wire Line
 Wire Wire Line
 	6300 2900 6350 2900
 Wire Wire Line
-	6350 2900 6350 2500
-Wire Wire Line
 	6350 2900 6350 3250
 Wire Wire Line
 	6350 3250 6300 3250
@@ -234,19 +228,66 @@ Connection ~ 6350 3250
 $Comp
 L Connector:Conn_01x03_Male J1
 U 1 1 5F9EC411
-P 4950 2200
-F 0 "J1" V 5012 2344 50  0000 L CNN
-F 1 "KEYB" V 5103 2344 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4950 2200 50  0001 C CNN
-F 3 "~" H 4950 2200 50  0001 C CNN
-	1    4950 2200
+P 4950 1850
+F 0 "J1" V 5012 1994 50  0000 L CNN
+F 1 "KEYB" V 5103 1994 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 4950 1850 50  0001 C CNN
+F 3 "~" H 4950 1850 50  0001 C CNN
+	1    4950 1850
 	0    1    1    0   
 $EndComp
+Text Label 5850 2100 2    50   ~ 0
+AKB
+$Comp
+L Device:R R7
+U 1 1 60388507
+P 4850 2550
+F 0 "R7" V 4643 2550 50  0000 C CNN
+F 1 "R" V 4734 2550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 4780 2550 50  0001 C CNN
+F 3 "~" H 4850 2550 50  0001 C CNN
+	1    4850 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 60388FC9
+P 4450 2550
+F 0 "D1" H 4443 2295 50  0000 C CNN
+F 1 "LED" H 4443 2386 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 4450 2550 50  0001 C CNN
+F 3 "~" H 4450 2550 50  0001 C CNN
+	1    4450 2550
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
-	3900 2500 4850 2500
+	5050 2050 5050 2550
 Wire Wire Line
-	4850 2400 4850 2500
-Connection ~ 4850 2500
+	4950 2050 4950 2200
 Wire Wire Line
-	4850 2500 6350 2500
+	4950 2200 4200 2200
+Wire Wire Line
+	4200 2200 4200 2550
+Wire Wire Line
+	4200 2550 4300 2550
+Wire Wire Line
+	4600 2550 4700 2550
+Wire Wire Line
+	5000 2550 5050 2550
+Connection ~ 5050 2550
+Wire Wire Line
+	5050 2550 5050 2900
+Wire Wire Line
+	4850 2050 4850 2100
+Wire Wire Line
+	4850 2100 3900 2100
+Wire Wire Line
+	3900 2100 3900 2900
+Wire Wire Line
+	6350 2100 4850 2100
+Wire Wire Line
+	6350 2100 6350 2900
+Connection ~ 4850 2100
+Text Label 4400 2200 2    50   ~ 0
+5V
 $EndSCHEMATC

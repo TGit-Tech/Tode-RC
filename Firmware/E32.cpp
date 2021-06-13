@@ -6,14 +6,6 @@
 #define _E32_CPP
 
 #include "E32.h"
-/*
- * [0][1] - To
- * [2]    - Channel
- * [3][4] - SecNet + Size
- * [5]    - [H]Size + PacketType
- * [6][7] - From
- * [8]    - Version    (9-Bytes)
- */
 //#####################################################################################################################
 E32Radio::E32Radio(byte _PinM0, byte _PinM1, byte _PinTX, byte _PinRX, byte _PinAUX):
   RadioI() {
@@ -21,6 +13,8 @@ E32Radio::E32Radio(byte _PinM0, byte _PinM1, byte _PinTX, byte _PinRX, byte _Pin
     PinM0 = _PinM0; PinM1 = _PinM1; PinTX = _PinTX; PinRX = _PinRX; PinAUX = _PinAUX;
     if ( PinM0 != 0 ) pinMode(PinM0, OUTPUT); 
     if ( PinM1 != 0 ) pinMode(PinM1, OUTPUT);
+    if ( PinTX != 0 ) pinMode(PinTX, OUTPUT);
+    if ( PinRX != 0 ) pinMode(PinRX, INPUT_PULLUP);
     if ( PinAUX != 0 ) pinMode(PinAUX, INPUT_PULLUP);
 }
 //---------------------------------------------------------------------------------------------------------------------
@@ -76,11 +70,7 @@ void E32Radio::TxPower(byte _TxPower) {
 byte E32Radio::TxPower() {
   if ( E32Param[E32HEAD] != 0xC0 ) GetParam();
   return (E32Param[E32OPTION] & 0x03);
-  //if ( (E32Param[E32OPTION] & 0x03) == 0 ) { return 30; }
-  //else if ( (E32Param[E32OPTION] & 0x03) == 1 ) { return 27; }
-  //else if ( (E32Param[E32OPTION] & 0x03) == 2 ) { return 24; }
-  //else if ( (E32Param[E32OPTION] & 0x03) == 3 ) { return 21; }
-  //return 0;
+  // Decoded by MenuValue (s) SetNumberName() see RadioTxPower
 }
 //---------------------------------------------------------------------------------------------------------------------
 void E32Radio::GetParam() {                                           //DBENTERL(("E32Radio::GetParam"))
@@ -116,23 +106,35 @@ void E32Radio::Mode(byte _Mode) {
   else if ( _Mode == E32_WAKEMODE ) { digitalWrite(PinM0, LOW); digitalWrite(PinM1, HIGH); }
   else if ( _Mode == E32_PWRSAVE ) { digitalWrite(PinM0, HIGH); digitalWrite(PinM1, LOW); }
   else if ( _Mode == E32_SLEEPMODE ) { digitalWrite(PinM0, HIGH); digitalWrite(PinM1, HIGH); }
+  delay(20); // Radio will not respond faster than this.
 }
 //-----------------------------------------------------------------------------------------------------
 byte E32Radio::Mode() {
   if ( digitalRead(PinM0) == LOW ) {
     if ( digitalRead(PinM1) == LOW ) { return E32_NORMMODE; } else { return E32_WAKEMODE; }
   } else {
+    // PinM0=HIGH
     if ( digitalRead(PinM1) == LOW ) { return E32_PWRSAVE; } else { return E32_SLEEPMODE; }
   }
 }
 //---------------------------------------------------------------------------------------------------------------------
 bool E32Radio::PacketAvailable() {                                        // Check for incoming communications
+
+  // Check that Radio is in Normal Mode
+  if ( Mode() != E32_NORMMODE ) {
+    DBINFOL(("E32Radio::PacketAvailable() Mode() != E32_NORMMODE"))
+    return false;
+  }
+
+  // Check if data exists
+  if ( Serial1.available() == 0 ) return false;
+  DBINFOAL(("E32Radio::PacketAvailable - Serial1.available() = "),(Serial1.available()));
   
-  if ( Serial1.available() == 0 ) return 0;                               // Check if data exists
-  if ( Mode() != E32_NORMMODE ) return 0;                                 // Check Radio is receiving RF-data
   if ( Packet != 0 ) {                                                    // Expire Packet build after 1-Second
     if ( millis() - Packet->PacketStartTimeMS > 1000 ) { 
-      delete Packet; Packet = 0; }
+      DBINFOL(("E32Radio::PacketAvailable PACKET EXPIRED > 1s"))
+      delete Packet; Packet = 0; 
+    }
   }
   if ( Packet == 0 ) {                                                    // Create new packet if needed
     Packet = new RxPacket();                   
@@ -141,6 +143,7 @@ bool E32Radio::PacketAvailable() {                                        // Che
 
   while ( Serial1.available() ) {                                         // Read RF Data
     if ( Packet->RxByte(Serial1.read()) ) {                               // Returns True when packet size reached
+      DBINFOL(("E32Radio::PacketAvailable FULL Packet Received"))
       if ( !Packet->IsValid() ) {
         DBINFOL(("E32Radio::PacketAvailable NOT VALID")) 
         delete(Packet); Packet=0; return false;                           // Return 'false' for InValid Packet
@@ -153,35 +156,78 @@ bool E32Radio::PacketAvailable() {                                        // Che
 }
 //-----------------------------------------------------------------------------------------------------
 void E32Radio::Send(TxPacket* Tx) {
-  DBENTERAL(("E32Radio::Send(Tx): "),(int(Tx),HEX))
+  DBENTERAL(("****************E32Radio::Send(Tx)*********************"),(int(Tx),HEX))
+  int i=0;
   
   // Prep & Check
   if ( Tx == 0 ) return;
   if ( E32Param[E32HEAD] != 0xC0 ) GetParam();
   if ( Mode() != E32_NORMMODE ) { DBERRORAL(("E32Radio::Send(Tx) Radio in Mode : "),(Mode())) return; }
-  unsigned int FromRF = Address();                                                    //This RF Address
-  if ( FromRF == 0xFFFF ) { DBERRORL(("E32Radio::Send(Tx) FromRF=0xFFFF")) return; }
+
+  // Wait for not-busy
+  Serial1.flush();
+  while ( digitalRead(PinAUX) == LOW ) { };
   
   // Set FromRF
+  unsigned int FromRF = Address();
+  if ( FromRF == 0xFFFF ) { DBERRORL(("E32Radio::Send(Tx) FromRF=0xFFFF")) return; }
   Tx->Bytes[PKB_FROM_RFH] = highByte(FromRF);
   Tx->Bytes[PKB_FROM_RFL] = lowByte(FromRF);
-  // Set Channel
+  
+  // Set Channel & Secure
   Tx->Bytes[PKB_CHANNEL] = Channel();
   Tx->Secure();
 
-  DBINFOL(("vvvvv E32Radio::Send Serial1.write(Tx) vvvvvvvvvvv"))
-  for ( int i=0; i<Tx->Size; i++ ) { DBENTERA((" "),(Tx->Bytes[i],HEX)) }
-  DBINFOL((" "))
+  // Re-Pack Bytes into Send Queue and show DEBUG INFO
+  ArduinoQueue<byte> bSendQueue(518); 
+  DBINFOAAL(("To[0][1]: "),(Tx->Bytes[PKB_TO_RFH],HEX),(Tx->Bytes[PKB_TO_RFL],HEX))
+  DBINFOAL(("Channel[2]: "),(Tx->Bytes[PKB_CHANNEL],HEX))
+  DBINFOAAL(("SecNet,Size: "),(EEPROM.read(EMC_SECNET)),(Tx->Size))
+  DBINFOAAL(("SecNet,Size[3][4]: "),(Tx->Bytes[PKB_SECH],HEX),(Tx->Bytes[PKB_SECL],HEX))
+  DBINFOAL(("HSize+PacketType[5]: "),(Tx->Bytes[PKB_TYPE],HEX))
+  DBINFOAAL(("From[6][7]: "),(Tx->Bytes[PKB_FROM_RFH],HEX),(Tx->Bytes[PKB_FROM_RFL],HEX))
+  DBINFOAL(("Tode Version[8]: "),(Tx->Bytes[PKB_TODEVER],HEX))
+  //#define PKB_TYPE        5     // This point forward may differ
+  //#define PKB_FROM_RFH    6
+  //#define PKB_FROM_RFL    7
+  //#define PKB_TODEVER     8
+  //#define PKB_TODECONFIG  9     // Start Tode Config Data
+  //#define PKB_RFID        9     // First RFID on GETVALS
+  //#define PKB_VALUEH      10
+  //#define PKB_VALUEL      11
   
-  // Send the Bytes
-  // The Below line inside while() loop made the Communications go down.  Not sure the reason; perhaps monitor print time lag?
-  // DBINFOAAL(("E32Radio::Send Serial1.write(Tx->Bytes(i)): "),(i),(Tx->Bytes[i],HEX))
-  int i = 0;
-  while (i<Tx->Size) { 
-    Serial1.write(Tx->Bytes[i]); 
-    i++; 
+  i=0; byte Temp=0;
+  while ( i<Tx->Size ) {
+    if ( i%12 == 0 ) { DBENTERL((" ")) } // new line
+    if ( i<58 ) { 
+      bSendQueue.enqueue(Tx->Bytes[i]);      
+      DBENTERAA(("Tx"),(i),(Tx->Bytes[i],HEX))
+    } else {
+      if ( Tx->ExtraBytes == 0 ) { DBERRORAL(("E32Radio::Send Tx->ExtraBytes == 0 @i: "),(i)) break; }
+      else {
+        if ( Tx->ExtraBytes->isEmpty() ) { DBINFOL(("E32Radio::Send Tx-ExtraBytes->isEmpty()")) break; }
+        Temp = Tx->ExtraBytes->dequeue();
+        DBENTERAA(("Ex"),(i),(Temp))
+        bSendQueue.enqueue(Temp);
+      }
+    }
+    i++;
   }
+  DBENTERL((""))
 
+  // Send the Send-Queue
+  i=0; 
+  while ( !bSendQueue.isEmpty() ) { 
+    i++;
+    if (i==58) {
+      Serial1.flush();
+      while ( digitalRead(PinAUX) == LOW ) { };     // Wait for not busy to send another 512-bytes
+      Serial1.write(Tx->Bytes[PKB_TO_RFH]);         // Resend Header and continue
+      Serial1.write(Tx->Bytes[PKB_TO_RFL]);
+      Serial1.write(Tx->Bytes[PKB_CHANNEL]);   
+    }
+    Serial1.write(bSendQueue.dequeue());
+  }
 }
 //_____________________________________________________________________________________________________________________
 #endif

@@ -92,10 +92,12 @@ int AnalogButtonCapture::Button() {
   int Rtn = NAVKEYNONE;                                         // Default return NONE
   if ( ButtonISR::ButtonBuffer != NAVKEYNONE ) {                    // Check Button buffer for a button press
     Rtn = ButtonISR::ButtonBuffer;
-    if ( BuzzerPin != 0xFF ) {
+    #if defined(BUZZER)
+	if ( BuzzerPin != 0xFF ) {
       noTone(BuzzerPin);
       tone(BuzzerPin,1200,15);
     }
+	#endif
     ButtonISR::ButtonBuffer = NAVKEYNONE;                           // Clear the Buffer
   }
   return Rtn;

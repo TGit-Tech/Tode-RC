@@ -1,0 +1,85 @@
+QUICK GUIDE
+notation = [Menu-bar].{section}/=Ribbon=."Button"
+----------------------------------------------------------------------------
+1.	Run bCNC
+2.	[FILE].{Serial}.set-COM."Open"
+3.	[CONTROL].{Status}."XYZ=0"
+4.	[CONTROL].{Command}."G01 X22Y17 F300" ( variations - see #3 below )
+6.	[CONTROL].{Control}."Z-down" till bit is close but not touching PCB
+5.	[CONTROL].{Status}."XYZ=0"
+4.	[PROBE].{Probe}."Probe"			( Req setup parameters first )
+5.	Wait for 'Idle' then [CONTROL].{Status}."XYZ=0"
+6.	[OPEN-FILE]icon.open-file
+7.	[PROBE].=Autolevel=."Margins"
+8.	[PROBE].{Autolevel} Set number of probes X & Y for ~ Step of 12
+9.	[PROBE].=Autolevel=."Scan" (Big Button)
+10.	Wait for 'Scan' to finish
+11.	[PROBE].=Autolevel=."Zero"
+12.	De-Wire the bit
+13.	[CONTROL]."Start"
+------------------------------------------------------------------
+1. [CONTROL]  	Home + XYZ=0 + "G01 X22Y17 F300" + Z-Down-Close + XYZ=0
+2. [PROBE]		Probe + XYZ=0												Probe Feed: 5.0
+3. Load the File + Autolevel Margins + Scan									Z: Max: 0.5
+
+
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+1.  Setup
+  a - Load a blank PCB onto the CNC Mill using 3D Printed Platform:
+      "D:\Mechanical\ME - CNC-Milling\PCB-Mill-Platform\PCB-MillPlatform-100x70mm-Smoothed.stl"
+  b - Load the Bit used for Trace Isolation
+  c - Connect the Probe Wires to the Board and Bit
+  d - Power up the CNC Mill
+  e - Start bCNC
+
+2.  Connect
+  a - MENU 'File'
+      -- 'Serial' -> 'Open'
+      -- Check 'Connected' status & Positions are shown
+
+3.  Homing
+  a - MENU 'Control'
+      -- Click 'Custom Button #5' or Command '$h'
+      -- Click 'XYZ=0'
+      -- In 'Command' Box (bottom-left) enter 'G01 X22Y17 F300'
+          TEMP SPOT: 'G01 X57Y42 F300'
+          -- Tightest X & Y = G01 X21.5Y16 F300
+          -- Tightest X = G01 X21.5Y17 F300
+          -- Tightest Y = G01 X22Y16 F300
+      -- Click 'XY=0'
+      -- Under 'Control' Press Z-Down 30
+      -- VISUALLY check bit is in a good XY=0 position
+
+4. Initial Z-Probe
+  a - MENU 'Probe' - SUBMENU 'Common'
+      -- Fast Probe Feed: 	100.0
+	  -- Probe Feed: 		10.0
+	  -- TLO:				0.000
+	  -- Probe Command:		G38.2
+  b - MENU 'Probe' - SUBMENU 'Probe'
+      -- Set last box (Probe along Z-axis):   -10
+      CLICK 'Probe'
+      -- Click 'Z=0'
+  
+9. Open File
+  a - MENU 'Open File' (Small folder icon top-left)
+
+10. Autolevel Probe
+  [[ PROBE - AutoLevel - Margins - Scan & PROBE - Probe - AutoLevel - Zero ]]
+  a - MENU 'Probe' - SUBMENU 'Autolevel'
+      -- Click 'Margins'
+      ++ Under 'AutoLevel'
+        -- Set 'N' for probes per Row/Col on the PCB
+        -- Click 'Scan' (NOT the small next to Margins but the BIG ONE!)
+
+  b - MENU 'Probe' - SUBMENU 'Probe'
+      -- Click 'Probe'
+      
+  c - MENU 'Probe' - SUBMENU 'Autolevel'
+      -- Click 'Zero' (Under Margins at Top Submenu)
+      
+11. Remove Probe Wires
+
+12. Start Milling
+  a - MENU 'Control'    (optionally start spindle beforehand with 'M03 S2000')
+      -- Click 'Start'

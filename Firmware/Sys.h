@@ -18,9 +18,9 @@
 #ifndef _SYS_H
 #define _SYS_H
 
-#include "mlTode.h"
-#include "miRF.h"
-#define FIRMWARE      "Firmware  211K"
+#include "LHdw.h"
+#include "iRF.h"
+#define FIRMWARE      "Firmware  2156"
 
 /**********************************************************************************************//**
  *  @class  Sys

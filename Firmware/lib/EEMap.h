@@ -23,6 +23,8 @@
 #define AEB_MAX         10        ///< Maximum Default Allocation for Char[]'s
 #define AEB_TODENAME    10        ///< TodeName Size to be (9)Chars + NULL
 #define AEB_DEVICENAME  10        ///< Device Names to be (9)Chars + NULL
+
+#define AEB_DEVSETTINGS 10		  ///< Storage per device ( local devices )
 ///@}
 /******************************************************************************//**
  * @defgroup EMC [E]EPROM [M]emory [C]onstants
@@ -32,7 +34,7 @@
 #define EMC_LOCALSETTINGS     3730  ///< Local Settings SecNet First at this address.
 #define EMC_SECNET            3730
 #define EMC_HDWSELECT		  3731
-#define EMC_PIN1			  3732
+#define EMC_DEVSETTINGS		  3795
 ///@}
 /******************************************************************************//**
  * @defgroup EMO [E]EPROM [M]emory [O]ffsets ( PER TODE )
