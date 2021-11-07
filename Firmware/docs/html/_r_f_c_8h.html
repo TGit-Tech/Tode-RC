@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tode: C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/RFC.h File Reference</title>
+<title>Tode: C:/Users/TGIT-TECH/Documents/!Projects/Tode-RC/firmware/Tode-RC-211U/RFC.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 211K</span>
+   &#160;<span id="projectnumber">ver. 211U</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -92,12 +92,13 @@ $(document).ready(function(){initNavTree('_r_f_c_8h.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 
-<p>Radio Freq Control Protocol for a TGit-Tech <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>.  
+<p>Radio Freq Control Protocol for a TGit-Tech <a class="el" href="class_tode.html" title="LIST represents a Physical Tode with a list of Device (s)">Tode</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;arduino.h&quot;</code><br />
-<code>#include &quot;lib/DB.h&quot;</code><br />
-<code>#include &quot;lib/EEMap.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="_d_b_8h_source.html">lib/DB.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_e_e_map_8h_source.html">lib/EEMap.h</a>&quot;</code><br />
 <code>#include &lt;EEPROM.h&gt;</code><br />
+<code>#include &lt;ArduinoQueue.h&gt;</code><br />
 </div>
 <p><a href="_r_f_c_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -106,12 +107,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_rx_packet.html">RxPacket</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receiving Byte Protocol for RF-Radio.  <a href="class_rx_packet.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_rx_packet_1_1ll_bytes.html">RxPacket::llBytes</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tx_packet.html">TxPacket</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmission Byte Protocol for RF-Radio.  <a href="class_tx_packet.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_tx_packet_1_1ll_bytes.html">TxPacket::llBytes</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_radio_i.html">RadioI</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common Interface Base-Class for various RF-Radios.  <a href="class_radio_i.html#details">More...</a><br /></td></tr>
@@ -133,32 +130,26 @@ Macros</h2></td></tr>
 <tr class="memitem:ga4fac90297dad90de740effa62e2c25f2"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_NOTSET</b>&#160;&#160;&#160;0xFF</td></tr>
 <tr class="separator:ga4fac90297dad90de740effa62e2c25f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2751abd34957b4a985fb464d09aa2077"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_PING</b>&#160;&#160;&#160;0x7F</td></tr>
-<tr class="separator:ga2751abd34957b4a985fb464d09aa2077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2941c09c67d56fe0d7c53c17eb34695e"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GETCONFIG</b>&#160;&#160;&#160;0x7E</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GETCONFIG</b>&#160;&#160;&#160;0x7F</td></tr>
 <tr class="separator:ga2941c09c67d56fe0d7c53c17eb34695e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga87feb0c115fe006d919a27c3033de1cb"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GETVALS</b>&#160;&#160;&#160;0x7D</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GETVALS</b>&#160;&#160;&#160;0x7E</td></tr>
 <tr class="separator:ga87feb0c115fe006d919a27c3033de1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae48f4ef8a0a69ff02c268182605cc2c6"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GETVAL</b>&#160;&#160;&#160;0x7C</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GETVAL</b>&#160;&#160;&#160;0x7D</td></tr>
 <tr class="separator:gae48f4ef8a0a69ff02c268182605cc2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1a44749b87157655be7d0ab3dc206612"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_SETVAL</b>&#160;&#160;&#160;0x70</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_SETVAL</b>&#160;&#160;&#160;0x7C</td></tr>
 <tr class="separator:ga1a44749b87157655be7d0ab3dc206612"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga823b78928e0529b2537d8d93b614378b"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_PINGBACK</b>&#160;&#160;&#160;0x5F</td></tr>
-<tr class="separator:ga823b78928e0529b2537d8d93b614378b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5452f6be8b5a99b95bb4a3209b3e91f2"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GOTCONFIG</b>&#160;&#160;&#160;0x5E</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GOTCONFIG</b>&#160;&#160;&#160;0x5F</td></tr>
 <tr class="separator:ga5452f6be8b5a99b95bb4a3209b3e91f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga06e2f7024b3c74b3857f7ba2a86716d7"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GOTVALS</b>&#160;&#160;&#160;0x5D</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GOTVALS</b>&#160;&#160;&#160;0x5E</td></tr>
 <tr class="separator:ga06e2f7024b3c74b3857f7ba2a86716d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabc894292070376b9fbf45e63ff369dbb"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GOTVAL</b>&#160;&#160;&#160;0x5C</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PKT_GOTVAL</b>&#160;&#160;&#160;0x5D</td></tr>
 <tr class="separator:gabc894292070376b9fbf45e63ff369dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3460e4fd3d06817d8fedc1839d42dde6"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PKB_TO_RFH</b>&#160;&#160;&#160;0</td></tr>
@@ -205,7 +196,7 @@ Macros</h2></td></tr>
 <tr class="separator:ga296513293cf451f0886d2f07ce43f44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Radio Freq Control Protocol for a TGit-Tech <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>. </p>
+<div class="textblock"><p>Radio Freq Control Protocol for a TGit-Tech <a class="el" href="class_tode.html" title="LIST represents a Physical Tode with a list of Device (s)">Tode</a>. </p>
 
 <p class="definition">Definition in file <a class="el" href="_r_f_c_8h_source.html">RFC.h</a>.</p>
 </div></div><!-- contents -->
@@ -213,7 +204,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3d2c46dab8f82ec07a2b191adf78a7a1.html">Tode-RC-211K</a></li><li class="navelem"><a class="el" href="_r_f_c_8h.html">RFC.h</a></li>
+    <li class="navelem"><a class="el" href="dir_f3318e67c9dee03b4fcf327947471129.html">Tode-RC-211U</a></li><li class="navelem"><a class="el" href="_r_f_c_8h.html">RFC.h</a></li>
     <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>

@@ -28,11 +28,12 @@ var NAVTREE =
     [ "Main Page", "index.html", [
       [ "Files & Abreviations", "index.html#Files", null ],
       [ "Conceptual Overview", "index.html#Overview", null ],
+      [ "New IO-HDW", "index.html#IO-HDW", null ],
       [ "Display-Type Encapsulation", "index.html#Display", null ],
       [ "User-Navigation", "index.html#Navigation", null ],
       [ "New Devices", "index.html#DEVICE", null ],
       [ "EEPROM Allocation Map", "index.html#EEPROM", null ],
-      [ "New IO-HDW", "index.html#IO-HDW", null ]
+      [ "STRUCTURES How EEPROM, INDEX, and RFID are related", "index.html#STRUCTURES", null ]
     ] ],
     [ "Todo List", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
@@ -60,7 +61,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "___doxy_8h_source.html",
-"group___b_v.html"
+"class_sys.html#ad4909440764d423d4a879df28a12cc79",
+"group___s_e_l.html#ga4bfc3486ef0e60b064f52a90d418aaf6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

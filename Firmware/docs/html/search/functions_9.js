@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['packetavailable_213',['PacketAvailable',['../class_e32_radio.html#a8b8891522e4a032215b9335908e96230',1,'E32Radio::PacketAvailable()'],['../class_radio_i.html#ab4485fb4ca3a020f02f3dfb321e9ffdb',1,'RadioI::PacketAvailable()']]]
+  ['offdisplay_249',['OffDisplay',['../class_menu_list.html#a579180d8fb5c4cf2a4e988d680dbb6f7',1,'MenuList']]]
 ];

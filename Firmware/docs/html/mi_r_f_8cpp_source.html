@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tode: C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/miRF.cpp Source File</title>
+<title>Tode: C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211L/miRF.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 211K</span>
+   &#160;<span id="projectnumber">ver. 211L</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('mi_r_f_8cpp_source.html',''); initResi
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keywordflow">else</span> {<span class="keywordflow">return</span> RF-&gt;Address();} </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//-----------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_radio_address.html#a9c2f4628231b30fb2badc852852020c5">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_radio_address.html#a2ba99fc0b268811944fd1ffe84d7c5b0">RadioAddress::Value</a>(<span class="keywordtype">int</span> _Value) {                 DBENTERAL((<span class="stringliteral">&quot;RadioAddress::Value[SET]&quot;</span>),(_Value))</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_radio_address.html#af4c8cac96d03e89f48833f03583f0ed9">   20</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_radio_address.html#a2ba99fc0b268811944fd1ffe84d7c5b0">RadioAddress::Value</a>(<span class="keywordtype">int</span> _Value, <span class="keywordtype">byte</span> _Status) {                 DBENTERAL((<span class="stringliteral">&quot;RadioAddress::Value[SET]&quot;</span>),(_Value))</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">if</span> ( RF==0 ) { DBERRORL((<span class="stringliteral">&quot;RadioAddress::Value[SET] No RF Object&quot;</span>)) <span class="keywordflow">return</span>; }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  RF-&gt;Address(_Value);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  EEPROM.update(EMC_THISTODE+EMO_TODERF,highByte(_Value));</div>
@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('mi_r_f_8cpp_source.html',''); initResi
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">return</span> RF-&gt;Frequency(); </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//-----------------------------------------------------------------------------------------------------    </span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_radio_frequency.html#af5ba279632a9f803b52c7257549ed13d">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_radio_frequency.html#a1dbb0f25960e92778b14d81fda47d42d">RadioFrequency::Value</a>(<span class="keywordtype">int</span> _Value) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_radio_frequency.html#aa91107044afafbf4839680bda4672748">   35</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_radio_frequency.html#a1dbb0f25960e92778b14d81fda47d42d">RadioFrequency::Value</a>(<span class="keywordtype">int</span> _Value, <span class="keywordtype">byte</span> _Status) {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordflow">if</span> ( RF==0 ) { DBERRORL((<span class="stringliteral">&quot;RadioFrequency::Value[SET] No RF Object&quot;</span>)) <span class="keywordflow">return</span>; } </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  RF-&gt;Frequency(_Value); </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('mi_r_f_8cpp_source.html',''); initResi
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">return</span> int(RF-&gt;TxPower()); </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//-----------------------------------------------------------------------------------------------------    </span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_radio_tx_power.html#a264f1bf11819640c74feb895544717a6">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_radio_tx_power.html#a592ae01cdce7684bc48a34d1b6a12062">RadioTxPower::Value</a>(<span class="keywordtype">int</span> _Value) { </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_radio_tx_power.html#a39b3a75df38265038d89642802e86b5c">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_radio_tx_power.html#a592ae01cdce7684bc48a34d1b6a12062">RadioTxPower::Value</a>(<span class="keywordtype">int</span> _Value, <span class="keywordtype">byte</span> _Status) { </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> ( RF==0 ) { DBERRORL((<span class="stringliteral">&quot;RadioTxPower::Value[SET] No RF Object&quot;</span>)) <span class="keywordflow">return</span>; } </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  RF-&gt;TxPower(<span class="keywordtype">byte</span>(_Value)); </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('mi_r_f_8cpp_source.html',''); initResi
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">//-----------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_radio_p_c_conn.html#af48f12c02d46427cad087e975c01806a">   67</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="class_radio_p_c_conn.html#af48f12c02d46427cad087e975c01806a">RadioPCConn::Value</a>() { <span class="keywordflow">return</span> <a class="code" href="class_menu_value.html#ad159ea001ff3f601ef5ac29fa8579117">iValue</a>; }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//-----------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_radio_p_c_conn.html#a03b5e5dad592c156c9b51311e66b3f05">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_radio_p_c_conn.html#af48f12c02d46427cad087e975c01806a">RadioPCConn::Value</a>(<span class="keywordtype">int</span> _Value) { </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="class_radio_p_c_conn.html#a1f9ee288c16c54fe1fc05959a58ab24a">   69</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_radio_p_c_conn.html#af48f12c02d46427cad087e975c01806a">RadioPCConn::Value</a>(<span class="keywordtype">int</span> _Value, <span class="keywordtype">byte</span> _Status) { </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="class_menu_value.html#ad159ea001ff3f601ef5ac29fa8579117">iValue</a>=_Value;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">if</span> ( RF==0 ) { DBERRORL((<span class="stringliteral">&quot;RadioPCConn::Value[SET] No RF Object&quot;</span>)) <span class="keywordflow">return</span>; } </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">if</span> (_Value==1) { RF-&gt;Mode(E32_SLEEPMODE); } <span class="keywordflow">else</span> { RF-&gt;Mode(E32_NORMMODE); }</div>
@@ -170,13 +170,13 @@ $(document).ready(function(){initNavTree('mi_r_f_8cpp_source.html',''); initResi
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_radio_tx_power_html_a592ae01cdce7684bc48a34d1b6a12062"><div class="ttname"><a href="class_radio_tx_power.html#a592ae01cdce7684bc48a34d1b6a12062">RadioTxPower::Value</a></div><div class="ttdeci">virtual int Value() override</div><div class="ttdoc">GET Item Value.</div><div class="ttdef"><b>Definition:</b> <a href="mi_r_f_8cpp_source.html#l00049">miRF.cpp:49</a></div></div>
-<div class="ttc" id="aclass_menu_value_html_ac5de090699e6181c59567f25660f2ab7"><div class="ttname"><a href="class_menu_value.html#ac5de090699e6181c59567f25660f2ab7">MenuValue::ValueRange</a></div><div class="ttdeci">virtual void ValueRange(int _VMin, int _VMax)</div><div class="ttdoc">SET the Value Range.</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8cpp_source.html#l00204">miLib.cpp:204</a></div></div>
-<div class="ttc" id="aclass_menu_e_e_value_html_a8c90b8120b67df1bd3c1fbd9f828347c"><div class="ttname"><a href="class_menu_e_e_value.html#a8c90b8120b67df1bd3c1fbd9f828347c">MenuEEValue::Value</a></div><div class="ttdeci">virtual int Value() override</div><div class="ttdoc">GET Item Value.</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8cpp_source.html#l00384">miLib.cpp:384</a></div></div>
+<div class="ttc" id="aclass_menu_value_html_ac5de090699e6181c59567f25660f2ab7"><div class="ttname"><a href="class_menu_value.html#ac5de090699e6181c59567f25660f2ab7">MenuValue::ValueRange</a></div><div class="ttdeci">virtual void ValueRange(int _VMin, int _VMax)</div><div class="ttdoc">SET the Value Range.</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8cpp_source.html#l00205">miLib.cpp:205</a></div></div>
+<div class="ttc" id="aclass_menu_e_e_value_html_a8c90b8120b67df1bd3c1fbd9f828347c"><div class="ttname"><a href="class_menu_e_e_value.html#a8c90b8120b67df1bd3c1fbd9f828347c">MenuEEValue::Value</a></div><div class="ttdeci">virtual int Value() override</div><div class="ttdoc">GET Item Value.</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8cpp_source.html#l00389">miLib.cpp:389</a></div></div>
 <div class="ttc" id="aclass_radio_address_html_a2ba99fc0b268811944fd1ffe84d7c5b0"><div class="ttname"><a href="class_radio_address.html#a2ba99fc0b268811944fd1ffe84d7c5b0">RadioAddress::Value</a></div><div class="ttdeci">virtual int Value() override</div><div class="ttdoc">GET Item Value.</div><div class="ttdef"><b>Definition:</b> <a href="mi_r_f_8cpp_source.html#l00015">miRF.cpp:15</a></div></div>
-<div class="ttc" id="aclass_menu_value_html_ad159ea001ff3f601ef5ac29fa8579117"><div class="ttname"><a href="class_menu_value.html#ad159ea001ff3f601ef5ac29fa8579117">MenuValue::iValue</a></div><div class="ttdeci">int iValue</div><div class="ttdoc">2s Compliment to -32,768 [ 0x8000 ]</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8h_source.html#l00121">miLib.h:121</a></div></div>
-<div class="ttc" id="aclass_menu_value_html_ab38488fbfd8f9461622a2d4d3f71ddee"><div class="ttname"><a href="class_menu_value.html#ab38488fbfd8f9461622a2d4d3f71ddee">MenuValue::SetNumberName</a></div><div class="ttdeci">virtual void SetNumberName(int _Value, const char *_NName)</div><div class="ttdoc">SET a Text-Name for certain NUMBERS.</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8cpp_source.html#l00350">miLib.cpp:350</a></div></div>
+<div class="ttc" id="aclass_menu_value_html_ad159ea001ff3f601ef5ac29fa8579117"><div class="ttname"><a href="class_menu_value.html#ad159ea001ff3f601ef5ac29fa8579117">MenuValue::iValue</a></div><div class="ttdeci">int iValue</div><div class="ttdoc">2s Compliment to -32,768 [ 0x8000 ]</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8h_source.html#l00115">miLib.h:115</a></div></div>
+<div class="ttc" id="aclass_menu_value_html_ab38488fbfd8f9461622a2d4d3f71ddee"><div class="ttname"><a href="class_menu_value.html#ab38488fbfd8f9461622a2d4d3f71ddee">MenuValue::SetNumberName</a></div><div class="ttdeci">virtual void SetNumberName(int _Value, const char *_NName)</div><div class="ttdoc">SET a Text-Name for certain NUMBERS.</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8cpp_source.html#l00355">miLib.cpp:355</a></div></div>
 <div class="ttc" id="ami_r_f_8h_html"><div class="ttname"><a href="mi_r_f_8h.html">miRF.h</a></div><div class="ttdoc">ITEM Extends miLib.h for the 'Radio' Menu Items</div></div>
-<div class="ttc" id="aclass_menu_value_html"><div class="ttname"><a href="class_menu_value.html">MenuValue</a></div><div class="ttdoc">ITEM adds local VALUE to MenuName for 'Name-&gt;Value' Pairs Offers Number-Naming ability Offers Value S...</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8h_source.html#l00099">miLib.h:99</a></div></div>
+<div class="ttc" id="aclass_menu_value_html"><div class="ttname"><a href="class_menu_value.html">MenuValue</a></div><div class="ttdoc">ITEM adds local VALUE to MenuName for 'Name-&gt;Value' Pairs Offers Number-Naming ability Offers Value S...</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8h_source.html#l00092">miLib.h:92</a></div></div>
 <div class="ttc" id="aclass_radio_frequency_html_a1dbb0f25960e92778b14d81fda47d42d"><div class="ttname"><a href="class_radio_frequency.html#a1dbb0f25960e92778b14d81fda47d42d">RadioFrequency::Value</a></div><div class="ttdeci">virtual int Value() override</div><div class="ttdoc">GET Item Value.</div><div class="ttdef"><b>Definition:</b> <a href="mi_r_f_8cpp_source.html#l00030">miRF.cpp:30</a></div></div>
 <div class="ttc" id="aclass_radio_address_html"><div class="ttname"><a href="class_radio_address.html">RadioAddress</a></div><div class="ttdoc">On-Demand initialized Item-Object Tool used to set Textual Names on a new screen.</div><div class="ttdef"><b>Definition:</b> <a href="mi_r_f_8h_source.html#l00014">miRF.h:14</a></div></div>
 <div class="ttc" id="agroup___v_t_html_ga797b258e3509947af4d69079f3010db6"><div class="ttname"><a href="group___v_t.html#ga797b258e3509947af4d69079f3010db6">VTDIG</a></div><div class="ttdeci">#define VTDIG</div><div class="ttdoc">b0000 001x - (0) Increment [default], (1) Digit Set</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8h_source.html#l00028">miLib.h:28</a></div></div>
@@ -187,7 +187,7 @@ $(document).ready(function(){initNavTree('mi_r_f_8cpp_source.html',''); initResi
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3d2c46dab8f82ec07a2b191adf78a7a1.html">Tode-RC-211K</a></li><li class="navelem"><a class="el" href="mi_r_f_8cpp.html">miRF.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_36f613512629ef4a7a50b4c1fc065771.html">Tode-RC-211L</a></li><li class="navelem"><a class="el" href="mi_r_f_8cpp.html">miRF.cpp</a></li>
     <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>

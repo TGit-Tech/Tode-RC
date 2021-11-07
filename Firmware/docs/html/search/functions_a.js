@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['rfaddr_214',['RFAddr',['../class_tode.html#a81d7f948e226227cd24246884d9062fe',1,'Tode::RFAddr()'],['../class_tode.html#a1acb0c85fcbff9d2bcae19f8bbd177d6',1,'Tode::RFAddr(unsigned int _RFAddr)']]],
-  ['rftode_215',['RFTode',['../class_sys.html#ac2716d383a4c9bd0244444b6f3409c26',1,'Sys']]],
-  ['rxbyte_216',['RxByte',['../class_rx_packet.html#a896808688b68f9213df6ad5cd7ca939b',1,'RxPacket']]],
-  ['rxvalue_217',['RxValue',['../class_device.html#ac7869579b891e1970b269b9ff4541f30',1,'Device']]]
+  ['packetavailable_250',['PacketAvailable',['../class_e32_radio.html#a8b8891522e4a032215b9335908e96230',1,'E32Radio::PacketAvailable()'],['../class_radio_i.html#ab4485fb4ca3a020f02f3dfb321e9ffdb',1,'RadioI::PacketAvailable()']]]
 ];

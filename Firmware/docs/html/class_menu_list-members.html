@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 211K</span>
+   &#160;<span id="projectnumber">ver. 211U</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -94,7 +94,9 @@ $(document).ready(function(){initNavTree('class_menu_list.html',''); initResizab
   <tr class="even"><td class="entry"><a class="el" href="class_menu_list.html#a2d088285e715923069ead8e0c5a54d78">Add</a>(MenuItem *_Item)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>CurrItem</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_menu_list.html#a2cca626cbd7a5c1b9167af44c334010c">Del</a>(MenuItem *_Item)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Display</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_menu_list.html#ae0bba7f87fa41f70ce2d11a9f8f7c629">DelAllItems</a>()</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Display</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_menu_list.html#a37307c04c7da2cc9c181184366fb1dc9">DispList</a>(bool Clear=false, byte _XPos=0, byte _YPos=0)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>FirstItem</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>LastItem</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_menu_list.html#aca1747bceb5bf14f233ae128a1437e8c">Loop</a>()</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
@@ -102,11 +104,13 @@ $(document).ready(function(){initNavTree('class_menu_list.html',''); initResizab
   <tr class="even"><td class="entry"><a class="el" href="class_menu_list.html#a89cba35cb735956d275b2cbcc4d490cd">Navigate</a>(byte _Key)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>Navigator</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>NextList</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>PrevList</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>RF</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>RFID</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_menu_list.html#a579180d8fb5c4cf2a4e988d680dbb6f7">OffDisplay</a>()</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>PrevList</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>RF</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_menu_list.html#ac14ecf727b009c14b8fc584560f384da">Title</a>()</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_menu_list.html#a7b91de670e0cdc42348b574a8a51a5a8">Update</a>()</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>XPos</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>YPos</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

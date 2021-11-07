@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tode: C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-20CR/DB.h File Reference</title>
+<title>Tode: C:/Users/TGIT-TECH/Documents/!Projects/Tode-RC/firmware/Tode-RC-211U/lib/DB.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 20CR</span>
+   &#160;<span id="projectnumber">ver. 211U</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -102,17 +102,20 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_b.html#ga98e1870af5a087143c11d0004159eef4">DEBUGLEVEL</a>&#160;&#160;&#160;10</td></tr>
 <tr class="memdesc:ga98e1870af5a087143c11d0004159eef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">[0]=NONE, [1]=ERROR, [2]=INIT, [3]=INFO, [4]=ENTER <br /></td></tr>
 <tr class="separator:ga98e1870af5a087143c11d0004159eef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2f49001be13949a16a57e6c99ab00ad"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>COMMA</b>&#160;&#160;&#160;,</td></tr>
+<tr class="separator:gaa2f49001be13949a16a57e6c99ab00ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad28b6a30aa33c07a92d12135f3aca321"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERRORAAL</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;,&quot;));Serial.print((z));Serial.println(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERRORAAL</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;,&quot;));Serial.print z;Serial.println(F(&quot;)&quot;));</td></tr>
 <tr class="separator:gad28b6a30aa33c07a92d12135f3aca321"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaafa0ecf28b7a45ca4ba0207cea8a1724"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERRORAA</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;,&quot;));Serial.print((z));Serial.print(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERRORAA</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;,&quot;));Serial.print z;Serial.print(F(&quot;)&quot;));</td></tr>
 <tr class="separator:gaafa0ecf28b7a45ca4ba0207cea8a1724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga47e85d13ae1f26733961dfa0d9d39349"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERRORAL</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.println(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERRORAL</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.println(F(&quot;)&quot;));</td></tr>
 <tr class="separator:ga47e85d13ae1f26733961dfa0d9d39349"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaea90edd7332407b32420bd156b037014"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERRORA</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERRORA</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;)&quot;));</td></tr>
 <tr class="separator:gaea90edd7332407b32420bd156b037014"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5f38e06647a30ccfca11f4a955903a57"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERRORL</b>(x)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.println((F(x)));</td></tr>
@@ -121,16 +124,16 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DBERROR</b>(x)&#160;&#160;&#160;Serial.print(F(&quot;!ERROR!-&quot;));Serial.print((F(x)));</td></tr>
 <tr class="separator:ga5365a987006ef74d696eeba9392ee2d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab6ea330c67b5793efd061936abae3cf5"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINITAAL</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;,&quot;));Serial.print((z));Serial.println(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINITAAL</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;,&quot;));Serial.print z;Serial.println(F(&quot;)&quot;));</td></tr>
 <tr class="separator:gab6ea330c67b5793efd061936abae3cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1631269a8eed95faff32d297256005d8"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINITAA</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;,&quot;));Serial.print((z));Serial.print(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINITAA</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;,&quot;));Serial.print z;Serial.print(F(&quot;)&quot;));</td></tr>
 <tr class="separator:ga1631269a8eed95faff32d297256005d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga42f1cdced86ecb62ca86994b42877eac"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINITAL</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.println(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINITAL</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.println(F(&quot;)&quot;));</td></tr>
 <tr class="separator:ga42f1cdced86ecb62ca86994b42877eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga85c5eaeba7a13c7a78e24799e021716c"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINITA</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINITA</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;)&quot;));</td></tr>
 <tr class="separator:ga85c5eaeba7a13c7a78e24799e021716c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe90579fb9f716b308b93f928daa1a5c"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINIT</b>(x)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.print((F(x)));</td></tr>
@@ -139,16 +142,16 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINITL</b>(x)&#160;&#160;&#160;Serial.print(F(&quot;@&quot;));Serial.println((F(x)));</td></tr>
 <tr class="separator:ga2d395c8b81b4338d5f1aaa6f84012d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa5ce745ae144c4060bfe9ae0eecdf531"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFOAAL</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;,&quot;));Serial.print((z));Serial.println(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFOAAL</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;,&quot;));Serial.print z;Serial.println(F(&quot;)&quot;));</td></tr>
 <tr class="separator:gaa5ce745ae144c4060bfe9ae0eecdf531"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadf19440c1af4b07e8869decbdfdf00ed"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFOAA</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;,&quot;));Serial.print((z));Serial.print(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFOAA</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;,&quot;));Serial.print z;Serial.print(F(&quot;)&quot;));</td></tr>
 <tr class="separator:gadf19440c1af4b07e8869decbdfdf00ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad51735d9fddc0bb07805bd834fba20c1"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFOAL</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.println(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFOAL</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.println(F(&quot;)&quot;));</td></tr>
 <tr class="separator:gad51735d9fddc0bb07805bd834fba20c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadc88fe908eecc05d60a5312bb2d9f99b"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFOA</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFOA</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;)&quot;));</td></tr>
 <tr class="separator:gadc88fe908eecc05d60a5312bb2d9f99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab42627d5f8132a6b1b93be8f3bdff21c"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFOL</b>(x)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.println((F(x)));</td></tr>
@@ -157,16 +160,16 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DBINFO</b>(x)&#160;&#160;&#160;Serial.print(F(&quot;...&quot;));Serial.print((F(x)));</td></tr>
 <tr class="separator:ga541011958aae7142dade7d4088088dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaddce17508c57a6bf36e4c45cb5f7880d"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBENTERAAL</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;&gt;&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;,&quot;));Serial.print((z));Serial.println(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBENTERAAL</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;&gt;&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;,&quot;));Serial.print z;Serial.println(F(&quot;)&quot;));</td></tr>
 <tr class="separator:gaddce17508c57a6bf36e4c45cb5f7880d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga59a77808bc075a005e569b0a5f10fdbb"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBENTERAA</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;&gt;&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;,&quot;));Serial.print((z));Serial.print(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBENTERAA</b>(x,  y,  z)&#160;&#160;&#160;Serial.print(F(&quot;&gt;&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;,&quot;));Serial.print z;Serial.print(F(&quot;)&quot;));</td></tr>
 <tr class="separator:ga59a77808bc075a005e569b0a5f10fdbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga65c60f43584ee4c19d518926261a50f7"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBENTERAL</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;&gt;&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.println(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBENTERAL</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;&gt;&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.println(F(&quot;)&quot;));</td></tr>
 <tr class="separator:ga65c60f43584ee4c19d518926261a50f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5c91aade9edf3a022e93bd72de0f7684"><td class="memItemLeft" align="right" valign="top">
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBENTERA</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;&gt;&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print((y));Serial.print(F(&quot;)&quot;));</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DBENTERA</b>(x,  y)&#160;&#160;&#160;Serial.print(F(&quot;&gt;&quot;));Serial.print((F(x)));Serial.print(F(&quot;(&quot;));Serial.print y;Serial.print(F(&quot;)&quot;));</td></tr>
 <tr class="separator:ga5c91aade9edf3a022e93bd72de0f7684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadbf082dcf2d3b13093079bd5eef4de32"><td class="memItemLeft" align="right" valign="top">
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>DBENTERL</b>(x)&#160;&#160;&#160;Serial.print(F(&quot;&gt;&quot;));Serial.println((F(x)));</td></tr>
@@ -184,7 +187,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_b5fbdd27ad91136219b1a2580cea3929.html">Tode-RC-20CR</a></li><li class="navelem"><a class="el" href="_d_b_8h.html">DB.h</a></li>
+    <li class="navelem"><a class="el" href="dir_f3318e67c9dee03b4fcf327947471129.html">Tode-RC-211U</a></li><li class="navelem"><a class="el" href="dir_bd1eff9e466dfa4ca60c31ad210692ab.html">lib</a></li><li class="navelem"><a class="el" href="_d_b_8h.html">DB.h</a></li>
     <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>

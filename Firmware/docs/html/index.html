@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 211K</span>
+   &#160;<span id="projectnumber">ver. 211U</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -94,39 +94,59 @@ Files &amp; Abreviations</h1>
 <li>Firmware DateCode [YYMD]<ul>
 <li>YY = Last two digits of the Year</li>
 <li>M = (1-9 is Jan-Sept),(A-C is Oct-Dec)</li>
-<li>D = (1-9 is 1-9),(A-V is 10-31)</li>
+<li>D = (1-9 is 1-9),(A-V is 10-31) <br  />
+<br  />
+</li>
 </ul>
 </li>
-<li>ABC = Analog Button Capture</li>
-<li>DB = Debug directives</li>
+<li>lib/ABC = Analog Button Capture</li>
+<li>lib/DB = Debug messages directives</li>
 <li>Disp = Instantiates the Display Object to use</li>
 <li>E32 = Control of the EBYTE E32-Radio Module</li>
 <li>RFC = RF Control Protocol Implementation ( <a class="el" href="class_rx_packet.html" title="Receiving Byte Protocol for RF-Radio.">RxPacket</a>, <a class="el" href="class_tx_packet.html" title="Transmission Byte Protocol for RF-Radio.">TxPacket</a>, <a class="el" href="class_radio_i.html" title="Common Interface Base-Class for various RF-Radios.">RadioI</a> )</li>
-<li>Menu = Menu Base Classes ( <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a>, <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can carry a List Name.">MenuList</a>, <a class="el" href="class_navigator.html" title="LIST of LISTS Top-Level Navigator of multiple MenuList (s).">Navigator</a> )</li>
-<li>miLib = [m]enu-[i]tem(s) for Basic Name-to-Value Operations</li>
-<li>miHdw = [m]enu-[i]tem(s) for Hardware Selection</li>
-<li>miDev = [m]enu-[i]tem(s) for IO Devices</li>
-<li>miRF = [m]enu-[i]tem(s) for a Radio Module</li>
+<li>Menu = Menu Base Classes ( <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a>, <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can have a Title() name.">MenuList</a>, <a class="el" href="class_navigator.html" title="LIST of LISTS Top-Level Navigator of multiple MenuList (s).">Navigator</a> ) <br  />
+<u><b>Menu-[L]ists</b></u><br  />
+</li>
+<li>LHdw = <a class="el" href="class_tode.html" title="LIST represents a Physical Tode with a list of Device (s)">Tode</a>, <a class="el" href="class_tode_list.html">TodeList</a> <br  />
+<u><b>Menu-[i]tems</b></u><br  />
+</li>
+<li>iLib = <a class="el" href="class_menu_name.html" title="ITEM adds NAME to MenuItem stored in either MEM or EEPROM determined by Constructor.">MenuName</a>, <a class="el" href="class_menu_value.html" title="ITEM adds local VALUE to MenuName for &#39;Name-&gt;Value&#39; Pairs Offers Number-Naming ability Offers Value S...">MenuValue</a>; for Basic Name-to-Value Operations</li>
+<li>iHdw = <a class="el" href="class_pin_select.html" title="ITEM MenuEEValue: Menu Pick-A-Pin of IO-Hardware Options specific hardware.">PinSelect</a>, <a class="el" href="class_device.html" title="ITEM for Remote and/or Local Values">Device</a>; for Hardware Selection and <a class="el" href="class_device.html" title="ITEM for Remote and/or Local Values">Device</a> Interface</li>
+<li>iDev = <a class="el" href="class_on_off.html" title="DEVICE Digital On/Off Value Control and Local Settings; inherits MenuValue.">OnOff</a>; for IO devices control</li>
+<li>iRF = <a class="el" href="class_e32_radio.html" title="On-Demand Connect RF-Radio Serial to Arduino USB Serial.">E32Radio</a>; puts E32 Controls on the Menu</li>
 </ul>
 <h1><a class="anchor" id="Overview"></a>
 Conceptual Overview</h1>
-<p>Just as variables point to values in memory every device will have a collection of specific-use class variable types that contain various counts of link-list dynamic Name-&gt;Value pairs.</p>
+<p>Every IO-Device Control is a functionally expanded Menu-Item</p>
 <ul>
-<li>Names<ul>
-<li><a class="el" href="class_menu_name.html" title="ITEM adds NAME to MenuItem stored in either MEM or EEPROM determined by Constructor.">MenuName</a> for use when no value is needed (like a menu line allows linking to other 'SubList' of items)</li>
+<li><a class="el" href="class_menu_name.html" title="ITEM adds NAME to MenuItem stored in either MEM or EEPROM determined by Constructor.">MenuName</a> for use when no value is needed; like a menu line that allows linking to other 'SubList' of items or carrying out a specified <a class="el" href="group___n_a_v.html">NAV = Navigate() Constants</a> Command.</li>
+<li><a class="el" href="class_menu_value.html" title="ITEM adds local VALUE to MenuName for &#39;Name-&gt;Value&#39; Pairs Offers Number-Naming ability Offers Value S...">MenuValue</a> Inherits <a class="el" href="class_menu_name.html" title="ITEM adds NAME to MenuItem stored in either MEM or EEPROM determined by Constructor.">MenuName</a>; The Value() is stored as a variable in MEM<ul>
+<li><a class="el" href="group___v_t.html">VT - Value Type</a> Value Type Properties<ul>
+<li>VTRW = Value is Read &amp; Writable on the Menu</li>
+<li>VTDIG = Per Digit Setable on the Menu</li>
+<li>VTHEX = Value is displayed as a Positive Hexadecimal Value on the Menu</li>
+<li>VTBYTE = Value is a single Positive Byte Size</li>
 </ul>
 </li>
-<li>Values ( Also contains <a class="el" href="class_menu_name.html" title="ITEM adds NAME to MenuItem stored in either MEM or EEPROM determined by Constructor.">MenuName</a> )<ul>
-<li>MenuValueDigSet for number values with ability to set them by Menu</li>
-<li>MVOptions for selectable values showing text options</li>
 </ul>
 </li>
+<li><a class="el" href="class_menu_e_e_value.html" title="ITEM adds On-Display Per-Digit SET feature to MenuValue.">MenuEEValue</a> Inherits <a class="el" href="class_menu_value.html" title="ITEM adds local VALUE to MenuName for &#39;Name-&gt;Value&#39; Pairs Offers Number-Naming ability Offers Value S...">MenuValue</a>; The Value() is stored in an EEPROM Location for Power On/Off persistance</li>
+<li><a class="el" href="class_device.html" title="ITEM for Remote and/or Local Values">Device</a> Inherits <a class="el" href="class_menu_value.html" title="ITEM adds local VALUE to MenuName for &#39;Name-&gt;Value&#39; Pairs Offers Number-Naming ability Offers Value S...">MenuValue</a>; The Value() is coordinated by RF-Communications or by local IO-depending on 'IsLocal'</li>
 <li>Common Accronyms in Code<ul>
 <li>AEB [A]llocation-Size of [E]EPROM in [B]ytes</li>
 <li>EEA [EE]PROM [A]ddress</li>
 <li>EMC [E]EPROM [M]emory [C]onstants</li>
 <li>EMO [E]EPROM [M]emory Address [O]ffsets</li>
 </ul>
+</li>
+</ul>
+<h1><a class="anchor" id="IO-HDW"></a>
+New IO-HDW</h1>
+<ul>
+<li>Create (2) 32-bit longs and (1) byte and assign bit-wise usable Pins<ol type="1">
+<li>Used in DevLib.cpp PinSelect::ChangeSetTo</li>
+<li>Name Pin Usage in PinSelect::PinSelect Constructor</li>
+</ol>
 </li>
 </ul>
 <h1><a class="anchor" id="Display"></a>
@@ -178,21 +198,23 @@ New Devices</h1>
 EEPROM Allocation Map</h1>
 <ol type="1">
 <li>ThisTode Configuration will always start from the beginning of EEPROM Space</li>
-<li>Remote <a class="el" href="class_tode.html" title="LIST of Devices per Tode">Tode</a>'s</li>
+<li>Remote <a class="el" href="class_tode.html" title="LIST represents a Physical Tode with a list of Device (s)">Tode</a>'s</li>
 <li>System Settings<ul>
 <li>Including ThisTode's <a class="el" href="class_device.html" title="ITEM for Remote and/or Local Values">Device</a> Settings (not control)</li>
 </ul>
 </li>
 </ol>
-<h1><a class="anchor" id="IO-HDW"></a>
-New IO-HDW</h1>
-<ul>
-<li>Create (2) 32-bit longs and (1) byte and assign bit-wise usable Pins<ol type="1">
-<li>Used in DevLib.cpp PinSelect::ChangeSetTo</li>
-<li>Name Pin Usage in PinSelect::PinSelect Constructor </li>
+<h1><a class="anchor" id="STRUCTURES"></a>
+STRUCTURES How EEPROM, INDEX, and RFID are related</h1>
+<ol type="1">
+<li>TodeIndex (0-9) 10-Total is exactly equivalent to EEPROM Address by Calculation</li>
+<li>However; TodeIndex is only static to ThisTode (Todes can have different Index on different Todes)</li>
+<li>Network-wise the <a class="el" href="class_tode.html" title="LIST represents a Physical Tode with a list of Device (s)">Tode</a> Address is it's unique identifier and stored first on <a class="el" href="class_tode.html" title="LIST represents a Physical Tode with a list of Device (s)">Tode</a>'s local EEPROM config</li>
+<li>RFID for Devices is stored at paticular and equivalent EEPROM Addresses by Calculation</li>
+<li>RFID is also static by TodeAddress::RFID so RFID 1 is always 1 on all Todes</li>
+<li><br  />
+ </li>
 </ol>
-</li>
-</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

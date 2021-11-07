@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['display_20colors_253',['Display Colors',['../group___d_s_p_c_o_l_o_r_s.html',1,'']]],
-  ['display_20settings_254',['Display Settings',['../group___d_s_p_s_e_t_t_i_n_g_s.html',1,'']]],
-  ['display_20navigate_28_29_20constants_255',['Display Navigate() Constants',['../group___n_a_v_d_s_p.html',1,'']]]
+  ['ebyte_2de32_20configuration_291',['Ebyte-E32 Configuration',['../group___e32_b_y_t_e_s.html',1,'']]],
+  ['ebyte_2de32_20modes_292',['Ebyte-E32 Modes',['../group___e32_m_o_d_e_s.html',1,'']]]
 ];

@@ -17,8 +17,9 @@ It's like a RF-Node but it's called a 'Tode'.
 #Project Status
 -----------------------------------------------------------------------------------
 Initial design pictured may be changed abruptly.  The project is still in its
-design state.  Firmware is buggy;  PCB design files and 3D-Prints are available
-but no complete build instructions yet.  The PCB set is currently limited to a 
-single SideIO Wing and only the Ebyte E3-433T30D has correct Back-Plane PCB design.
+design state.  Firmware is not functional at this time;  PCB design files and
+3D-Prints are available but no complete build instructions yet.  The PCB set is 
+currently limited to a single IO Wing and only the Ebyte E3-433T30D has correct 
+Back-Plane PCB design.
 
 Please check back later for an available release.

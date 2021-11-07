@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tode: C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/miRF.h Source File</title>
+<title>Tode: C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211L/miRF.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 211K</span>
+   &#160;<span id="projectnumber">ver. 211L</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('mi_r_f_8h_source.html',''); initResiza
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_radio_address.html">RadioAddress</a>();</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>         <a class="code" href="class_radio_address.html#a2ba99fc0b268811944fd1ffe84d7c5b0">Value</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>        <a class="code" href="class_radio_address.html#a2ba99fc0b268811944fd1ffe84d7c5b0">Value</a>(<span class="keywordtype">int</span> _Value) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>        <a class="code" href="class_radio_address.html#a2ba99fc0b268811944fd1ffe84d7c5b0">Value</a>(<span class="keywordtype">int</span> _Value, <span class="keywordtype">byte</span> _Status = STSNORMAL) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/******************************************************************************************************************/</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_radio_frequency.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_radio_frequency.html">RadioFrequency</a> : <span class="keyword">public</span> <a class="code" href="class_menu_value.html">MenuValue</a> {</div>
@@ -107,21 +107,21 @@ $(document).ready(function(){initNavTree('mi_r_f_8h_source.html',''); initResiza
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_radio_frequency.html">RadioFrequency</a>();</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>         <a class="code" href="class_radio_frequency.html#a1dbb0f25960e92778b14d81fda47d42d">Value</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>        <a class="code" href="class_radio_frequency.html#a1dbb0f25960e92778b14d81fda47d42d">Value</a>(<span class="keywordtype">int</span> _Value) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>        <a class="code" href="class_radio_frequency.html#a1dbb0f25960e92778b14d81fda47d42d">Value</a>(<span class="keywordtype">int</span> _Value, <span class="keywordtype">byte</span> _Status = STSNORMAL) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/******************************************************************************************************************/</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_radio_tx_power.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_radio_tx_power.html">RadioTxPower</a> : <span class="keyword">public</span> <a class="code" href="class_menu_value.html">MenuValue</a> {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_radio_tx_power.html">RadioTxPower</a>();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>         <a class="code" href="class_radio_tx_power.html#a592ae01cdce7684bc48a34d1b6a12062">Value</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>        <a class="code" href="class_radio_tx_power.html#a592ae01cdce7684bc48a34d1b6a12062">Value</a>(<span class="keywordtype">int</span> _Value) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>        <a class="code" href="class_radio_tx_power.html#a592ae01cdce7684bc48a34d1b6a12062">Value</a>(<span class="keywordtype">int</span> _Value, <span class="keywordtype">byte</span> _Status = STSNORMAL) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/******************************************************************************************************************/</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_radio_p_c_conn.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_radio_p_c_conn.html">RadioPCConn</a> : <span class="keyword">public</span> <a class="code" href="class_menu_value.html">MenuValue</a> {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_radio_p_c_conn.html">RadioPCConn</a>();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>         <a class="code" href="class_radio_p_c_conn.html#af48f12c02d46427cad087e975c01806a">Value</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>        <a class="code" href="class_radio_p_c_conn.html#af48f12c02d46427cad087e975c01806a">Value</a>(<span class="keywordtype">int</span> _Value) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>        <a class="code" href="class_radio_p_c_conn.html#af48f12c02d46427cad087e975c01806a">Value</a>(<span class="keywordtype">int</span> _Value, <span class="keywordtype">byte</span> _Status = STSNORMAL) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">byte</span>        <a class="code" href="class_radio_p_c_conn.html#a02ed2172fd1cee759980dbc861afc23a">Loop</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//_____________________________________________________________________________________________________________________</span></div>
@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('mi_r_f_8h_source.html',''); initResiza
 <div class="ttc" id="ami_lib_8h_html"><div class="ttname"><a href="mi_lib_8h.html">miLib.h</a></div><div class="ttdoc">Menu-Items General Extension Library.</div></div>
 <div class="ttc" id="aclass_radio_p_c_conn_html"><div class="ttname"><a href="class_radio_p_c_conn.html">RadioPCConn</a></div><div class="ttdoc">On-Demand Connect RF-Radio Serial to Arduino USB Serial.</div><div class="ttdef"><b>Definition:</b> <a href="mi_r_f_8h_source.html#l00048">miRF.h:48</a></div></div>
 <div class="ttc" id="aclass_radio_address_html_a2ba99fc0b268811944fd1ffe84d7c5b0"><div class="ttname"><a href="class_radio_address.html#a2ba99fc0b268811944fd1ffe84d7c5b0">RadioAddress::Value</a></div><div class="ttdeci">virtual int Value() override</div><div class="ttdoc">GET Item Value.</div><div class="ttdef"><b>Definition:</b> <a href="mi_r_f_8cpp_source.html#l00015">miRF.cpp:15</a></div></div>
-<div class="ttc" id="aclass_menu_value_html"><div class="ttname"><a href="class_menu_value.html">MenuValue</a></div><div class="ttdoc">ITEM adds local VALUE to MenuName for 'Name-&gt;Value' Pairs Offers Number-Naming ability Offers Value S...</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8h_source.html#l00099">miLib.h:99</a></div></div>
+<div class="ttc" id="aclass_menu_value_html"><div class="ttname"><a href="class_menu_value.html">MenuValue</a></div><div class="ttdoc">ITEM adds local VALUE to MenuName for 'Name-&gt;Value' Pairs Offers Number-Naming ability Offers Value S...</div><div class="ttdef"><b>Definition:</b> <a href="mi_lib_8h_source.html#l00092">miLib.h:92</a></div></div>
 <div class="ttc" id="aclass_radio_frequency_html_a1dbb0f25960e92778b14d81fda47d42d"><div class="ttname"><a href="class_radio_frequency.html#a1dbb0f25960e92778b14d81fda47d42d">RadioFrequency::Value</a></div><div class="ttdeci">virtual int Value() override</div><div class="ttdoc">GET Item Value.</div><div class="ttdef"><b>Definition:</b> <a href="mi_r_f_8cpp_source.html#l00030">miRF.cpp:30</a></div></div>
 <div class="ttc" id="aclass_radio_address_html"><div class="ttname"><a href="class_radio_address.html">RadioAddress</a></div><div class="ttdoc">On-Demand initialized Item-Object Tool used to set Textual Names on a new screen.</div><div class="ttdef"><b>Definition:</b> <a href="mi_r_f_8h_source.html#l00014">miRF.h:14</a></div></div>
 <div class="ttc" id="aclass_radio_p_c_conn_html_a02ed2172fd1cee759980dbc861afc23a"><div class="ttname"><a href="class_radio_p_c_conn.html#a02ed2172fd1cee759980dbc861afc23a">RadioPCConn::Loop</a></div><div class="ttdeci">virtual byte Loop() override</div><div class="ttdoc">System loop()</div><div class="ttdef"><b>Definition:</b> <a href="mi_r_f_8cpp_source.html#l00075">miRF.cpp:75</a></div></div>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('mi_r_f_8h_source.html',''); initResiza
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_3d2c46dab8f82ec07a2b191adf78a7a1.html">Tode-RC-211K</a></li><li class="navelem"><a class="el" href="mi_r_f_8h.html">miRF.h</a></li>
+    <li class="navelem"><a class="el" href="dir_36f613512629ef4a7a50b4c1fc065771.html">Tode-RC-211L</a></li><li class="navelem"><a class="el" href="mi_r_f_8h.html">miRF.h</a></li>
     <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>

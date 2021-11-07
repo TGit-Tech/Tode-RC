@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 211K</span>
+   &#160;<span id="projectnumber">ver. 211U</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -95,8 +95,10 @@ $(document).ready(function(){initNavTree('class_tode.html',''); initResizable();
   <tr><td class="entry"><a class="el" href="class_tode.html#aec3a04f5a272f254da9d099b1cf752cd">AddDevice</a>(byte _DTKey, byte _RFID)</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>CurrItem</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_menu_list.html#a2cca626cbd7a5c1b9167af44c334010c">Del</a>(MenuItem *_Item)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_tode.html#a787181e4171d6b641cf3e1728d943daa">Devices</a></td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Display</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_menu_list.html#ae0bba7f87fa41f70ce2d11a9f8f7c629">DelAllItems</a>()</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tode.html#a787181e4171d6b641cf3e1728d943daa">Devices</a></td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Display</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_menu_list.html#a37307c04c7da2cc9c181184366fb1dc9">DispList</a>(bool Clear=false, byte _XPos=0, byte _YPos=0)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_tode.html#a35e7fa4e787966eb0bd6aedf5f90bb25">EEAddress</a>()</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>EELoadDevices</b>() (defined in <a class="el" href="class_tode.html">Tode</a>)</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>FirstItem</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
@@ -108,18 +110,20 @@ $(document).ready(function(){initNavTree('class_tode.html',''); initResizable();
   <tr class="even"><td class="entry"><a class="el" href="class_menu_list.html#a89cba35cb735956d275b2cbcc4d490cd">Navigate</a>(byte _Key)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_tode.html#a21061fd9e7758985baced2a3a5d530d9">NewDevice</a>(byte _DTKey)</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>NextList</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>PrevList</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>RF</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_tode.html#a81d7f948e226227cd24246884d9062fe">RFAddr</a>()</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_tode.html#a1acb0c85fcbff9d2bcae19f8bbd177d6">RFAddr</a>(unsigned int _RFAddr)</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>RFID</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_menu_list.html#a579180d8fb5c4cf2a4e988d680dbb6f7">OffDisplay</a>()</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>PrevList</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>RF</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tode.html#a81d7f948e226227cd24246884d9062fe">RFAddr</a>()</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_tode.html#a1acb0c85fcbff9d2bcae19f8bbd177d6">RFAddr</a>(unsigned int _RFAddr)</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_tode.html#a2f235e21355ea1329b7912175d51d3b9">Title</a>() override</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_tode.html#a069864f6745185955b0bb2ee102d84a7">Tode</a>(byte _TodeIndex)</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>TodeIndex</b> (defined in <a class="el" href="class_tode.html">Tode</a>)</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_tode.html#a000c37a5281ed26da19b174280a040d6">TodeIndex</a></td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_tode.html#a311f4a58136f34356fbbf5a1feb7895e">TodeName</a></td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_tode.html#a1aa0525a38f53d2795606b83459d227d">Update</a>() override</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_tode.html#a912aa3d7150bab0ec181ea7c3ffa784b">Version</a>()</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_tode.html#a567b64456c4d62a8ef873ca2bef92e73">Version</a>(byte _Version)</td><td class="entry"><a class="el" href="class_tode.html">Tode</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>XPos</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>YPos</b> (defined in <a class="el" href="class_menu_list.html">MenuList</a>)</td><td class="entry"><a class="el" href="class_menu_list.html">MenuList</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

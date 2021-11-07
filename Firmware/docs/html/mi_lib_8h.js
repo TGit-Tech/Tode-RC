@@ -14,8 +14,6 @@ var mi_lib_8h =
     [ "NSSAVE", "group___n_s.html#gab21f678c49f2299a87e284907257de8a", null ],
     [ "NSTITLE", "group___n_s.html#ga1f1d745c34f0e624ceef720951e814f6", null ],
     [ "RXVALEXPIREMS", "mi_lib_8h.html#a946c6e82df5cabf4ed5a1baaf660d093", null ],
-    [ "VST_BYRX", "group___v_s_t.html#gad04127d22a1f3220b2112d34f86f584c", null ],
-    [ "VST_BYUSER", "group___v_s_t.html#ga699e01000c8cb5224ba24dec8f2862c5", null ],
     [ "VTBYTE", "group___v_t.html#ga2d65e42b28261c6b589f3769a287f8df", null ],
     [ "VTDIG", "group___v_t.html#ga797b258e3509947af4d69079f3010db6", null ],
     [ "VTHEX", "group___v_t.html#ga47ea1d39dc1001596339638089b9d2e3", null ],

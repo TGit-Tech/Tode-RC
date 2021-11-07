@@ -1,9 +1,7 @@
 var _r_f_c_8h =
 [
     [ "RxPacket", "class_rx_packet.html", "class_rx_packet" ],
-    [ "llBytes", "struct_rx_packet_1_1ll_bytes.html", "struct_rx_packet_1_1ll_bytes" ],
     [ "TxPacket", "class_tx_packet.html", "class_tx_packet" ],
-    [ "llBytes", "struct_tx_packet_1_1ll_bytes.html", "struct_tx_packet_1_1ll_bytes" ],
     [ "RadioI", "class_radio_i.html", "class_radio_i" ],
     [ "BNONE", "_r_f_c_8h.html#a2750a00190636997d66cf567af774f97", null ],
     [ "INONE", "_r_f_c_8h.html#aff5dcc280bf801e02fef48f71f2a3af0", null ],
@@ -27,8 +25,6 @@ var _r_f_c_8h =
     [ "PKT_GOTVAL", "group___p_k_t.html#gabc894292070376b9fbf45e63ff369dbb", null ],
     [ "PKT_GOTVALS", "group___p_k_t.html#ga06e2f7024b3c74b3857f7ba2a86716d7", null ],
     [ "PKT_NOTSET", "group___p_k_t.html#ga4fac90297dad90de740effa62e2c25f2", null ],
-    [ "PKT_PING", "group___p_k_t.html#ga2751abd34957b4a985fb464d09aa2077", null ],
-    [ "PKT_PINGBACK", "group___p_k_t.html#ga823b78928e0529b2537d8d93b614378b", null ],
     [ "PKT_SETVAL", "group___p_k_t.html#ga1a44749b87157655be7d0ab3dc206612", null ],
     [ "PKV_EXPIRE_TIME", "group___p_k_v.html#ga296513293cf451f0886d2f07ce43f44c", null ],
     [ "VALNOTSET", "_r_f_c_8h.html#ad54662a2f85767d6698c5c0aa32e9997", null ]

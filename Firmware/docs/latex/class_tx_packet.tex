@@ -9,16 +9,14 @@ Transmission Byte Protocol for R\+F-\/\+Radio.
 
 {\ttfamily \#include $<$R\+F\+C.\+h$>$}
 
-\doxysubsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{struct_tx_packet_1_1ll_bytes}{ll\+Bytes}}
-\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_tx_packet_a60e947cbb1a138fe8f3e4e5288e1abb6}\label{class_tx_packet_a60e947cbb1a138fe8f3e4e5288e1abb6}} 
 {\bfseries Tx\+Packet} (byte \+\_\+\+Sec\+Net, byte \+\_\+\+Type, int \+\_\+\+To\+RF, byte \+\_\+\+Ver=\mbox{\hyperlink{_r_f_c_8h_a2750a00190636997d66cf567af774f97}{B\+N\+O\+NE}}, byte \+\_\+\+Dev\+R\+F\+ID=\mbox{\hyperlink{_r_f_c_8h_a2750a00190636997d66cf567af774f97}{B\+N\+O\+NE}}, int \+\_\+\+Value=\mbox{\hyperlink{_r_f_c_8h_aff5dcc280bf801e02fef48f71f2a3af0}{I\+N\+O\+NE}})
+\item 
+\mbox{\Hypertarget{class_tx_packet_a70b38b7fe15f8fd9fa6c86eb98a4966d}\label{class_tx_packet_a70b38b7fe15f8fd9fa6c86eb98a4966d}} 
+void {\bfseries Tx\+Byte} (byte \+\_\+\+Byte)
 \item 
 \mbox{\Hypertarget{class_tx_packet_a5ba2b6cde0e63502aff9cf5988296f74}\label{class_tx_packet_a5ba2b6cde0e63502aff9cf5988296f74}} 
 int {\bfseries Secure} ()
@@ -35,6 +33,9 @@ void {\bfseries Add\+Value} (byte \+\_\+\+R\+F\+ID, int \+\_\+\+Value)
 \mbox{\Hypertarget{class_tx_packet_a572d38d3bab1776af2ed9bd1afefa3bc}\label{class_tx_packet_a572d38d3bab1776af2ed9bd1afefa3bc}} 
 int {\bfseries Size} = 0
 \item 
+\mbox{\Hypertarget{class_tx_packet_ab8bc33550dab583a01b7f6bbec32d403}\label{class_tx_packet_ab8bc33550dab583a01b7f6bbec32d403}} 
+Arduino\+Queue$<$ byte $>$ $\ast$ {\bfseries Extra\+Bytes} = 0
+\item 
 byte {\bfseries Bytes} \mbox{[}58\mbox{]}
 \end{DoxyCompactItemize}
 
@@ -42,7 +43,7 @@ byte {\bfseries Bytes} \mbox{[}58\mbox{]}
 \doxysubsection{Detailed Description}
 Transmission Byte Protocol for R\+F-\/\+Radio. 
 
-Definition at line 103 of file R\+F\+C.\+h.
+Definition at line 98 of file R\+F\+C.\+h.
 
 
 
@@ -65,11 +66,11 @@ Definition at line 103 of file R\+F\+C.\+h.
 \end{DoxyCode}
 
 
-Definition at line 116 of file R\+F\+C.\+h.
+Definition at line 110 of file R\+F\+C.\+h.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+R\+C-\/211\+K/\mbox{\hyperlink{_r_f_c_8h}{R\+F\+C.\+h}}\item 
-C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/\#\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+R\+C-\/211\+K/\mbox{\hyperlink{_r_f_c_8cpp}{R\+F\+C.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/!\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+R\+C-\/211\+U/\mbox{\hyperlink{_r_f_c_8h}{R\+F\+C.\+h}}\item 
+C\+:/\+Users/\+T\+G\+I\+T-\/\+T\+E\+C\+H/\+Documents/!\+Projects/\+Tode-\/\+R\+C/firmware/\+Tode-\/\+R\+C-\/211\+U/\mbox{\hyperlink{_r_f_c_8cpp}{R\+F\+C.\+cpp}}\end{DoxyCompactItemize}

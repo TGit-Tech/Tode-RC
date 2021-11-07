@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 211K</span>
+   &#160;<span id="projectnumber">ver. 211U</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('class_menu_list.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 
-<p><b>LIST</b> of Menu-Item (s) which can carry a <em>List Name</em>.  
+<p><b>LIST</b> of Menu-Item (s) which can have a <a class="el" href="class_menu_list.html#ac14ecf727b009c14b8fc584560f384da" title="GET List Title-Name.">Title()</a> name.  
  <a href="class_menu_list.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_menu_8h_source.html">Menu.h</a>&gt;</code></p>
@@ -105,7 +105,8 @@ Inheritance diagram for MenuList:</div>
  <div class="center">
   <img src="class_menu_list.png" usemap="#MenuList_map" alt=""/>
   <map id="MenuList_map" name="MenuList_map">
-<area href="class_tode.html" title="LIST of Devices per Tode" alt="Tode" shape="rect" coords="0,56,63,80"/>
+<area href="class_tode.html" title="LIST represents a Physical Tode with a list of Device (s)" alt="Tode" shape="rect" coords="0,56,63,80"/>
+<area href="class_tode_list.html" alt="TodeList" shape="rect" coords="73,56,136,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -119,14 +120,26 @@ Public Member Functions</h2></td></tr>
 virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a89cba35cb735956d275b2cbcc4d490cd">Navigate</a> (byte _Key)</td></tr>
 <tr class="memdesc:a89cba35cb735956d275b2cbcc4d490cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keypad Navigate by KEY. <br /></td></tr>
 <tr class="separator:a89cba35cb735956d275b2cbcc4d490cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37307c04c7da2cc9c181184366fb1dc9"><td class="memItemLeft" align="right" valign="top"><a id="a37307c04c7da2cc9c181184366fb1dc9"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a37307c04c7da2cc9c181184366fb1dc9">DispList</a> (bool Clear=false, byte _XPos=0, byte _YPos=0)</td></tr>
+<tr class="memdesc:a37307c04c7da2cc9c181184366fb1dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diplay the List on the Display. <br /></td></tr>
+<tr class="separator:a37307c04c7da2cc9c181184366fb1dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a579180d8fb5c4cf2a4e988d680dbb6f7"><td class="memItemLeft" align="right" valign="top"><a id="a579180d8fb5c4cf2a4e988d680dbb6f7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a579180d8fb5c4cf2a4e988d680dbb6f7">OffDisplay</a> ()</td></tr>
+<tr class="memdesc:a579180d8fb5c4cf2a4e988d680dbb6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove List from the Display. <br /></td></tr>
+<tr class="separator:a579180d8fb5c4cf2a4e988d680dbb6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d088285e715923069ead8e0c5a54d78"><td class="memItemLeft" align="right" valign="top"><a id="a2d088285e715923069ead8e0c5a54d78"></a>
 virtual <a class="el" href="class_menu_item.html">MenuItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a2d088285e715923069ead8e0c5a54d78">Add</a> (<a class="el" href="class_menu_item.html">MenuItem</a> *_Item)</td></tr>
-<tr class="memdesc:a2d088285e715923069ead8e0c5a54d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADD <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a> to the <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can carry a List Name.">MenuList</a>. <br /></td></tr>
+<tr class="memdesc:a2d088285e715923069ead8e0c5a54d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADD <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a> to the <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can have a Title() name.">MenuList</a>. <br /></td></tr>
 <tr class="separator:a2d088285e715923069ead8e0c5a54d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cca626cbd7a5c1b9167af44c334010c"><td class="memItemLeft" align="right" valign="top"><a id="a2cca626cbd7a5c1b9167af44c334010c"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a2cca626cbd7a5c1b9167af44c334010c">Del</a> (<a class="el" href="class_menu_item.html">MenuItem</a> *_Item)</td></tr>
-<tr class="memdesc:a2cca626cbd7a5c1b9167af44c334010c"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEL <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a> from the <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can carry a List Name.">MenuList</a>. <br /></td></tr>
+<tr class="memdesc:a2cca626cbd7a5c1b9167af44c334010c"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEL <a class="el" href="class_menu_item.html" title="ITEM Menu-Item Base Class ie Interface.">MenuItem</a> from the <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can have a Title() name.">MenuList</a>. <br /></td></tr>
 <tr class="separator:a2cca626cbd7a5c1b9167af44c334010c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0bba7f87fa41f70ce2d11a9f8f7c629"><td class="memItemLeft" align="right" valign="top"><a id="ae0bba7f87fa41f70ce2d11a9f8f7c629"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#ae0bba7f87fa41f70ce2d11a9f8f7c629">DelAllItems</a> ()</td></tr>
+<tr class="memdesc:ae0bba7f87fa41f70ce2d11a9f8f7c629"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEL ALL MenuItems from the <a class="el" href="class_menu_list.html" title="LIST of Menu-Item (s) which can have a Title() name.">MenuList</a>. <br /></td></tr>
+<tr class="separator:ae0bba7f87fa41f70ce2d11a9f8f7c629"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b91de670e0cdc42348b574a8a51a5a8"><td class="memItemLeft" align="right" valign="top"><a id="a7b91de670e0cdc42348b574a8a51a5a8"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#a7b91de670e0cdc42348b574a8a51a5a8">Update</a> ()</td></tr>
 <tr class="memdesc:a7b91de670e0cdc42348b574a8a51a5a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preform updates on Current List. <br /></td></tr>
@@ -137,14 +150,11 @@ virtual byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:aca1747bceb5bf14f233ae128a1437e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac14ecf727b009c14b8fc584560f384da"><td class="memItemLeft" align="right" valign="top"><a id="ac14ecf727b009c14b8fc584560f384da"></a>
 virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_menu_list.html#ac14ecf727b009c14b8fc584560f384da">Title</a> ()</td></tr>
-<tr class="memdesc:ac14ecf727b009c14b8fc584560f384da"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET List Title/Name. <br /></td></tr>
+<tr class="memdesc:ac14ecf727b009c14b8fc584560f384da"><td class="mdescLeft">&#160;</td><td class="mdescRight">GET List Title-Name. <br /></td></tr>
 <tr class="separator:ac14ecf727b009c14b8fc584560f384da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a900de49c779b834b378eb310a6bae4ee"><td class="memItemLeft" align="right" valign="top"><a id="a900de49c779b834b378eb310a6bae4ee"></a>
-byte&#160;</td><td class="memItemRight" valign="bottom"><b>RFID</b> = 0xFF</td></tr>
-<tr class="separator:a900de49c779b834b378eb310a6bae4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee6e82442ea3ddf1b2702413b1949103"><td class="memItemLeft" align="right" valign="top"><a id="aee6e82442ea3ddf1b2702413b1949103"></a>
 <a class="el" href="class_menu_list.html">MenuList</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>NextList</b> = 0</td></tr>
 <tr class="separator:aee6e82442ea3ddf1b2702413b1949103"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,6 +170,12 @@ RFCLASS *&#160;</td><td class="memItemRight" valign="bottom"><b>RF</b> = 0</td><
 <tr class="memitem:a3d375f4bb212075a6820f62b9711a9a7"><td class="memItemLeft" align="right" valign="top"><a id="a3d375f4bb212075a6820f62b9711a9a7"></a>
 DSPCLASS *&#160;</td><td class="memItemRight" valign="bottom"><b>Display</b> = 0</td></tr>
 <tr class="separator:a3d375f4bb212075a6820f62b9711a9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad384023d01d08886e1db8d3b1fbedb59"><td class="memItemLeft" align="right" valign="top"><a id="ad384023d01d08886e1db8d3b1fbedb59"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><b>XPos</b> =0</td></tr>
+<tr class="separator:ad384023d01d08886e1db8d3b1fbedb59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a703b232b32f542675436334be8660ca9"><td class="memItemLeft" align="right" valign="top"><a id="a703b232b32f542675436334be8660ca9"></a>
+byte&#160;</td><td class="memItemRight" valign="bottom"><b>YPos</b> =0</td></tr>
+<tr class="separator:a703b232b32f542675436334be8660ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb4c6d40e4ac35561021cc533d6b2283"><td class="memItemLeft" align="right" valign="top"><a id="abb4c6d40e4ac35561021cc533d6b2283"></a>
 <a class="el" href="class_menu_item.html">MenuItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>FirstItem</b> = 0</td></tr>
 <tr class="separator:abb4c6d40e4ac35561021cc533d6b2283"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,12 +193,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Navigator</b></td></
 <tr class="separator:a1c39e2e7a194cc6a61b868bc08f8b3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><b>LIST</b> of Menu-Item (s) which can carry a <em>List Name</em>. </p>
+<div class="textblock"><p><b>LIST</b> of Menu-Item (s) which can have a <a class="el" href="class_menu_list.html#ac14ecf727b009c14b8fc584560f384da" title="GET List Title-Name.">Title()</a> name. </p>
 
-<p class="definition">Definition at line <a class="el" href="_menu_8h_source.html#l00103">103</a> of file <a class="el" href="_menu_8h_source.html">Menu.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_menu_8h_source.html#l00125">125</a> of file <a class="el" href="_menu_8h_source.html">Menu.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="_menu_8h_source.html">Menu.h</a></li>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="_menu_8cpp_source.html">Menu.cpp</a></li>
+<li>C:/Users/TGIT-TECH/Documents/!Projects/Tode-RC/firmware/Tode-RC-211U/<a class="el" href="_menu_8h_source.html">Menu.h</a></li>
+<li>C:/Users/TGIT-TECH/Documents/!Projects/Tode-RC/firmware/Tode-RC-211U/<a class="el" href="_menu_8cpp_source.html">Menu.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

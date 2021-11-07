@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="TGit-Tech-Logo-Shadowed.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Tode
-   &#160;<span id="projectnumber">ver. 211K</span>
+   &#160;<span id="projectnumber">ver. 211U</span>
    </div>
    <div id="projectbrief">Tode-RC firmware</div>
   </td>
@@ -85,7 +85,6 @@ $(document).ready(function(){initNavTree('class_tx_packet.html',''); initResizab
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_tx_packet-members.html">List of all members</a>  </div>
@@ -99,16 +98,14 @@ $(document).ready(function(){initNavTree('class_tx_packet.html',''); initResizab
 
 <p><code>#include &lt;<a class="el" href="_r_f_c_8h_source.html">RFC.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_tx_packet_1_1ll_bytes.html">llBytes</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a60e947cbb1a138fe8f3e4e5288e1abb6"><td class="memItemLeft" align="right" valign="top"><a id="a60e947cbb1a138fe8f3e4e5288e1abb6"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>TxPacket</b> (byte _SecNet, byte _Type, int _ToRF, byte _Ver=<a class="el" href="_r_f_c_8h.html#a2750a00190636997d66cf567af774f97">BNONE</a>, byte _DevRFID=<a class="el" href="_r_f_c_8h.html#a2750a00190636997d66cf567af774f97">BNONE</a>, int _Value=<a class="el" href="_r_f_c_8h.html#aff5dcc280bf801e02fef48f71f2a3af0">INONE</a>)</td></tr>
 <tr class="separator:a60e947cbb1a138fe8f3e4e5288e1abb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b38b7fe15f8fd9fa6c86eb98a4966d"><td class="memItemLeft" align="right" valign="top"><a id="a70b38b7fe15f8fd9fa6c86eb98a4966d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>TxByte</b> (byte _Byte)</td></tr>
+<tr class="separator:a70b38b7fe15f8fd9fa6c86eb98a4966d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ba2b6cde0e63502aff9cf5988296f74"><td class="memItemLeft" align="right" valign="top"><a id="a5ba2b6cde0e63502aff9cf5988296f74"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>Secure</b> ()</td></tr>
 <tr class="separator:a5ba2b6cde0e63502aff9cf5988296f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,13 +121,16 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a572d38d3bab1776af2ed9bd1afefa3bc"><td class="memItemLeft" align="right" valign="top"><a id="a572d38d3bab1776af2ed9bd1afefa3bc"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>Size</b> = 0</td></tr>
 <tr class="separator:a572d38d3bab1776af2ed9bd1afefa3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8bc33550dab583a01b7f6bbec32d403"><td class="memItemLeft" align="right" valign="top"><a id="ab8bc33550dab583a01b7f6bbec32d403"></a>
+ArduinoQueue&lt; byte &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>ExtraBytes</b> = 0</td></tr>
+<tr class="separator:ab8bc33550dab583a01b7f6bbec32d403"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b7b16d2d335c2b14f7fd6a37458bdf1"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><b>Bytes</b> [58]</td></tr>
 <tr class="separator:a1b7b16d2d335c2b14f7fd6a37458bdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Transmission Byte Protocol for RF-Radio. </p>
 
-<p class="definition">Definition at line <a class="el" href="_r_f_c_8h_source.html#l00103">103</a> of file <a class="el" href="_r_f_c_8h_source.html">RFC.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_f_c_8h_source.html#l00098">98</a> of file <a class="el" href="_r_f_c_8h_source.html">RFC.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a1b7b16d2d335c2b14f7fd6a37458bdf1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b7b16d2d335c2b14f7fd6a37458bdf1">&#9670;&nbsp;</a></span>Bytes</h2>
@@ -150,13 +150,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>Size</b> = 0</td></tr>
 <div class="line">                         255,255,255,255,255,255,255,255,255,255,</div>
 <div class="line">                         255,255,255,255,255,255,255,255}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="_r_f_c_8h_source.html#l00116">116</a> of file <a class="el" href="_r_f_c_8h_source.html">RFC.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_r_f_c_8h_source.html#l00110">110</a> of file <a class="el" href="_r_f_c_8h_source.html">RFC.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="_r_f_c_8h_source.html">RFC.h</a></li>
-<li>C:/Users/TGIT-TECH/Documents/#Projects/Tode-RC/firmware/Tode-RC-211K/<a class="el" href="_r_f_c_8cpp_source.html">RFC.cpp</a></li>
+<li>C:/Users/TGIT-TECH/Documents/!Projects/Tode-RC/firmware/Tode-RC-211U/<a class="el" href="_r_f_c_8h_source.html">RFC.h</a></li>
+<li>C:/Users/TGIT-TECH/Documents/!Projects/Tode-RC/firmware/Tode-RC-211U/<a class="el" href="_r_f_c_8cpp_source.html">RFC.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

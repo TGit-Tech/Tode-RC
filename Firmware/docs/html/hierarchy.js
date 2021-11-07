@@ -1,7 +1,6 @@
 var hierarchy =
 [
-    [ "RxPacket::llBytes", "struct_rx_packet_1_1ll_bytes.html", null ],
-    [ "TxPacket::llBytes", "struct_tx_packet_1_1ll_bytes.html", null ],
+    [ "AnalogButtonCapture", "class_analog_button_capture.html", null ],
     [ "MenuItem", "class_menu_item.html", [
       [ "MenuName", "class_menu_name.html", [
         [ "MenuValue", "class_menu_value.html", [
@@ -21,7 +20,8 @@ var hierarchy =
       ] ]
     ] ],
     [ "MenuList", "class_menu_list.html", [
-      [ "Tode", "class_tode.html", null ]
+      [ "Tode", "class_tode.html", null ],
+      [ "TodeList", "class_tode_list.html", null ]
     ] ],
     [ "Navigator", "class_navigator.html", [
       [ "Sys", "class_sys.html", null ]

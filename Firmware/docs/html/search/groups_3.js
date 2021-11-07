@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ebyte_2de32_20configuration_256',['Ebyte-E32 Configuration',['../group___e32_b_y_t_e_s.html',1,'']]],
-  ['ebyte_2de32_20modes_257',['Ebyte-E32 Modes',['../group___e32_m_o_d_e_s.html',1,'']]]
+  ['io_2dhardware_20options_293',['IO-Hardware Options',['../group___i_o_h_d_w.html',1,'']]],
+  ['iv_20_2d_20integer_20value_28_29_20constants_294',['IV - Integer Value() Constants',['../group___i_v.html',1,'']]]
 ];

@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "AddTode", "class_add_tode.html", "class_add_tode" ],
+    [ "AnalogButtonCapture", "class_analog_button_capture.html", "class_analog_button_capture" ],
     [ "Device", "class_device.html", "class_device" ],
     [ "E32Radio", "class_e32_radio.html", "class_e32_radio" ],
     [ "HdwSelect", "class_hdw_select.html", "class_hdw_select" ],
@@ -20,5 +21,6 @@ var annotated_dup =
     [ "RxPacket", "class_rx_packet.html", "class_rx_packet" ],
     [ "Sys", "class_sys.html", "class_sys" ],
     [ "Tode", "class_tode.html", "class_tode" ],
+    [ "TodeList", "class_tode_list.html", "class_tode_list" ],
     [ "TxPacket", "class_tx_packet.html", "class_tx_packet" ]
 ];
