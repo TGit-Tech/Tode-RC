@@ -14,6 +14,11 @@ A Universal Remote MicroController System Project.
 It's like a RF-Node but it's called a 'Tode'.
 
 -----------------------------------------------------------------------------------
+#Project Expansions
+-----------------------------------------------------------------------------------
+Side-IO Screw Terminal Case (pictured) https://github.com/TGit-Tech/Tode-SIOST
+
+-----------------------------------------------------------------------------------
 #Project Status
 -----------------------------------------------------------------------------------
 Initial design pictured may be changed abruptly.  The project is still in its
