@@ -29,11 +29,11 @@ void setup() {
   pinMode(48, OUTPUT);          
   digitalWrite(48, HIGH);       // Turn on Display Backlight
     
-//#if DEBUGLEVEL>0
+#if DEBUGLEVEL>0
   Serial.begin(115200);           // This has a funny way of blanking the display (Comment out to check)
   //Serial.begin(9600);           // This has a funny way of blanking the display (Comment out to check)
   while (!Serial) ;             // If the Serial Monitor isn't open at the time
-//#endif
+#endif
 
   Serial1.begin(9600);          // Begin Radio Communication
 
