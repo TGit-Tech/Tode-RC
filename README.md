@@ -14,6 +14,13 @@ A Universal Remote MicroController System Project.
 It's like a RF-Node but it's called a 'Tode'.
 
 -----------------------------------------------------------------------------------
+#Project Purchase Options
+-----------------------------------------------------------------------------------
+Parts & Supplies ONLY ( You must assemble and solder and make 3D-prints )
+Builders Kit @ https://www.tindie.com/products/tgittech/tode-rc-builders-kit
+
+
+-----------------------------------------------------------------------------------
 #Project Expansions
 -----------------------------------------------------------------------------------
 Side-IO Screw Terminal Case (pictured) https://github.com/TGit-Tech/Tode-SIOST
