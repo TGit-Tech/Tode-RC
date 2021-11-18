@@ -1,12 +1,13 @@
 /******************************************************************************************************************//**
- * @file      Tode-RC-212G.ino
+ * @file      Tode-RC-21BH.ino
  * @brief     Arduino Sketch for the Tode-RC System Implementing Ebyte E32 Transceiver.
- * @details 
- * @version   20CR [YYMD]
+ * @details   Main Sketch
+ * @version   21BH [YYMD]
  * @bug       None Yet
  * @warning   Never call 'RF' object in Item Constructors
  * @copyright MIT Public License
- * @author    TGIT-TECH   original creation   2116
+ * @author    TGIT-TECH   Erase Memory,Fix Per-Digit Hex,SecNet Boundaries                                  21BH
+ *            TGIT-TECH   original creation                                                                 2116
  **********************************************************************************************************************/
 #include "lib/ABC.h"
 #include "lib/ABC.cpp"
@@ -31,8 +32,11 @@ void setup() {
     
 #if DEBUGLEVEL>0
   Serial.begin(115200);           // This has a funny way of blanking the display (Comment out to check)
-  //Serial.begin(9600);           // This has a funny way of blanking the display (Comment out to check)
   while (!Serial) ;             // If the Serial Monitor isn't open at the time
+#else
+  // Required for 'Radio'->'PC Conn'
+  Serial.begin(9600);
+  while (!Serial);
 #endif
 
   Serial1.begin(9600);          // Begin Radio Communication

@@ -4,6 +4,7 @@
  *********************************************************************************************************************/
 #ifndef _IHDW_H
 #define _IHDW_H
+
 /*
  * SETTINGS
  *  Device Name
@@ -38,6 +39,18 @@ class AddTode : public MenuValue {
     AddTode();
     virtual int           Value() override;                                        ///< GET Item Value
     virtual void          Value(int _Value, byte _Status = STSNORMAL) override;    ///< SET Item Value
+};
+/******************************************************************************************************************//**
+ * @class   MemReset
+ * @brief   **ITEM** for Clearing the EEPROM Memory
+ *********************************************************************************************************************/
+class MemReset : public MenuValue {
+  public:
+    MemReset(const char* _CName);
+    virtual int           Value() override;
+    virtual void          Value(int _Value, byte _Status = STSNORMAL) override;    ///< SET Item Value
+  private:
+    void(* resetFunc) (void) = 0;  // declare reset fuction at address 0
 };
 /******************************************************************************************************************//**
  * @class   HdwSelect

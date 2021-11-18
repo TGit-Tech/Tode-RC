@@ -267,28 +267,38 @@ byte MenuValue::NavValueSet(byte _Key) {               DBENTERAL(("MenuValue::Na
   
   if (_Key==NAVKEYLEFT) { 
     if ( VType&VTDIG ) {
-      if ( VDigitPos<VDigits-1 ) { VDigitPos++; DisplayValue(); }             // Move Digit Left
-      else { NavSelected=SEL_NAME; VDigitPos = 0; DispItem(); return NAVKEYNONE; }   // Else Move to Name
+      if ( VDigitPos<VDigits-1 ) { VDigitPos++; DisplayValue(); }                     //Move Digit Left
+      else { NavSelected=SEL_NAME; VDigitPos = 0; DispItem(); return NAVKEYNONE; }    //el| Move to Name
     } else {
       NavSelected=SEL_NAME; DispItem(); return NAVKEYNONE; // NO-SAVE and EXIT
     }
   }
 
   if ( _Key==NAVKEYUP || _Key==NAVKEYDOWN ) {
-    // DIGIT SET
+    //if| PER-DIGIT SET
     if ( VType&VTDIG ) {
-      uint16_t base = VType&VTHEX?HEX:DEC;
-      uint16_t digatpos = uint16_t(uint16_t(iSetTo)/(pow(base,VDigitPos)))%base;
-      if ( _Key==NAVKEYUP ) {
-        if ( digatpos >= base-1 ) { iSetTo = iSetTo - digatpos*pow(base,VDigitPos); }
-        else { iSetTo = iSetTo + pow(base,VDigitPos); }      
-      }
-      if ( _Key==NAVKEYDOWN ) {
-        if ( digatpos == 0 ) { iSetTo = iSetTo + (base-1)*pow(base,VDigitPos); }
-        else { iSetTo = iSetTo - pow(base,VDigitPos); }
+      uint16_t base = VType&VTHEX?HEX:DEC;                                          // If (VType is HEX) 16 else 10;
+      if (base==HEX) {
+        uint8_t nibble=0;
+        nibble = (iSetTo & uint16_t(0xF<<(VDigitPos*4))) >> VDigitPos*4;                //Pulls one nibble-out
+        if ( _Key==NAVKEYUP ) { if (nibble==0xF) { nibble=0; } else { nibble++; } }     // +nibble
+        if ( _Key==NAVKEYDOWN ) { if (nibble==0x0) { nibble=0xF; } else { nibble--; } } // -nibble
+        iSetTo = (iSetTo & ~uint16_t(0xF<<(VDigitPos*4)));                              // ZERO where nibble goes
+        iSetTo = iSetTo | uint16_t(nibble << (VDigitPos*4));                            // Plug nibble back-in
+        
+      } else {
+        uint16_t digatpos = uint16_t(uint16_t(iSetTo)/(pow(base,VDigitPos)))%base;    // VDigitPos is where setting
+        if ( _Key==NAVKEYUP ) {
+          if ( digatpos >= base-1 ) { iSetTo = iSetTo - digatpos*pow(base,VDigitPos); }
+          else { iSetTo = iSetTo + pow(base,VDigitPos); }      
+        }
+        if ( _Key==NAVKEYDOWN ) {
+          if ( digatpos == 0 ) { iSetTo = iSetTo + (base-1)*pow(base,VDigitPos); }
+          else { iSetTo = iSetTo - pow(base,VDigitPos); }
+        }
       }
     
-    // NO-DIGIT SET
+    //el| NOT-PER-DIGIT SET
     } else {
       if ( _Key==NAVKEYUP ) iSetTo++;
       if ( _Key==NAVKEYDOWN ) iSetTo--;

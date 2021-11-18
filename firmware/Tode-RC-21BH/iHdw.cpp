@@ -21,6 +21,25 @@ void AddTode::Value(int _Value, byte _Status) {   DBINFOAL(("AddTode::Value[SET]
   RF->Send(new TxPacket(EEPROM.read(EMC_SECNET),PKT_GETCONFIG,iValue));
 }
 //#####################################################################################################################
+MemReset::MemReset(const char* _CName):
+  MenuValue(_CName, VTRW) {
+  ValueRange(0,1);
+  SetNumberName(0, "No");
+  SetNumberName(1, "Yes");
+  iValue = 0;
+}
+//-----------------------------------------------------------------------------------------------------
+int MemReset::Value() { return iValue; }
+//-----------------------------------------------------------------------------------------------------
+void MemReset::Value(int _Value, byte _Status) {                       DBENTERAL(("MemReset::Value(SET): "),(_Value))
+
+  if (_Value==1) {
+    // Clear all EEPROM and Reset Arduino
+    for (int i=0; i<EEPROM.length();i++) { EEPROM.update(i,0xFF); }
+    resetFunc();    
+  }
+}
+//#####################################################################################################################
 HdwSelect::HdwSelect(const char* _CName):
   MenuEEValue(_CName, EMC_HDWSELECT, VTRW+VTBYTE) {
   

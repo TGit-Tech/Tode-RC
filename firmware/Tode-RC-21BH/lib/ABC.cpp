@@ -57,9 +57,9 @@ namespace ButtonISR {
     Current_Button = NAVKEYNONE;
     if (bpress < 18) {      Current_Button = NAVKEYRIGHT; }
     else if (bpress < 27) { Current_Button = NAVKEYUP; }
-    else if (bpress < 37) { Current_Button = NAVKEYDOWN; }
+    else if (bpress < 36) { Current_Button = NAVKEYDOWN; }
     else if (bpress < 43) { Current_Button = NAVKEYLEFT; }
-    else if (bpress < 52) { Current_Button = NAVKEYOKAY; }
+    else if (bpress < 49) { Current_Button = NAVKEYOKAY; }
     else if (bpress < 60) { Current_Button = NAVKEYSET; }
     ButtonBuffer = Current_Button;
     //PCICR |= (1<<PCIE0);                                    // Enable (PCICR) Pin Change Interrupt

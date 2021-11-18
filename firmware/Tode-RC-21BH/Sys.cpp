@@ -108,12 +108,12 @@ void Sys::BuildSetupMenu() {                                    DBENTERL(("Sys::
   // 2. Radio . RadioSettings
   RadioSettings = new MenuList("Radio");
   SetupMenu->Add(new MenuName("Radio", RadioSettings));                                         // RADIO - Add supplies RF
-  RadioSettings->Add(new MenuEEValue("SecNet", EMC_SECNET, VTRW+VTBYTE+VTHEX+VTDIG));
+  SecNt = RadioSettings->Add(new MenuEEValue("SecNet", EMC_SECNET, VTRW+VTBYTE+VTHEX+VTDIG));
   RadioSettings->Add(new RadioAddress());
   RadioSettings->Add(new RadioFrequency());
   RadioSettings->Add(new RadioTxPower());
   RFPCConn = RadioSettings->Add(new RadioPCConn());
-
+  
   // 3. Devices MenuList
   if (ThisTode==0) { DBERRORL(("Sys::BuildSetupMenu ThisTode==0")) }                            // 2.2 ThisTode Devices
   else {
@@ -142,8 +142,10 @@ void Sys::BuildSetupMenu() {                                    DBENTERL(("Sys::
   SetupMenu->Add(ThisTode->Hardware);                                                           // 2. IO-HDW (Created in ThisTode)
 
   // 8. Firmware
-  SetupMenu->Add(new MenuName(FIRMWARE));                                                       // FIRMWARE
+  SetupMenu->Add(new MemReset(FIRMWARE));                                                       // FIRMWARE
 
+  // Menu Item Settings
+  SecNt->ValueRange(0x00, 0x7F);
 }
 //---------------------------------------------------------------------------------------------------------------------
 byte Sys::Loop(byte _FinalKey) {

@@ -20,7 +20,7 @@
 
 #include "LHdw.h"
 #include "iRF.h"
-#define FIRMWARE      "Firmware  2156"
+#define FIRMWARE      "Reset21BH"
 
 /**********************************************************************************************//**
  *  @class  Sys
@@ -54,7 +54,7 @@ class Sys : public Navigator {
     void          BuildSetupMenu();
     void          RFLoop();
     RadioPCConn*  RFPCConn = 0;
-
+    MenuEEValue*  SecNt = 0;
 };
 
 //_____________________________________________________________________________________________________________________
