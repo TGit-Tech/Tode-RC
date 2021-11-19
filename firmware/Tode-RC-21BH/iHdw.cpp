@@ -35,7 +35,10 @@ void MemReset::Value(int _Value, byte _Status) {                       DBENTERAL
 
   if (_Value==1) {
     // Clear all EEPROM and Reset Arduino
-    for (int i=0; i<EEPROM.length();i++) { EEPROM.update(i,0xFF); }
+    for (int i=2; i<EEPROM.length();i++) {    //Skip resetting RFAddr at [0,1]
+      if (i==EMC_SECNET) continue;            //Skip resetting SecNet
+      EEPROM.update(i,0xFF); 
+    }
     resetFunc();    
   }
 }
