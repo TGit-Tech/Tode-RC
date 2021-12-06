@@ -9,7 +9,7 @@ A Universal Remote MicroController System Project.
 - Hardware adaptation by module building blocks
 - User friendly On-Controller IO configuration
 
-<img src="./pics/Final.JPG" height="469" width="660">
+<img src="./pics/Final.JPG" height="1032" width="869">
 
 It's like a RF-Node but it's called a 'Tode'.
 
