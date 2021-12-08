@@ -16,23 +16,23 @@ It's like a RF-Node but it's called a 'Tode'.
 -----------------------------------------------------------------------------------
 #Project Firmware & Expansions
 -----------------------------------------------------------------------------------
-Firmware can be gotten from https://github.com/TGit-Tech/Tode-RC-Firmware
-Side-IO Screw Terminal Case (pictured) https://github.com/TGit-Tech/Tode-SIOST
+- Firmware at https://github.com/TGit-Tech/Tode-RC-Firmware
+- Side-IO Screw Terminals #SIOST (pictured) https://github.com/TGit-Tech/Tode-SIOST
 
 -----------------------------------------------------------------------------------
 #Project Status
 -----------------------------------------------------------------------------------
-Release 21C9
+- Release 21C9
 Initial Release.  All items/files appear to work properly.
 
 -----------------------------------------------------------------------------------
 #Project Purchase Options
 -----------------------------------------------------------------------------------
-Parts & Supplies ONLY ( You must assemble and solder and make 3D-prints )
-Builders Kit
+Parts & Supplies ONLY ( You must assemble and solder and make 3D-prints )\
+Builders Kit\
 https://www.tindie.com/products/tgittech/tode-rc-builders-kit
 https://www.etsy.com/listing/1111355606/tode-rc-builders-kit
-
-Assembled Tode-RC
+\
+Assembled Tode-RC\
 https://www.tindie.com/products/tgittech/tode-rc/
 https://www.etsy.com/listing/1121613074/tode-rc
