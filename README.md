@@ -29,10 +29,10 @@ Initial Release.  All items/files appear to work properly.
 #Project Purchase Options
 -----------------------------------------------------------------------------------
 Parts & Supplies ONLY ( You must assemble and solder and make 3D-prints )\
-Builders Kit\
+Builders Kit
 - https://www.tindie.com/products/tgittech/tode-rc-builders-kit
 - https://www.etsy.com/listing/1111355606/tode-rc-builders-kit
-\
+<br/><br/>
 Assembled Tode-RC\
 - https://www.tindie.com/products/tgittech/tode-rc/
 - https://www.etsy.com/listing/1121613074/tode-rc
