@@ -9,29 +9,30 @@ A Universal Remote MicroController System Project.
 - Hardware adaptation by module building blocks
 - User friendly On-Controller IO configuration
 
-<img src="./pics/Final.JPG" height="580" width="688">
+<img src="./pics/Final.JPG" height="469" width="660">
 
 It's like a RF-Node but it's called a 'Tode'.
 
 -----------------------------------------------------------------------------------
-#Project Purchase Options
+#Project Firmware & Expansions
 -----------------------------------------------------------------------------------
-Parts & Supplies ONLY ( You must assemble and solder and make 3D-prints )
-Builders Kit @ https://www.tindie.com/products/tgittech/tode-rc-builders-kit
-
-
------------------------------------------------------------------------------------
-#Project Expansions
------------------------------------------------------------------------------------
+Firmware can be gotten from https://github.com/TGit-Tech/Tode-RC-Firmware
 Side-IO Screw Terminal Case (pictured) https://github.com/TGit-Tech/Tode-SIOST
 
 -----------------------------------------------------------------------------------
 #Project Status
 -----------------------------------------------------------------------------------
-Initial design pictured may be changed abruptly.  The project is still in its
-design state.  Firmware is not functional at this time;  PCB design files and
-3D-Prints are available but no complete build instructions yet.  The PCB set is 
-currently limited to a single IO Wing and only the Ebyte E3-433T30D has correct 
-Back-Plane PCB design.
+Release 21C9
+Initial Release.  All items/files appear to work properly.
 
-Please check back later for an available release.
+-----------------------------------------------------------------------------------
+#Project Purchase Options
+-----------------------------------------------------------------------------------
+Parts & Supplies ONLY ( You must assemble and solder and make 3D-prints )
+Builders Kit
+https://www.tindie.com/products/tgittech/tode-rc-builders-kit
+https://www.etsy.com/listing/1111355606/tode-rc-builders-kit
+
+Assembled Tode-RC
+https://www.tindie.com/products/tgittech/tode-rc/
+https://www.etsy.com/listing/1121613074/tode-rc
