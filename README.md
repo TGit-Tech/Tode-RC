@@ -33,6 +33,6 @@ Builders Kit
 - https://www.tindie.com/products/tgittech/tode-rc-builders-kit
 - https://www.etsy.com/listing/1111355606/tode-rc-builders-kit
 <br/><br/>
-Assembled Tode-RC\
-- https://www.tindie.com/products/tgittech/tode-rc/
+Assembled Tode-RC
+- https://www.tindie.com/products/tgittech/tode-rc
 - https://www.etsy.com/listing/1121613074/tode-rc
