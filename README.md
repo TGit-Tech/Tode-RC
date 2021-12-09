@@ -24,6 +24,7 @@ It's like a RF-Node but it's called a 'Tode'.
 -----------------------------------------------------------------------------------
 - Release 21C9
 Initial Release.  All items/files appear to work properly.
+Firmware tested for Remote On/Off Devices only. (more functionality to come)
 
 -----------------------------------------------------------------------------------
 #Project Purchase Options
