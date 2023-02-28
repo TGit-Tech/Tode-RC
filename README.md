@@ -12,6 +12,8 @@ A Universal Remote MicroController System Project.
 <img src="./pics/Final.JPG" height="469" width="660">
 
 It's like a RF-Node but it's called a 'Tode'.
+See the User-Manual for abilities.
+https://tgit-tech.github.io/Tode-RC/Tode-RC%20Manual%20-%20Users%20Guide.pdf
 
 -----------------------------------------------------------------------------------
 #Project Firmware & Expansions
