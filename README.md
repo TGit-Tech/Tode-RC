@@ -22,7 +22,7 @@ https://tgit-tech.github.io/Tode-RC/Tode-RC%20Manual%20-%20Users%20Guide.pdf
 # Firmware & Expansions
 -----------------------------------------------------------------------------------
 - Firmware at https://github.com/TGit-Tech/Tode-RC-Firmware
-- Side-IO Screw Terminals #SIOST (pictured) https://github.com/TGit-Tech/Tode-SIOST
+- IO-Access Hardware #SIOST (pictured) https://github.com/TGit-Tech/Tode-IO-Options
 
 -----------------------------------------------------------------------------------
 # Status
