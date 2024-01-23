@@ -11,7 +11,7 @@ A Universal Arduino-based User-Interface & Remote-Control System.
 - User-Interface Logic Control
 - Hardware adaptation by module building blocks
 
-<img src="./pics/Final.JPG" height="469" width="660">
+<img src="./pics/Final.JPG" height="469" width="600">
 
 It's like a RF-Node but it's called a 'Tode'.<br>
 See the User-Manual for abilities.
