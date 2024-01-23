@@ -9,6 +9,7 @@ A Universal Arduino-based User-Interface & Remote-Control System.
 - User-Interface IO-Connected Device Setup
 - User-Interface Find/Add Remote Tode design
 - User-Interface Logic Control
+- OpenHab MQTT support
 - Hardware adaptation by module building blocks
 
 <img src="./pics/Final.JPG" height="469" width="600">
