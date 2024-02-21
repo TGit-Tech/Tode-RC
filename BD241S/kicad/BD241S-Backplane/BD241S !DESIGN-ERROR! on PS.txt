@@ -1,0 +1,2 @@
+The Input voltage traces to VCC.
+It can be cut and then add a jumper wire from P.S. out to VCC.

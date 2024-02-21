@@ -1,53 +1,43 @@
 -----------------------------------------------------------------------------------
 # Tode-RC
 -----------------------------------------------------------------------------------
-A Universal Arduino-based User-Interface & Remote-Control System.
+A Universal Remote MicroController System Project.
 
-- AtMega2560 Pro-Mini Micro-Controller
-- 1W or 2W 433MHz LoRa Trasceiver ( 2-mile+ range using Ebyte-E32 Module )
-- 1.8" TFT Color Display and 6-Button Keypad
-- User-Interface IO-Connected Device Setup
-- User-Interface Find/Add Remote Tode design
-- User-Interface Logic Control
-- OpenHab MQTT support
+- Mini Mega 2560 Pro Arduino type Micro-Controller
+- 1.8" TFT Display and 6-Button Keypad
 - Hardware adaptation by module building blocks
+- User friendly On-Controller IO configuration
+- (2) Models to chose from
+	- SD23CF supporting 2W(T33D) or 1W(T30D) Ebyte Radios and 7-IO points
+	- BD241S supporting 1W(T30D) or 250mW(T20D) Ebyte Radios and 46-IO points
 
-<img src="./pics/Final.JPG" height="469" width="600">
+<img src="./All-pics/Brochure.jpg" height="871" width="525">
 
-It's like a RF-Node but it's called a 'Tode'.<br>
-See the User-Manual for abilities.
-https://tgit-tech.github.io/Tode-RC/Tode-RC%20Manual%20-%20Users%20Guide.pdf
+It's like a RF-Node but it's called a 'Tode'.
 
 -----------------------------------------------------------------------------------
-# Firmware & Expansions
+#Project Firmware & Expansions
 -----------------------------------------------------------------------------------
 - Firmware at https://github.com/TGit-Tech/Tode-RC-Firmware
-- IO-Access Hardware #SIOST (pictured) https://github.com/TGit-Tech/Tode-IO-Options
+	- Be sure to set Backplane model in config.h
+- Side-IO Screw Terminals #SIOST (pictured) https://github.com/TGit-Tech/Tode-IO
+- Back-IO Pin Header Array #BIOPH https://github.com/TGit-Tech/Tode-IO
 
 -----------------------------------------------------------------------------------
-# Status
+#Project Status
 -----------------------------------------------------------------------------------
-- Release 21C9
-	- Initial Release.  
-	- All items/files appear to work properly.
-	- Firmware tested for Remote On/Off Devices only. (more functionality to come)
-	
-- Release Candidate Multi-Model Release
-	- Model BD235M is a work-in-progress with [B]ack-IO and [D]itgital keypad
-	- Model SA212K is previous design with [S]ide-IO (3D-box) and [A]nalog keypad
-	- Model SD23CF is new design with [S]ide-IO (commercial box) and [D]igital keypad
+- Release Candidate 242I
+NEW changes.  The old model SA212K with analog keypad will become obsolete (not supported).
+There will no longer be an outdoor 3D-Printed box as commercially available ones are
+so much better weather-proofing and durability wise.  All future designs will have
+digital keypads as analog was spotty with moisture and temperature change.  Secondary 
+Power Supplies are On-PCB now for both SD23CF(Side-IO) and BD241S(Back-IO).  BD241S is
+the ideal build because of it's 46-Pin access however SD23CF allows Ebyte T33D(2W) radios
+that cover-up Arduino pin access so it will continue to be supported in the future.  Firmware
+auto-detects E32-433T20D/T30D, E22-400T30D/900T30D and E220-400T30D Ebyte Radios.
 
 -----------------------------------------------------------------------------------
-# Compatibility Notes
------------------------------------------------------------------------------------
-- Ebyte E32 Radio Modules Version V8+ will NOT communicate with previous E32 versions.
-	- This has been verified by Ebyte Mfg.
-- Firmware 21C9 is NOT compatible 231H+ Firmware.  
-	- Add Tode gets name but no devices.
-	- Not planning to address this unless requested to do so.
-
------------------------------------------------------------------------------------
-# Purchase Options
+#Project Purchase Options
 -----------------------------------------------------------------------------------
 Parts & Supplies ONLY ( You must assemble and solder and make 3D-prints )\
 Builders Kit
