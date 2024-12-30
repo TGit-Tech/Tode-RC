@@ -1,0 +1,8 @@
+Save the manual as a PDF
+
+In FoxIt Reader select:
+The book uses Standard 8.5 x 11 " paper
+
+Under "Print Handling"
+Click "Booklet"
+Binding: Left

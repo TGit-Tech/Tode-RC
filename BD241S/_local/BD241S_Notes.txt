@@ -1,0 +1,17 @@
+Future Design 
+
+Like a way for Radio plug-in instead of solder.
+
+-Like a better way for IO-Power instead of plug-in.
+Consider using Mega Pro PWR Pins and solder jumper wire from PWR pins to ICSP Power
+That will connect ICSP to main PWR rails.
+
+
+BD can read up to (4) 8-Bit[7.0] encoders on  PA, PC, PF, PK
+**if you can get plugs (hardware blocked) on D48,D49 get PL too.
+
+PWM Drives on PL3(OC5A), PL4(OC5B), PL5(OC5C)
+All other OC(s) are used by RF & DISPKB.
+- Future design may move off D4-D9 OC(s) if needed (not PCINT KB-pins)
+
+So I need to check if OC5(A,B,C) can be driven seperately to secure Water-Cart Usage on drive & steer.
