@@ -10,10 +10,18 @@ It's like a RF-Node but call it a 'Tode'.
 
 See the docs/ Users-Guide for device support list and usage details including MQTT OpenHab connection abilities.
 
+Benefits of the Tode over ESP32 LoRa Modules
+- Big enough to be practical.  Small enough to be handy.
+- 5V TTL-IO (Ebyte-RF 5V match & 200mW/IO power)
+- 54-IO pins (leaving (46) with display, keypad, radio connected)
+- 30dbm (T30D) Transmission Power with Ebyte LoRa Modules
+- 3-Piece plug-together assembly keeps individual parts easy to swap/salvage.
+
 Due to button sticking issues the buttons are now just black tops shown in first image.
 
 <img src="./pics/Tode-RC.BD241S.jpg" height="406" width="186">
 <img src="./pics/TodeModelBD241S.jpg" height="406" width="527">
+<img src="./pics/TodeBOM.jpg" height="656" width="734">
 
 -----------------------------------------------------------------------------------
 #Project Purchase Options
@@ -33,7 +41,10 @@ Purchase pre-made at...
 -----------------------------------------------------------------------------------
 #Project Status
 -----------------------------------------------------------------------------------
-USE Tode-RC.BD241S.  It supports 1W(T30D) or 1/4W(T20D) Ebyte Radios.
+USE Tode-RC.BD241S.  It supports 1W(T30D) or 1/4W(T20D) Ebyte Radios.\
+Double Check that the PCB doesn't have the below design error.
+
+<img src="./pics/PCB241S.Error.png" height="399" width="217">
 
 Model SD23CF(In-Design/BETA) supports 2W(T33D) Radios but only 7-IO pins.
 	
