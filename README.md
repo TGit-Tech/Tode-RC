@@ -14,7 +14,7 @@ Benefits of the Tode over ESP32 LoRa Modules
 - Big enough to be practical.  Small enough to be handy.
 - 5V TTL-IO (Ebyte-RF 5V match, 200mW/IO power, Ready-fit for 5V Sensors)
 - 54-IO pins (leaving (46) with display, keypad, radio connected)
-- 30dbm (T30D) Transmission Power with Ebyte LoRa Modules
+- 30dbm (T30D) Transmission Power with Ebyte LoRa Modules (A good 5-mile distance)
 - 3-Piece plug-together assembly keeps individual parts easy to swap/salvage.
 
 Due to button sticking issues the buttons are now just black tops shown in first image.
